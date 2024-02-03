@@ -6,7 +6,7 @@ export const siteConfig = {
 
 	url: "",
 	image:"/siteLogo.png",
-	  "keywords": [
+	keywords: [
     "Barber shop",
     "Salon",
     "Hair Cut",
@@ -50,7 +50,7 @@ export const siteConfig = {
     "Clean and Sanitized",
     "Sterilized Equipment",
     "COVID-19 Safety Measures"
-  ]
+  	],
 	lang: "en-US",
 	locale: "en_us",
 

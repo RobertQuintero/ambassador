@@ -63,7 +63,7 @@ export const siteConfig = {
 	// Company details
 	name: "Ambassador",
 	description: "",
-	email: "info@primeklase.com",
+	email: "ambassador.com",
 	telephone: "+63 999 999 9999",
 	mobile: "+63 999 999 9999",
 	becomePrimeKlase: "becomeprimera@primeklase.com",
@@ -79,17 +79,50 @@ export const siteConfig = {
 		description: "",
 	},
 	{
-		label: "About us",
-		href: "/instructors",
-		description: "Meet the masters, your guides to unlocking talents and potential",
+		label: "Book Now",
+		href: "/book-now",
+		description: "",
+	},
+	],
+	navItemsService: [
+	{
+		label: "Barber Shop",
+		href: "/barber-shop",
+		description: "",
 	},
 	{
-		label: "",
-		href: "/instructors",
-		description: "Meet the masters, your guides to unlocking talents and potential",
+		label: "Salon",
+		href: "/salon",
+		description: "",
+	},
+	{
+		label: "Tattoo",
+		href: "/tattoo",
+		description: "",
 	},
 
-
+	],
+	navItemsResources: [
+	{
+		label: "About us",
+		href: "/about",
+		description: "",
+	},
+	{
+		label: "Gallery",
+		href: "/gallery",
+		description: "",
+	},
+	{
+		label: "Testimonials",
+		href: "/testimonials",
+		description: "",
+	},
+	{
+		label: "Contact us",
+		href: "/contact",
+		description: "",
+	},
 	],
 	links: {
 		twitter: "https://twitter.com/getnextui",
@@ -105,3 +138,18 @@ export const siteConfig = {
 	},
 
 };
+	// {
+	// 	label: "Beauty",
+	// 	href: "/beauty",
+	// 	description: "",
+	// },
+	// {
+	// 	label: "Spa",
+	// 	href: "/spa",
+	// 	description: "",
+	// },
+	// {
+	// 	label: "Esthetics",
+	// 	href: "/esthetics",
+	// 	description: "",
+	// },

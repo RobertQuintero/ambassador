@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import clsx from "clsx";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { AnimatedTransitionEffect } from "@/components/animation/animatedTransitionEffect";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -23,7 +24,14 @@ export const metadata: Metadata = {
     yandex: siteConfig.yandex,
     yahoo: siteConfig.yahoo,
     other: {
-      me: [siteConfig.email,siteConfig.links.linkedin,siteConfig.links.facebook,siteConfig.links.instagram,siteConfig.links.twitter,siteConfig.links.pinterest],
+      me: [
+        siteConfig.email,
+        siteConfig.links.linkedin,
+        siteConfig.links.facebook,
+        siteConfig.links.instagram,
+        siteConfig.links.twitter,
+        siteConfig.links.pinterest,
+      ],
       bing: siteConfig.bing,
     },
   },
@@ -33,18 +41,18 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     locale: siteConfig.lang,
     siteName: siteConfig.name,
-    type: 'website',
+    type: "website",
     images: [
       {
         url: `${siteConfig.image}`,
       },
     ],
   },
-  alternates:{
+  alternates: {
     canonical: siteConfig.url,
     types: {
-      'application/rss+xml': `${siteConfig.url}/feed.xml`,
-      'application/xml': `${siteConfig.url}/sitemap.xml`,
+      "application/rss+xml": `${siteConfig.url}/feed.xml`,
+      "application/xml": `${siteConfig.url}/sitemap.xml`,
     },
   },
   icons: {
@@ -61,7 +69,6 @@ export const viewport = {
   ],
 };
 
-
 export default function RootLayout({
   children,
 }: {
@@ -77,6 +84,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          <AnimatedTransitionEffect />
           <Navbar />
           <main>{children}</main>
           <Footer />

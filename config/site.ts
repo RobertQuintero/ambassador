@@ -4,7 +4,8 @@ export const siteConfig = {
 
 
 
-	url: "",
+	// url: "https://ambassador.vercel.app",
+	url:"http://localhost:3000",
 	image:"/siteLogo.png",
 	keywords: [
     "Barber shop",

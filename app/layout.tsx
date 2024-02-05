@@ -8,21 +8,59 @@ import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  keywords: siteConfig.keywords,
+  generator: siteConfig.name,
+  verification: {
+    google: siteConfig.google,
+    yandex: siteConfig.yandex,
+    yahoo: siteConfig.yahoo,
+    other: {
+      me: [siteConfig.email,siteConfig.links.linkedin,siteConfig.links.facebook,siteConfig.links.instagram,siteConfig.links.twitter,siteConfig.links.pinterest],
+      bing: siteConfig.bing,
+    },
+  },
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    locale: siteConfig.lang,
+    siteName: siteConfig.name,
+    type: 'website',
+    images: [
+      {
+        url: `${siteConfig.image}`,
+      },
+    ],
+  },
+  alternates:{
+    canonical: siteConfig.url,
+    types: {
+      'application/rss+xml': `${siteConfig.url}/feed.xml`,
+      'application/xml': `${siteConfig.url}/sitemap.xml`,
+    },
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
 };
+
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "dark" },
+  ],
+};
+
 
 export default function RootLayout({
   children,

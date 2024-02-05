@@ -23,48 +23,6 @@ export const Logo: React.FC<IconSvgProps> = ({
 	</svg>
 );
 
-export const DiscordIcon: React.FC<IconSvgProps> = ({
-	size = 24,
-	width,
-	height,
-	...props
-}) => {
-	return (
-		<svg
-			height={size || height}
-			viewBox="0 0 24 24"
-			width={size || width}
-			{...props}
-		>
-			<path
-				d="M14.82 4.26a10.14 10.14 0 0 0-.53 1.1 14.66 14.66 0 0 0-4.58 0 10.14 10.14 0 0 0-.53-1.1 16 16 0 0 0-4.13 1.3 17.33 17.33 0 0 0-3 11.59 16.6 16.6 0 0 0 5.07 2.59A12.89 12.89 0 0 0 8.23 18a9.65 9.65 0 0 1-1.71-.83 3.39 3.39 0 0 0 .42-.33 11.66 11.66 0 0 0 10.12 0q.21.18.42.33a10.84 10.84 0 0 1-1.71.84 12.41 12.41 0 0 0 1.08 1.78 16.44 16.44 0 0 0 5.06-2.59 17.22 17.22 0 0 0-3-11.59 16.09 16.09 0 0 0-4.09-1.35zM8.68 14.81a1.94 1.94 0 0 1-1.8-2 1.93 1.93 0 0 1 1.8-2 1.93 1.93 0 0 1 1.8 2 1.93 1.93 0 0 1-1.8 2zm6.64 0a1.94 1.94 0 0 1-1.8-2 1.93 1.93 0 0 1 1.8-2 1.92 1.92 0 0 1 1.8 2 1.92 1.92 0 0 1-1.8 2z"
-				fill="currentColor"
-			/>
-		</svg>
-	);
-};
-
-export const TwitterIcon: React.FC<IconSvgProps> = ({
-	size = 24,
-	width,
-	height,
-	...props
-}) => {
-	return (
-		<svg
-			height={size || height}
-			viewBox="0 0 24 24"
-			width={size || width}
-			{...props}
-		>
-			<path
-				d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
-				fill="currentColor"
-			/>
-		</svg>
-	);
-};
-
 export const GithubIcon: React.FC<IconSvgProps> = ({
 	size = 24,
 	width,
@@ -132,59 +90,188 @@ export const SunFilledIcon = ({
 	</svg>
 );
 
-export const HeartFilledIcon = ({
+export const FacebookIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => (
+  <svg
+    fill="none"
+    height={size || height}
+    viewBox="0 -1 25 26"
+    width={size || width}
+    {...props}
+  >
+    <path
+      d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z"
+      fill="currentColor"
+    ></path>
+  </svg>
+);
+
+export const TwitterIcon: React.FC<IconSvgProps> = ({
 	size = 24,
 	width,
 	height,
 	...props
-}: IconSvgProps) => (
-	<svg
-		aria-hidden="true"
-		focusable="false"
-		height={size || height}
-		role="presentation"
-		viewBox="0 0 24 24"
-		width={size || width}
-		{...props}
-	>
-		<path
-			d="M12.62 20.81c-.34.12-.9.12-1.24 0C8.48 19.82 2 15.69 2 8.69 2 5.6 4.49 3.1 7.56 3.1c1.82 0 3.43.88 4.44 2.24a5.53 5.53 0 0 1 4.44-2.24C19.51 3.1 22 5.6 22 8.69c0 7-6.48 11.13-9.38 12.12Z"
-			fill="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth={1.5}
-		/>
-	</svg>
-);
+}) => {
+	return (
+		<svg
+			height={size || height}
+			viewBox="0 0 24 24"
+			width={size || width}
+			{...props}
+		>
+			<path
+				d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
+				fill="currentColor"
+			/>
+		</svg>
+	);
+};
 
-export const SearchIcon = (props: IconSvgProps) => (
-	<svg
-		aria-hidden="true"
+export const InstagramIcon: React.FC<IconSvgProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+}) => {
+	return (
+		<svg
+			height={size || height}
+			viewBox="0 0 30 30"
+			width={size || width}
+			{...props}
+		>
+			<path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z" fill="currentColor"/>
+		</svg>
+	);
+};
+
+export const TiktokIcon: React.FC<IconSvgProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+}) => {
+	return (
+		<svg
+			height={size || height}
+			 viewBox="0 0 30 30"
+			width={size || width}
+			{...props}
+		>
+			<path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.104,4,24,4z M22.689,13.474 c-0.13,0.012-0.261,0.02-0.393,0.02c-1.495,0-2.809-0.768-3.574-1.931c0,3.049,0,6.519,0,6.577c0,2.685-2.177,4.861-4.861,4.861 C11.177,23,9,20.823,9,18.139c0-2.685,2.177-4.861,4.861-4.861c0.102,0,0.201,0.009,0.3,0.015v2.396c-0.1-0.012-0.197-0.03-0.3-0.03 c-1.37,0-2.481,1.111-2.481,2.481s1.11,2.481,2.481,2.481c1.371,0,2.581-1.08,2.581-2.45c0-0.055,0.024-11.17,0.024-11.17h2.289 c0.215,2.047,1.868,3.663,3.934,3.811V13.474z" fill="currentColor"/>
+		</svg>
+	);
+};
+
+export const YoutubeIcon: React.FC<IconSvgProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+}) => {
+	return (
+		<svg
+			height={size || height}
+			 viewBox="0 0 30 30"
+			width={size || width}
+			{...props}
+		>
+			<path d="M 15 4 C 10.814 4 5.3808594 5.0488281 5.3808594 5.0488281 L 5.3671875 5.0644531 C 3.4606632 5.3693645 2 7.0076245 2 9 L 2 15 L 2 15.001953 L 2 21 L 2 21.001953 A 4 4 0 0 0 5.3769531 24.945312 L 5.3808594 24.951172 C 5.3808594 24.951172 10.814 26.001953 15 26.001953 C 19.186 26.001953 24.619141 24.951172 24.619141 24.951172 L 24.621094 24.949219 A 4 4 0 0 0 28 21.001953 L 28 21 L 28 15.001953 L 28 15 L 28 9 A 4 4 0 0 0 24.623047 5.0546875 L 24.619141 5.0488281 C 24.619141 5.0488281 19.186 4 15 4 z M 12 10.398438 L 20 15 L 12 19.601562 L 12 10.398438 z" fill="currentColor"/>
+		</svg>
+	);
+};
+
+export const PinterestIcon: React.FC<IconSvgProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+}) => {
+	return (
+		<svg
+			height={size || height}
+			 viewBox="0 0 30 30"
+			width={size || width}
+			{...props}
+		>
+			 <path d="M15,3C8.373,3,3,8.373,3,15c0,5.084,3.163,9.426,7.627,11.174c-0.105-0.949-0.2-2.406,0.042-3.442 c0.218-0.936,1.407-5.965,1.407-5.965s-0.359-0.719-0.359-1.781c0-1.669,0.967-2.914,2.171-2.914c1.024,0,1.518,0.769,1.518,1.69 c0,1.03-0.655,2.569-0.994,3.995c-0.283,1.195,0.599,2.169,1.777,2.169c2.133,0,3.772-2.249,3.772-5.495 c0-2.873-2.064-4.882-5.012-4.882c-3.414,0-5.418,2.561-5.418,5.208c0,1.031,0.397,2.137,0.893,2.739 c0.098,0.119,0.112,0.223,0.083,0.344c-0.091,0.379-0.293,1.194-0.333,1.361c-0.052,0.22-0.174,0.266-0.401,0.16 c-1.499-0.698-2.436-2.889-2.436-4.649c0-3.785,2.75-7.262,7.929-7.262c4.163,0,7.398,2.966,7.398,6.931 c0,4.136-2.608,7.464-6.227,7.464c-1.216,0-2.359-0.632-2.75-1.378c0,0-0.602,2.291-0.748,2.853 c-0.271,1.042-1.002,2.349-1.492,3.146C12.57,26.812,13.763,27,15,27c6.627,0,12-5.373,12-12S21.627,3,15,3z" fill="currentColor"/>
+		</svg>
+	);
+};
+
+
+export const LinkedInIcon: React.FC<IconSvgProps> = ({
+  size = 30,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 30 30"
+      width={size || width}
+      {...props}
+    >
+<path fill="currentColor" d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"/></svg>
+  );
+};
+
+export const FemaleIcon: React.FC<IconSvgProps> = ({
+  size = 30,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+		stroke="currentColor"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		strokeWidth={1.8}
 		fill="none"
-		focusable="false"
-		height="1em"
-		role="presentation"
-		viewBox="0 0 24 24"
-		width="1em"
-		{...props}
-	>
-		<path
-			d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="2"
-		/>
-		<path
-			d="M22 22L20 20"
-			stroke="currentColor"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			strokeWidth="2"
-		/>
-	</svg>
-);
+    >
+  <path d="M12 15.75A7.125 7.125 0 1 0 12 1.5a7.125 7.125 0 0 0 0 14.25Z"></path>
+  <path d="M12 15.75v6.75"></path>
+  <path d="M14.719 19.5H9.28"></path>
+</svg>
+  );
+};
+export const MaleIcon: React.FC<IconSvgProps> = ({
+  size = 30,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 24 24"
+      width={size || width}
+      {...props}
+		stroke="currentColor"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		strokeWidth={1.8}
+		fill="none"
+    >
 
+    {/* // fillRule="evenodd"
+    // clipRule="evenodd" */}
+  <path d="M10.125 21a7.125 7.125 0 1 0 0-14.25 7.125 7.125 0 0 0 0 14.25Z"></path>
+  <path d="M21 7.5V3h-4.5"></path>
+  <path d="M15.188 8.813 21 3"></path>
+</svg>
+  );
+};
 export const NextUILogo: React.FC<IconSvgProps> = (props) => {
   const { width, height = 40 } = props;
 

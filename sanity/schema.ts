@@ -1,19 +1,23 @@
 import { type SchemaTypeDefinition } from 'sanity'
 import gallery from './schemas/gallery'
-import services from './schemas/services'
 import testimonials from './schemas/testimonials'
 import branches from './schemas/branches'
 import about from './schemas/about'
-import teams from './schemas/teams'
+import team from './schemas/teams'
 import artists from './schemas/artists'
+import salon from './schemas/salon'
+import barbershop from './schemas/barbershop'
+import tattoo from './schemas/tattoo'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
+  salon,
+  barbershop,
+  tattoo,
   about,
   artists,
-  teams,
+  team,
   gallery,
-  services,
   testimonials,
   branches,
   ],

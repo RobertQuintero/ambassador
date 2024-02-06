@@ -30,13 +30,13 @@ export const Navbar = () => {
       <NavbarContent >
         <NavbarBrand as="li" className="flex items-center w-full justify-center" >
           <NextLink href="/">
-            <AnimatedLogo className="w-20 h-20    md:w-36 md:h-36" hidden="hidden"/>
+            <AnimatedLogo className="w-20 h-20    md:w-36 md:h-36" />
           </NextLink>
         </NavbarBrand>
 		<NavbarMenuToggle className="absolute right-8 md:right-20 "/>
       </NavbarContent>
 
-      <NavbarMenu className="bg-background mt-8 md:mt-24 ">
+    <NavbarMenu className="bg-background mt-8 md:mt-24 ">
 
 
 

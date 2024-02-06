@@ -43,14 +43,13 @@ export default defineType({
         validation: (Rule) => Rule.required(),
         }),
 
-        // services
+        // team
         defineField({
-        name: "services",
-        title: "Services",
-        description: "Services of the company",
+        name: "team",
+        title: "Team",
+        description: "Team members of the company",
         type: "array",
-        of: [{ type: "reference", to: [{ type: "services" }] }],
-        validation: (Rule) => Rule.required(),
+        of: [{ type: "reference", to: [{ type: "team" }] }],
         }),
 
         // testimonials

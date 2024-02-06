@@ -17,17 +17,6 @@ export default defineType({
         }),
 
         defineField({
-        name: "slug",
-        title: "Slug",
-        type: "slug",
-        options: {
-            source: "galleryTitle",
-            maxLength: 96,
-        },
-        validation: (Rule) => Rule.required(),
-        }),
-
-        defineField({
         name: "galleryDescription",
         title: "Gallery Description",
         type: "text",

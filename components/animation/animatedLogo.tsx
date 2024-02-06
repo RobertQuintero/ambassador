@@ -12,7 +12,7 @@ type LogoProps = {
   show?: boolean;
 };
 
-const AnimatedLogo = ({
+const AnimatedLogoFull = ({
   url,
   delay = 0,
   hidden,
@@ -319,8 +319,37 @@ const AnimatedLogo = ({
         />
         {/* // ... Stars end */}
       </motion.svg>
+    </div>
+  );
+};
+
+
+
+const AnimatedLogo = ({
+  url,
+  delay = 0,
+  hidden,
+  hidden2,
+  className,
+  show = true,
+  ...props
+}: LogoProps) => {
+  const draw = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: (i: number) => {
+      return {
+        pathLength: 1,
+        opacity: 1,
+        transition: {
+          pathLength: { delay: delay, type: "spring", duration: 8, bounce: 0 },
+        },
+      };
+    },
+  };
+  return (
+    <div className={cn("flex flex-col items-center ", className)} {...props}>
       <motion.svg
-        className={`w-[70rem] h-[70rem] fill-black ${className}  ${hidden2}`}
+        className={`w-[70rem] h-[70rem] fill-black ${className}`}
         width="756"
         height="666"
         viewBox="0 0 756 666"
@@ -464,4 +493,4 @@ const AnimatedLogo = ({
   );
 };
 
-export { AnimatedLogo };
+export { AnimatedLogo,AnimatedLogoFull };

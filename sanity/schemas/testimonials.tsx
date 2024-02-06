@@ -25,20 +25,6 @@ export default defineType({
         }),
 
         defineField({
-            name: "companyOrAffiliation",
-            title: "Company or Affiliation",
-            type: "string",
-            description: "Company name or affiliation of the person giving the testimonial (optional)",
-        }),
-
-        defineField({
-            name: "profession",
-            title: "Profession",
-            type: "string",
-            description: "Profession of the person giving the testimonial (optional)",
-        }),
-
-        defineField({
             name: "testimonial",
             title: "Testimonial",
             type: "text",
@@ -50,6 +36,13 @@ export default defineType({
             title: "Testimonial Date",
             type: "date",
             description: "Date when the testimonial was given",
+            validation: (Rule) => Rule.required(),
+        }),
+
+        defineField({
+            name: "url",
+            title: "URL Link of testimonial",
+            type: "url",
             validation: (Rule) => Rule.required(),
         }),
     ],

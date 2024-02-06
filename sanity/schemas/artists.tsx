@@ -15,6 +15,17 @@ export default defineType({
       description: "Enter your full name (e.g. John Doe)",
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description: "This will be used to generate a unique URL for your profile",
+      validation: (Rule) => Rule.required(),
+      options: {
+        source: "fullName",
+        maxLength: 96,
+      },
+    }),
 
     defineField({
       name: "dateOfBirth",

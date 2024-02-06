@@ -14,7 +14,7 @@ export async function getAboutData(): Promise<AboutType> {
         history,
         "testimonials": testimonials[]->{
             "image": image.asset->url,
-            name,
+            fullName,
             date,
             testimonial,
             url,
@@ -22,3 +22,4 @@ export async function getAboutData(): Promise<AboutType> {
     }`);
   return data;
 }
+

@@ -18,8 +18,8 @@ export default defineType({
         }),
 
         defineField({
-            name: "name",
-            title: "Name",
+            name: "fullName",
+            title: "Full Name",
             type: "string",
             validation: (Rule) => Rule.required(),
         }),

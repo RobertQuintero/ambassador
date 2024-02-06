@@ -9,7 +9,7 @@ export default defineType({
     type: "document",
     fields: [
         defineField({
-        name: "galleryTitle",
+        name: "title",
         title: "Gallery Title",
         type: "string",
         description: "Enter the title of your gallery",
@@ -17,7 +17,7 @@ export default defineType({
         }),
 
         defineField({
-        name: "galleryDescription",
+        name: "description",
         title: "Gallery Description",
         type: "text",
         description: "Enter a short description of your gallery",
@@ -25,7 +25,7 @@ export default defineType({
         }),
 
         defineField({
-        name: "galleryDate",
+        name: "date",
         title: "Gallery Date",
         type: "date",
         description: "Enter the date of your gallery",
@@ -43,8 +43,8 @@ export default defineType({
                     type: "object",
                     fields: [
                         defineField({
-                            name: "title",
-                            title: "Title",
+                            name: "caption",
+                            title: "Caption",
                             type: "string",
                             validation: (Rule) => Rule.required(),
                         }),

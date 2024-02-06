@@ -1,7 +1,7 @@
 
 import { GalleryType } from "./galleryType";
 
-export type ServicesPage = {
+export type ServicesPageType = {
     _createdAt: string;
     _updatedAt: string;
     _id: string;

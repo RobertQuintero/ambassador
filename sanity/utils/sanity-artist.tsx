@@ -20,7 +20,7 @@ export async function getArtistsData(): Promise<ArtistType[]> {
 }
 
 
-export async function getArtistData(slug: string): Promise<ArtistType> {
+export async function getArtistPageData(slug: string): Promise<ArtistType> {
   const data = await client.fetch(groq`*[_type=="artists" && slug.current==$slug][0]{...,
         _createdAt,
         _updatedAt,

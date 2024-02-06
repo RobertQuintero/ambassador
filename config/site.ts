@@ -8,7 +8,7 @@ export const siteConfig = {
 	url:"http://localhost:3000",
 	image:"/siteLogo.png",
 	keywords: [
-    "Barber shop",
+    "Barbershop",
     "Salon",
     "Hair Cut",
     "Tattoo",
@@ -80,14 +80,19 @@ export const siteConfig = {
 	},
 	{
 		label: "Book Now",
-		href: "/book-now",
+		href: "/booking",
 		description: "",
 	},
 	],
 	navItemsService: [
 	{
-		label: "Barber Shop",
-		href: "/barber-shop",
+		label: "artists",
+		href: "/artists",
+		description: "",
+	},
+	{
+		label: "Barbershop",
+		href: "/barbershop",
 		description: "",
 	},
 	{
@@ -100,8 +105,8 @@ export const siteConfig = {
 		href: "/tattoo",
 		description: "",
 	},
-
 	],
+
 	navItemsResources: [
 	{
 		label: "About us",
@@ -118,12 +123,14 @@ export const siteConfig = {
 		href: "/testimonials",
 		description: "",
 	},
+
 	{
 		label: "Contact us",
 		href: "/contact",
 		description: "",
 	},
 	],
+
 	links: {
 		twitter: "https://twitter.com/getnextui",
 		facebook: "https://www.facebook.com/getnextui",

@@ -1,9 +1,12 @@
-import { title } from "@/components/primitives";
+import { getAboutData } from "@/sanity/utils/sanity-about";
+import React from "react";
 
-export default function AboutPage() {
+export default async function AboutPage() {
+
+	const about = await getAboutData();
 	return (
-		<div>
-			<h1 className={title()}>About</h1>
-		</div>
+		<React.Fragment>
+			<p>About</p>
+		</React.Fragment>
 	);
 }

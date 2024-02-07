@@ -84,7 +84,6 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <AnimatedTransitionEffect />
           <Navbar />
           <main>{children}</main>
           <Footer />

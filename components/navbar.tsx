@@ -1,4 +1,3 @@
-"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -28,8 +27,6 @@ import {
   MapIcon,
   PhoneIcon,
 } from "@heroicons/react/24/solid";
-import { motion } from "framer-motion";
-
 export const Navbar = () => {
 
 
@@ -45,17 +42,14 @@ export const Navbar = () => {
     >
       <NavbarContent className="w-full">
         <NavbarBrand className="flex relative  w-full">
-          <motion.div   className="absolute left-0"  whileHover={{ scale: 1.2, }}>
-
           <Button
             as={Link}
             href="/booking"
             variant="shadow"
-            className={`!font-bold bg-default-400/20  border border-default-100 pt-0.5 animate-pulse ${title({ size: "lg" })}`}
+            className={`!font-bold bg-default-400/20 absolute left-0 border border-default-100 pt-0.5 animate-pulse ${title({ size: "lg" })}`}
           >
             Book Now
           </Button>
-          </motion.div>
           <NextLink href="/" className="mx-auto">
             <AnimatedLogo className=" w-24 h-fit md:w-40" />
           </NextLink>
@@ -107,7 +101,7 @@ export const Navbar = () => {
               )}`}
             >
               Follow us
-              <HandThumbUpIcon className="w-6 h-6 md:w-8 md:h-8 absolute -rotate-45 -top-2 md:-top-4 -right-4 text-default-700 animate-pulse " />{" "}
+              <HandThumbUpIcon className="w-6 h-6 md:w-8 md:h-8 absolute -rotate-45 -top-2 md:-top-4 -right-4 text-default-700 " />{" "}
             </p>
             <div className="flex flex-row items-center justify-center gap-4 md:gap-8 mt-3 ">
               {siteConfig.links.instagram ? (

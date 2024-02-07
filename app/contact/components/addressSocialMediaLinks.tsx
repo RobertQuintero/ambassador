@@ -1,0 +1,237 @@
+import React from "react";
+import NextLink from "next/link";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Link,
+} from "@nextui-org/react";
+
+import { SocialMediaLink } from "@/components/links/socialMediaLink";
+import { paragraph, title } from "@/components/primitives";
+import { AnimatedLogo, AnimatedLogoFull } from "@/components/animation/animatedLogo";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from "@/components/icons";
+import { siteConfig } from "@/config/site";
+
+const AddressSocialMediaLinks = () => {
+  return (
+    <React.Fragment>
+      <div className="flex flex-col justify-center items-center ">
+        <AnimatedLogoFull className="w-80 h-fit" />
+        <h1
+          className={`!font-bold text-warning text-center !text-5xl sm:!text-6xl ${title(
+            { size: "xxxl" }
+          )}`}
+        >
+          Contact us
+        </h1>
+        <p
+          className={`!text-default-500 max-w-2xl text-center ${paragraph({
+            size: "md",
+          })}`}
+        >
+          {/* //the website is about barbershop/salon/  */}
+          Thank you for visiting {siteConfig.name}! Whether you&apos;re looking
+          to schedule an appointment, discuss potential collaborations, or have
+          any questions, we&apos;re here to assist you. Your feedback and
+          inquiries are important to us, so please don&apos;t hesitate to reach
+          out.
+        </p>
+      </div>
+      <div className="max-w-7xl mx-auto md:items-center grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-4  ">
+        {/* Inquiries */}
+        <Card
+          className="col-span-3 md:col-span-1 border border-default/30 bg-default/30 "
+          radius="none"
+          isBlurred
+          shadow="none"
+        >
+          <CardHeader>
+            <p
+              className={`!text-default-500 !text-center ${title({
+                size: "xl",
+              })}`}
+            >
+              Inquiries
+            </p>
+          </CardHeader>
+          <CardBody>
+            Thank you for reaching out to {siteConfig.name}! Whether
+          </CardBody>
+          <CardFooter>
+            <Button
+              as={Link}
+              href="#ContactForm"
+              size="lg"
+              className="font-bold w-full"
+              color="default"
+              variant="solid"
+              radius="none"
+            >
+              Contact us
+            </Button>
+          </CardFooter>
+        </Card>
+        {/* Main Branch */}
+        <Card
+          className="col-span-3 md:col-span-2 border border-default/30 bg-default/30  pt-4"
+          radius="none"
+          isBlurred
+          shadow="none"
+        >
+          <CardHeader className="items-center justify-center">
+            <p
+              className={`!text-default-500 ${title({
+                size: "xl",
+              })}`}
+            >
+              Main Branch
+            </p>
+          </CardHeader>
+          <CardBody className={` gap-2 items-center `}>
+            <p
+              className={`!text-default-500 hover:text-default-800 ${paragraph({
+                size: "md",
+              })}`}
+            >
+              {siteConfig.address}
+            </p>
+            <Link
+              className={`!text-default-500 hover:text-default-800 ${paragraph({
+                size: "md",
+              })}`}
+              as={NextLink}
+              href={`mailto:${siteConfig.email}`}
+            >
+              {siteConfig.email}
+            </Link>
+            <Link
+              className={`!text-default-500 hover:text-default-800 ${paragraph({
+                size: "md",
+              })}`}
+              as={NextLink}
+              href={`tel:${siteConfig.mobile}`}
+            >
+              {siteConfig.mobile}
+            </Link>
+            <Link
+              className={`!text-default-500 hover:text-default-800 ${paragraph({
+                size: "md",
+              })}`}
+              as={NextLink}
+              href={`tel:${siteConfig.telephone}`}
+            >
+              {siteConfig.telephone}
+            </Link>
+          </CardBody>
+          <CardFooter className="flex-col">
+            <div className="flex flex-row justify-center gap-2 w-full">
+              {siteConfig.links.instagram ? (
+                <Link
+                  isExternal
+                  href={siteConfig.links.instagram}
+                  aria-label="instagram"
+                >
+                  <InstagramIcon
+                    className="text-default-500 hover:text-default-800 transition-all"
+                    size={50}
+                  />
+                </Link>
+              ) : null}
+              {siteConfig.links.facebook ? (
+                <Link
+                  isExternal
+                  href={siteConfig.links.facebook}
+                  aria-label="facebook"
+                >
+                  <FacebookIcon
+                    className="text-default-500 hover:text-default-800 transition-all"
+                    size={50}
+                  />
+                </Link>
+              ) : null}
+              {siteConfig.links.twitter ? (
+                <Link
+                  isExternal
+                  href={siteConfig.links.twitter}
+                  aria-label="twitter"
+                >
+                  <TwitterIcon
+                    className="text-default-500 hover:text-default-800 transition-all"
+                    size={50}
+                  />
+                </Link>
+              ) : null}
+              {siteConfig.links.linkedin ? (
+                <Link
+                  isExternal
+                  href={siteConfig.links.linkedin}
+                  aria-label="LinkedIn"
+                  className=""
+                >
+                  <LinkedInIcon
+                    className="text-default-500  hover:text-default-800 transition-all"
+                    size={50}
+                  />
+                </Link>
+              ) : null}
+            </div>
+            <Button
+              size="lg"
+              className="font-bold w-full mt-4"
+              color="default"
+              variant="solid"
+              radius="none"
+              as={NextLink}
+              href="/branches"
+            >
+              Other Branches
+            </Button>
+          </CardFooter>
+        </Card>
+        {/* Book now */}
+        <Card
+          className="col-span-3 md:col-span-1  border border-default/30 bg-default/30 "
+          radius="none"
+          isBlurred
+          shadow="none"
+        >
+          <CardHeader>
+            <p
+              className={`!text-default-500 ${title({
+                size: "xl",
+              })}`}
+            >
+              Make a Reservation
+            </p>
+          </CardHeader>
+          <CardBody>
+            Thank you for reaching out to {siteConfig.name}! Whether
+          </CardBody>
+          <CardFooter>
+            <Button
+              size="lg"
+              className="font-bold w-full"
+              color="default"
+              variant="solid"
+              radius="none"
+              as={NextLink}
+              href="/application"
+            >
+              Book Now
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export { AddressSocialMediaLinks };

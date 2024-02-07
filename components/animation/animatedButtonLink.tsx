@@ -52,10 +52,10 @@ const AnimatedButtonNavLink = ({ link, titleLink,className }: LinkArrowProps) =>
     <React.Fragment>
       <Link
         href={link}
-        className={` font-semibold relative before:absolute before:left-0 before:bottom-0 before:origin-right before:scale-x-0 before:transform before:transition-transform before:duration-700 before:ease-in-out before:h-1.5 before:lg:h-2 before:w-full before:bg-default-400 before:rounded-sm hover:before:scale-x-100 hover:before:origin-left
+        className={` font-semibold relative before:absolute before:left-0 before:bottom-0 before:origin-right before:scale-x-0 before:transform before:transition-transform before:duration-700 before:ease-in-out before:h-1.5 before:lg:h-2 before:w-full before:bg-default-500 before:rounded-sm hover:before:scale-x-100 hover:before:origin-left
         hover:before:bg-default-800 hover:!text-default-800 transition-all
 					${title({ size: "v2xl" })}
-          ${pathname === link ? "before:scale-x-100 text-default-800 before:bg-default-800" : "text-default-400"}
+          ${pathname === link ? "before:scale-x-100 text-default-800 before:bg-default-800" : "text-default-500"}
           ${className}
         `}
         >

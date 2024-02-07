@@ -9,7 +9,24 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes:{
+        'animate-gradient': {
+          '0%': {
+            'background-position': '0% 50%',
+          },
+          '50%': {
+            'background-position': '100% 50%',
+          },
+          '100%': {
+            'background-position': '0% 50%',
+          },
+        }
+      },
+      animation: {
+        'animate-gradient': 'animate-gradient 2s linear infinite',
+      }
+    },
   },
   darkMode: "class",
   plugins: [nextui()],

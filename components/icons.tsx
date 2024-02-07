@@ -90,6 +90,22 @@ export const SunFilledIcon = ({
 	</svg>
 );
 
+export const MobileIcon: React.FC<IconSvgProps> = ({
+  size = 46,
+  width,
+  height,
+  ...props
+}) => (
+  <svg
+    fill="currentColor"
+    height={size || height}
+    viewBox="0 0 24 24"
+    width={size || width}
+    {...props}
+  >
+<path d="M6.24 4.8a2.4 2.4 0 0 1 2.4-2.4h7.2a2.4 2.4 0 0 1 2.4 2.4v14.4a2.4 2.4 0 0 1-2.4 2.4h-7.2a2.4 2.4 0 0 1-2.4-2.4V4.8Zm7.2 13.2a1.2 1.2 0 1 0-2.4 0 1.2 1.2 0 0 0 2.4 0Z"></path>
+  </svg>
+);
 export const FacebookIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,

@@ -64,10 +64,10 @@ export const siteConfig = {
 	name: "Ambassador",
 	description: "",
 	email: "ambassador.com",
-	telephone: "+63 999 999 9999",
-	mobile: "+63 999 999 9999",
+	telephone: "0936736732",
+	mobile: "090-293-232",
 	becomePrimeKlase: "becomeprimera@primeklase.com",
-	address: "Primera Klase, 1234, Manila, Philippines",
+	address: "ambassador, 1234, Manila, Philippines",
 	// Creator details
 	createdByUrl: "https://robertquintero.me",
 	createByName: " Robert Quintero",

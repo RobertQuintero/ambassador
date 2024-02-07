@@ -11,7 +11,7 @@ import {
 
 import { SocialMediaLink } from "@/components/links/socialMediaLink";
 import { paragraph, title } from "@/components/primitives";
-import { AnimatedLogo, AnimatedLogoFull } from "@/components/animation/animatedLogo";
+import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -26,14 +26,14 @@ const AddressSocialMediaLinks = () => {
       <div className="flex flex-col justify-center items-center ">
         <AnimatedLogoFull className="w-80 h-fit" />
         <h1
-          className={`!font-bold text-warning text-center !text-5xl sm:!text-6xl ${title(
+          className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
             { size: "xxxl" }
           )}`}
         >
           Contact us
         </h1>
         <p
-          className={`!text-default-500 max-w-2xl text-center ${paragraph({
+          className={` max-w-2xl text-center mb-4 md:mb-8 ${paragraph({
             size: "md",
           })}`}
         >
@@ -45,7 +45,7 @@ const AddressSocialMediaLinks = () => {
           out.
         </p>
       </div>
-      <div className="max-w-7xl mx-auto md:items-center grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-4  ">
+      <div className="max-w-7xl mx-auto md:items-center grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-4 my-16 md:my-32 ">
         {/* Inquiries */}
         <Card
           className="col-span-3 md:col-span-1 border border-default/30 bg-default/30 "
@@ -55,7 +55,7 @@ const AddressSocialMediaLinks = () => {
         >
           <CardHeader>
             <p
-              className={`!text-default-500 !text-center ${title({
+              className={`!text-default-800 !text-center ${title({
                 size: "xl",
               })}`}
             >
@@ -63,7 +63,12 @@ const AddressSocialMediaLinks = () => {
             </p>
           </CardHeader>
           <CardBody>
-            Thank you for reaching out to {siteConfig.name}! Whether
+             <p
+              className={` ${paragraph({
+                size: "md",
+              })}`}
+            >Thank you for reaching out to {siteConfig.name}! Whether</p>
+
           </CardBody>
           <CardFooter>
             <Button
@@ -88,7 +93,7 @@ const AddressSocialMediaLinks = () => {
         >
           <CardHeader className="items-center justify-center">
             <p
-              className={`!text-default-500 ${title({
+              className={` ${title({
                 size: "xl",
               })}`}
             >
@@ -97,14 +102,14 @@ const AddressSocialMediaLinks = () => {
           </CardHeader>
           <CardBody className={` gap-2 items-center `}>
             <p
-              className={`!text-default-500 hover:text-default-800 ${paragraph({
+              className={`hover:text-default-800 ${paragraph({
                 size: "md",
               })}`}
             >
               {siteConfig.address}
             </p>
             <Link
-              className={`!text-default-500 hover:text-default-800 ${paragraph({
+              className={`hover:text-default-800 ${paragraph({
                 size: "md",
               })}`}
               as={NextLink}
@@ -113,7 +118,7 @@ const AddressSocialMediaLinks = () => {
               {siteConfig.email}
             </Link>
             <Link
-              className={`!text-default-500 hover:text-default-800 ${paragraph({
+              className={` hover:text-default-800 ${paragraph({
                 size: "md",
               })}`}
               as={NextLink}
@@ -122,7 +127,7 @@ const AddressSocialMediaLinks = () => {
               {siteConfig.mobile}
             </Link>
             <Link
-              className={`!text-default-500 hover:text-default-800 ${paragraph({
+              className={` hover:text-default-800 ${paragraph({
                 size: "md",
               })}`}
               as={NextLink}
@@ -205,7 +210,7 @@ const AddressSocialMediaLinks = () => {
         >
           <CardHeader>
             <p
-              className={`!text-default-500 ${title({
+              className={` ${title({
                 size: "xl",
               })}`}
             >
@@ -213,7 +218,12 @@ const AddressSocialMediaLinks = () => {
             </p>
           </CardHeader>
           <CardBody>
-            Thank you for reaching out to {siteConfig.name}! Whether
+             <p
+              className={` ${paragraph({
+                size: "md",
+              })}`}
+            >Thank you for reaching out to {siteConfig.name}! Whether</p>
+
           </CardBody>
           <CardFooter>
             <Button

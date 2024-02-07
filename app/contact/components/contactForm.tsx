@@ -93,7 +93,8 @@ const ContactForm = () => {
     <React.Fragment>
       {!isSubmitted ? (
         <form
-          className=" flex flex-col gap-4 max-w-4xl mx-auto"
+          className=" flex flex-col gap-4 max-w-4xl mx-auto "
+          id="ContactForm"
           onSubmit={handleSubmit}
         >
           <p
@@ -101,11 +102,11 @@ const ContactForm = () => {
               size: "xxl",
             })}`}
           >
-            Contact us
+            Send us a message
           </p>
           <p
-            className={`!text-default-500 mb-4 text-center mx-auto !max-w-xl ${paragraph({
-              size: "sm",
+            className={`!text-default-800 mb-4 text-center mx-auto !max-w-xl ${paragraph({
+              size: "md",
             })}`}
           >
             "Welcome to {siteConfig.name} ! Before you fill out the form, we

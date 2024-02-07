@@ -45,7 +45,7 @@ export const title = tv({
 });
 
 export const paragraph = tv({
-	base: " md:leading-8 leading-7 text-default-600 text-left ",
+	base: " md:leading-8 leading-7 text-default-700 text-left ",
 	variants: {
 		size: {
 				xs: "text-xs md:text-sm xl:leading-5 md:leading-5 leading-4",

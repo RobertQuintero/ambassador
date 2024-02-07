@@ -1,6 +1,9 @@
+"use client";
 import { Link } from "@nextui-org/react";
 import { title } from "@/components/primitives";
 import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import React from "react";
+import { usePathname } from "next/navigation";
 type LinkArrowProps = {
   link: string;
   titleLink?: string;
@@ -44,16 +47,18 @@ const AnimatedButtonLink = ({
   );
 };
 const AnimatedButtonNavLink = ({ link, titleLink }: LinkArrowProps) => {
+  const pathname = usePathname();
   return (
-    <div className="relative group flex flex-row items-center z-10">
+    <React.Fragment>
       <Link
         href={link}
-        className="text-default-500 hover:text-warning transition-colors  gap-4 z-10 "
-      >
+        className={`font-semibold relative before:absolute before:left-0 before:bottom-0 before:origin-right before:scale-x-0 before:transform before:transition-transform before:duration-700 before:ease-in-out before:h-2 before:w-full before:bg-default-400 before:rounded-sm hover:before:scale-x-100 hover:before:origin-left
+					${title({ size: "xxl" })}
+          ${pathname === link ? "before:scale-x-100 text-default-800 before:bg-default-800" : "text-default-400"}
+					`}>
         {titleLink}
       </Link>
-      <ChevronRightIcon className="w-4 h-4  relative opacity-0 -z-20 right-3 duration-700 ease-in-out group-hover:text-warning group-hover:w-4 group-hover:h-4 group-hover:right-0 group-hover:opacity-100  group-hover:duration-700 group-hover:ease-in-out" />
-    </div>
+    </React.Fragment>
   );
 };
 

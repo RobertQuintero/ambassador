@@ -24,10 +24,11 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
     return (
         <Switch
             className={className}
-            classNames={{wrapper:"rounded-none ",thumb:"rounded-none bg-warning" }}
+            classNames={{wrapper:"rounded-sm ",thumb:"rounded-sm bg-black dark:bg-white" }}
             defaultSelected={theme === "light" || isSSR}
             onChange={onChange}
-            size="sm"
+            size="md"
+
             startContent={<SunIcon />}
             endContent={<MoonIcon />}
             color="default"

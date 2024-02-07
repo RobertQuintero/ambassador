@@ -79,14 +79,20 @@ export const siteConfig = {
 		description: "",
 	},
 	{
+		label: "About us",
+		href: "/about",
+		description: "",
+	},
+	{
 		label: "Book Now",
 		href: "/booking",
 		description: "",
 	},
+
 	],
 	navItemsService: [
 	{
-		label: "artists",
+		label: "Artists",
 		href: "/artists",
 		description: "",
 	},
@@ -109,8 +115,8 @@ export const siteConfig = {
 
 	navItemsResources: [
 	{
-		label: "About us",
-		href: "/about",
+		label: "Branches",
+		href: "/branches",
 		description: "",
 	},
 	{
@@ -123,7 +129,6 @@ export const siteConfig = {
 		href: "/testimonials",
 		description: "",
 	},
-
 	{
 		label: "Contact us",
 		href: "/contact",

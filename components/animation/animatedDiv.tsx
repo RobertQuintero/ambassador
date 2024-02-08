@@ -21,6 +21,7 @@ const AnimatedDivLeftRightUpDown = ({ children, delay, direction ,className}: Pr
   const isInView = useInView(ref, { once: true });
   const controls = useAnimation();
 
+
   useEffect(() => {
     if (isInView) {
       controls.start("visible");

@@ -7,10 +7,9 @@ export const revalidate = 1;
 
 export default async function Testimonials() {
 
-  const testimonials = await getTestimonialData();
   return (
     <React.Fragment>
-        <TestimonialsList testimonials={testimonials} />
+        <TestimonialsList />
     </React.Fragment>
   );
 }

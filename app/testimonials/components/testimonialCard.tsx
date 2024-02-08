@@ -8,12 +8,13 @@ import NextLink from "next/link";
 
 type testimonialProps = {
     testimonial: TestimonialsType;
+    className?: string;
 }
 
-const TestimonialCard = ({testimonial}:testimonialProps ) => {
+const TestimonialCard = ({testimonial, className}:testimonialProps ) => {
   return (
     <React.Fragment>
-        <Card className='max-w-lg mx-auto p-1.5 md:p-3 border border-default/30 bg-default/10 hover:dark:bg-default/20 hover:bg-default-100' radius="sm" isBlurred shadow="sm" isPressable as={NextLink} href={testimonial.url}>
+        <Card className={`max-w-lg h-auto mx-auto p-1.5 md:p-3 border border-default/30 bg-default/10 hover:dark:bg-default/20 hover:bg-default-100 ${className}`} radius="sm" isBlurred shadow="sm" isPressable as={NextLink} href={testimonial.url}>
             <CardHeader>
                 <Avatar src={testimonial.image} className='w-10 h-10 md:w-12 md:h-12 2xl:w-16 2xl:h-16 mr-4' />
                 <div className='flex flex-col'>

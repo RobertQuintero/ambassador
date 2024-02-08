@@ -1,5 +1,5 @@
 import { atom } from "jotai";
-import { inputAtom, showMoreCountAtom } from "./searchAtoms";
+import { showMoreCountAtom } from "./searchAtoms";
 import { getTestimonialData } from "@/sanity/utils/sanity-testimonials";
 
 
@@ -10,12 +10,8 @@ const testimonialsAtoms = atom(async () => {
 });
 
 
-export const filteredBranches = atom(async (get) => {
+export const filteredTestimonials = atom(async (get) => {
     const showMoreCount = get(showMoreCountAtom);
-    const branchCard = await get(testimonialsAtoms);
-
-    const filteredBranches = branchCard.filter((branch) => {
-
-    });
-    return filteredBranches.slice(0, showMoreCount);
+    const testimonialCard = await get(testimonialsAtoms);
+    return testimonialCard.slice(0, showMoreCount);
 });

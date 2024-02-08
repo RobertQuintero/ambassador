@@ -1,5 +1,6 @@
 import { getGalleryData } from "@/sanity/utils/sanity-gallery";
 import React from "react";
+import { GalleryList } from "./components/galleryList";
 
 
 export const revalidate = 1;
@@ -10,7 +11,7 @@ export default async function Gallery() {
 
   return (
     <React.Fragment>
-        <p>Gallery</p>
+        <GalleryList gallery={Gallery} />
 
     </React.Fragment>
   );

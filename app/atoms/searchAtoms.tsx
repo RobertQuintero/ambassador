@@ -5,4 +5,4 @@ export const categoryAtom = atom<string[]>([]);
 export const techStackAtom = atom<string[]>([]);
 export const tagAtom = atom<string[]>([]);
 
-export const showMoreCountAtom = atom(6);
+export const showMoreCountAtom = atom(7);

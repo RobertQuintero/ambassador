@@ -7,26 +7,4 @@
     display: none;
 }
 
-.swiper-slide {
-  background-size: cover;
-  background-position: center;
-}
 
-.mySwiper2 {
-  height: 100%;
-  width: 100%;
-}
-
-.mySwiper {
-
-  box-sizing: border-box;
-}
-
-.mySwiper .swiper-slide {
-  height: 100%;
-  opacity: 0.4;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}

@@ -13,8 +13,11 @@ const TestimonialsList = () => {
   const testimonials = useAtomValue(filteredTestimonials);
   return (
     <React.Fragment>
-      <div className="flex flex-col justify-center items-center ">
-        <AnimatedLogoFull className="w-80 h-fit" />
+      <AnimatedLogoFull className="w-64 sm:w-80 h-fit mx-auto" />
+      <AnimatedDivLeftRightUpDown
+        className="flex flex-col justify-center items-center"
+        direction="up"
+      >
         <h1
           className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
             { size: "xxxl" }
@@ -32,11 +35,14 @@ const TestimonialsList = () => {
           levels, and inspiration shared by our community. Your feedback and
           inquiries are always welcome as we strive for excellence.
         </p>
-      </div>
+      </AnimatedDivLeftRightUpDown>
 
-       <TestimonialCard testimonial={testimonials[0]} className="max-w-xl border-default-400" />
-
-
+      <AnimatedDivLeftRightUpDown direction="up" delay={0.7}>
+      <TestimonialCard
+        testimonial={testimonials[0]}
+        className="max-w-xl border-default-400"
+      />
+      </AnimatedDivLeftRightUpDown>
       <div className="w-full h-full flex flex-col justify-center items-center my-16 md:my-32 ">
         <AnimatedDivLeftRightUpDown
           direction="up"

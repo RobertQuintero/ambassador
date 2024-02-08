@@ -8,14 +8,17 @@ import { GalleryType } from "@/types/galleryType";
 import { GalleryCard } from "./galleryCard";
 
 type GalleryListProps = {
-    gallery: GalleryType[];
-    className?: string;
-    };
+  gallery: GalleryType[];
+  className?: string;
+};
 
-const GalleryList = ({gallery}:GalleryListProps) => {
+const GalleryList = ({ gallery }: GalleryListProps) => {
   return (
     <React.Fragment>
-      <div className="flex flex-col justify-center items-center ">
+      <AnimatedDivLeftRightUpDown
+        className="flex flex-col justify-center items-center "
+        direction="up"
+      >
         <h1
           className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
             { size: "xxxl" }
@@ -23,10 +26,19 @@ const GalleryList = ({gallery}:GalleryListProps) => {
         >
           Gallery
         </h1>
-      </div>
+        <p
+          className={` max-w-2xl text-center  ${paragraph({
+            size: "md",
+          })}`}
+        >
+          Discover the essence of artistry in our gallery, where barbering,
+          salon transformations, and intricate tattoos converge. Each image
+          embodies creativity and skill, offering inspiration for your next
+          visit.
+        </p>
+      </AnimatedDivLeftRightUpDown>
 
-
-      <div className="w-full h-full flex flex-col justify-center items-center my-16 md:my-32 ">
+      <div className="w-full h-full flex flex-col justify-center items-center my-16 md:mb-32 ">
         <div className="max-w-[1536px] mx-auto columns-1 gap-4 md:gap-8 xl:gap-10 sm:columns-2 lg:columns-3 xl:columns-4  ">
           {gallery.map((_gallery, index) => (
             <div

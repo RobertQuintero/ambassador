@@ -33,7 +33,7 @@ const BranchCard = ({ branch, className }: BranchCardProps) => {
         </CardHeader>
         <CardBody className="gap-3 md:gap-3.5">
           <div className="hover:text-default-800 flex flex-row gap-2 items-start justify-center w-fit ">
-            <MapIcon className="min-w-[1.3rem] h-[1.3rem] mt-1  " />
+            <MapIcon className="min-w-[1.3rem] h-[1.3rem] mt-1 text-default-700 " />
             <p className={` ${paragraph({ size: "md" })}`}>{branch.address}</p>
           </div>
           <Link

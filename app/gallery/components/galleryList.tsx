@@ -2,7 +2,6 @@
 import { AnimatedDivLeftRightUpDown } from "@/components/animation/animatedDiv";
 import { paragraph, title } from "@/components/primitives";
 import React from "react";
-import { siteConfig } from "@/config/site";
 import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 import { GalleryType } from "@/types/galleryType";
 import { GalleryCard } from "./galleryCard";
@@ -15,6 +14,7 @@ type GalleryListProps = {
 const GalleryList = ({ gallery }: GalleryListProps) => {
   return (
     <React.Fragment>
+      <AnimatedLogoFull className="w-64 sm:w-80 h-fit mx-auto" />
       <AnimatedDivLeftRightUpDown
         className="flex flex-col justify-center items-center "
         direction="up"

@@ -26,23 +26,24 @@ import {
 } from "next-share";
 import { paragraph, title } from "../primitives";
 import { siteConfig } from "@/config/site";
-import { TalentsType } from "@/types/talentsType.";
+import { ArtistsType } from "@/types/artistsType";
+
 
 type socialMediaTalentShareProps = {
-  socialMediaShareTalent: TalentsType;
+  socialMediaShareArtists: ArtistsType;
   className?: string;
   size?: string;
 };
 
-export default function SocialMediaShareTalent({
-  socialMediaShareTalent,
+export default function SocialMediaShareArtists({
+  socialMediaShareArtists,
   className,
   size = "w-8 h-8 sm:h-8 sm:h-8 xl:h-10 xl:w-10 rounded-lg",
 }: socialMediaTalentShareProps) {
   return (
-    <Popover radius="none">
+    <Popover radius="sm">
       <PopoverTrigger>
-        <Button variant="light" isIconOnly radius="none" aria-label="Share it">
+        <Button variant="light" isIconOnly radius="sm" aria-label="Share it">
           <ShareIcon color="primary" className="text-default-600 w-5 h-5 md:w-6 md:h-6" />
         </Button>
       </PopoverTrigger>
@@ -53,74 +54,74 @@ export default function SocialMediaShareTalent({
             <p className={` ${paragraph({ size: "xs" })}`}>to your friends</p>
           </div>
           <RedditShareButton
-            url={`${siteConfig.url}/talents/${String(socialMediaShareTalent.slug)}`}
-            title={socialMediaShareTalent.fullName}
+            url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
+            title={socialMediaShareArtists.fullName}
             className={className}
           >
-            <RedditIcon className={` rounded-none ${size}`} />
+            <RedditIcon className={` rounded-sm ${size}`} />
           </RedditShareButton>
           <LinkedinShareButton
             aria-label="Share on LinkedIn"
-            url={`${siteConfig.url}/talents/${String(socialMediaShareTalent.slug)}`}
-            title={socialMediaShareTalent.fullName}
+            url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
+            title={socialMediaShareArtists.fullName}
             className={className}
           >
-            <LinkedinIcon className={` rounded-none ${size}`} />
+            <LinkedinIcon className={` rounded-sm ${size}`} />
           </LinkedinShareButton>
 
           <FacebookShareButton
             aria-label="Share on Facebook"
-            url={`${siteConfig.url}/talents/${String(socialMediaShareTalent.slug)}`}
-            quote={socialMediaShareTalent.fullName}
-            hashtag={socialMediaShareTalent.modelingPreferences
+            url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
+            quote={socialMediaShareArtists.fullName}
+            hashtag={socialMediaShareArtists.specialties
               .map((tag: any) => tag.title)
               .join(", ")}
             className={className}
           >
-            <FacebookIcon className={` rounded-none ${size}`} />
+            <FacebookIcon className={` rounded-sm ${size}`} />
           </FacebookShareButton>
           <FacebookMessengerShareButton
             aria-label="Share on Facebook Messenger"
-            url={`${siteConfig.url}/talents/${String(socialMediaShareTalent.slug)}`}
+            url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
             appId="1071787503955957"
             className={className}
           >
-            <FacebookMessengerIcon className={` rounded-none ${size}`} />
+            <FacebookMessengerIcon className={` rounded-sm ${size}`} />
           </FacebookMessengerShareButton>
 
           <TwitterShareButton
             aria-label="Share on Twitter"
-            url={`${siteConfig.url}/talents/${String(socialMediaShareTalent.slug)}`}
-            title={socialMediaShareTalent.fullName}
-            hashtags={socialMediaShareTalent.modelingPreferences.map((tag: any) => tag.title)}
+            url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
+            title={socialMediaShareArtists.fullName}
+            hashtags={socialMediaShareArtists.specialties.map((tag: any) => tag.title)}
             className={className}
           >
-            <TwitterIcon className={` rounded-none ${size}`} />
+            <TwitterIcon className={` rounded-sm ${size}`} />
           </TwitterShareButton>
           <PinterestShareButton
             aria-label="Share on Pinterest"
-            url={`${siteConfig.url}/talents/${String(socialMediaShareTalent.slug)}`}
-            media={socialMediaShareTalent.portfolioImages[0].image}
-            description={socialMediaShareTalent.fullName}
+            url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
+            media={socialMediaShareArtists.portfolioImages[0].image}
+            description={socialMediaShareArtists.fullName}
           >
-            <PinterestIcon className={` rounded-none ${size}`} />
+            <PinterestIcon className={` rounded-sm ${size}`} />
           </PinterestShareButton>
           <WhatsappShareButton
             aria-label="Share on Whatsapp"
-            url={`${siteConfig.url}/talents/${String(socialMediaShareTalent.slug)}`}
-            title={socialMediaShareTalent.fullName}
+            url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
+            title={socialMediaShareArtists.fullName}
           >
-            <WhatsappIcon className={` rounded-none ${size}`} />
+            <WhatsappIcon className={` rounded-sm ${size}`} />
           </WhatsappShareButton>
 
           <EmailShareButton
             aria-label="Share on Email"
-            url={`${siteConfig.url}/talents/${String(socialMediaShareTalent.slug)}`}
-            subject={socialMediaShareTalent.fullName}
-            body={socialMediaShareTalent.portfolioImages[0].image}
+            url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
+            subject={socialMediaShareArtists.fullName}
+            body={socialMediaShareArtists.portfolioImages[0].image}
             className={className}
           >
-            <EmailIcon className={` rounded-none ${size}`} />
+            <EmailIcon className={` rounded-sm ${size}`} />
           </EmailShareButton>
         </div>
       </PopoverContent>
@@ -128,4 +129,4 @@ export default function SocialMediaShareTalent({
   );
 }
 
-export { SocialMediaShareTalent };
+export { SocialMediaShareArtists };

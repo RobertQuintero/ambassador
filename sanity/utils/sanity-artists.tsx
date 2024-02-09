@@ -1,9 +1,8 @@
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
-import { ArtistType } from "@/types/artistType";
+import { ArtistsType } from "@/types/artistsType";
 
-
-export async function getArtistsData(): Promise<ArtistType[]> {
+export async function getArtistsData(): Promise<ArtistsType[]> {
   const data = await client.fetch(groq`*[_type=="artists"]{...,
         _createdAt,
         _updatedAt,
@@ -14,13 +13,18 @@ export async function getArtistsData(): Promise<ArtistType[]> {
         gender,
         bio,
         specialties,
+        "portfolioImages": portfolioImages[]{
+            _id,
+            "image": image.asset->url,
+            caption,
+        }
 
     }`);
     return data;
 }
 
 
-export async function getArtistPageData(slug: string): Promise<ArtistType> {
+export async function getArtistPageData(slug: string): Promise<ArtistsType> {
   const data = await client.fetch(groq`*[_type=="artists" && slug.current==$slug][0]{...,
         _createdAt,
         _updatedAt,
@@ -35,6 +39,11 @@ export async function getArtistPageData(slug: string): Promise<ArtistType> {
             _id,
             linkType,
             url,
+        }
+        "portfolioImages": portfolioImages[]{
+            _id,
+            "image": image.asset->url,
+            caption,
         }
     }`, { slug });
 

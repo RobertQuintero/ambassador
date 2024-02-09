@@ -18,7 +18,7 @@ const GalleryCard = ({ gallery }: GalleryCardProps) => {
   return (
     <React.Fragment>
       <div className="flex flex-col relative max-w-xl">
-        <Card isBlurred isPressable onPress={onOpen} radius="sm" className="">
+        <Card isBlurred isPressable onPress={onOpen} radius="none" className="">
           <Image
             src={gallery.galleryImages[0].image}
             alt={gallery.title}

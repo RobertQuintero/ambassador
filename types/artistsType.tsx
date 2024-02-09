@@ -1,7 +1,8 @@
 import { Slug } from "sanity";
 import { SocialMediaType } from "./socialMediaType";
+import { ImagesType } from "./imagesType";
 
-export type ArtistType = {
+export type ArtistsType = {
   _createdAt: string;
   _updatedAt: string;
   _id: string;
@@ -12,4 +13,5 @@ export type ArtistType = {
   bio: string;
   specialties: string[];
   socialMedia: SocialMediaType[];
+  portfolioImages: ImagesType[];
 };

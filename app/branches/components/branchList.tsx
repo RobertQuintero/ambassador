@@ -4,42 +4,48 @@ import { paragraph, title } from "@/components/primitives";
 import React from "react";
 import { useAtomValue } from "jotai";
 import { ShowMoreButton } from "@/app/atoms/components/showMoreButton";
-import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 import { filteredBranches } from "@/app/atoms/searchBranches";
 import { BranchCard } from "./branchCard";
+import { MapLocationXIcon } from "@/components/icons";
 
 const BranchesList = () => {
   const branches = useAtomValue(filteredBranches);
-  return (
-    <React.Fragment>
-      <AnimatedLogoFull className="w-64 sm:w-80 h-fit mx-auto" />
-      <AnimatedDivLeftRightUpDown
-        className="flex flex-col justify-center items-center"
-        direction="up"
-      >
-        <h1
-          className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
-            { size: "xxxl" }
+
+  if (branches.length === 0) {
+    return (
+      <div className="w-full h-full flex flex-col justify-center items-center my-16 md:my-32 ">
+        <MapLocationXIcon className="w-16 h-16 text-default-500" />
+        <h2
+          className={`!font-bold  ${title(
+            { size: "xl" }
           )}`}
         >
-          Testimonials
-        </h1>
-      </AnimatedDivLeftRightUpDown>
+          No Branches Found
+        </h2>
+        <p
+          className={`text-center  ${paragraph({
+            size: "md",
+          })}`}
+        >
+          We couldn't find any branches matching your search
+        </p>
+
+      </div>
+    );
+  }
+
+  return (
+    <React.Fragment>
       <div className="w-full h-full flex flex-col justify-center items-center my-16 md:my-32 ">
-        <div className="max-w-7xl mx-auto columns-1 gap-4 md:gap-8 xl:gap-10 sm:columns-2 lg:columns-3 ">
+        <div className="max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-4 md:gap-8 xl:gap-10 ">
           {branches.map((branch, index) => (
-            <div
-              className="flex flex-col break-inside-avoid h-auto mb-4 md:mb-8 xl:mb-10"
+            <AnimatedDivLeftRightUpDown
+              direction="up"
               key={branch.locationName}
+              delay={0.3 * (index + 1)}
             >
-              <AnimatedDivLeftRightUpDown
-                className="flex flex-col break-inside-avoid-page "
-                direction="up"
-                delay={0.3 * (index + 1)}
-              >
-                <BranchCard branches={branches}/>
-              </AnimatedDivLeftRightUpDown>
-            </div>
+              <BranchCard branch={branch} />
+            </AnimatedDivLeftRightUpDown>
           ))}
         </div>
         <ShowMoreButton filteredAtom={filteredBranches} />

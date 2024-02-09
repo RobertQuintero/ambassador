@@ -8,10 +8,7 @@ import {
   CardHeader,
   Link,
 } from "@nextui-org/react";
-
-import { SocialMediaLink } from "@/components/links/socialMediaLink";
 import { paragraph, title } from "@/components/primitives";
-import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -20,7 +17,7 @@ import {
 } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { AnimatedDivLeftRightUpDown } from "@/components/animation/animatedDiv";
-
+import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 const AddressSocialMediaLinks = () => {
   return (
     <React.Fragment>

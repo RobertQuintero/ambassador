@@ -6,12 +6,12 @@ import { TestimonialsType } from '@/types/testimonialsType'
 import { DateComponent } from '@/components/time/date'
 import NextLink from "next/link";
 
-type testimonialProps = {
+type TestimonialProps = {
     testimonial: TestimonialsType;
     className?: string;
 }
 
-const TestimonialCard = ({testimonial, className}:testimonialProps ) => {
+const TestimonialCard = ({testimonial, className}:TestimonialProps ) => {
   return (
     <React.Fragment>
         <Card className={`max-w-lg h-auto mx-auto p-1.5 md:p-3 border border-default/30 bg-default/10 hover:dark:bg-default/20 hover:bg-default-100 ${className}`} radius="sm" isBlurred shadow="sm" isPressable as={NextLink} href={testimonial.url}>

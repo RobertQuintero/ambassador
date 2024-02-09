@@ -8,6 +8,7 @@ const branchesAtoms = atom(async () => {
     return branchCard;
 });
 
+console.log(branchesAtoms);
 
 export const filteredBranches = atom(async (get) => {
     const inputValue = get(inputAtom);

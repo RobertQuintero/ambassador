@@ -13,11 +13,7 @@ export async function getBranchesData(): Promise<BranchesType[]> {
         email,
         mobile,
         telephone,
-        "socialMedia": socialMedia[]->{
-            _id,
-            linkType,
-            url,
-        }
+
     }`);
     return data;
 }

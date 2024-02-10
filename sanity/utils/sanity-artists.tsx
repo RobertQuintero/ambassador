@@ -10,6 +10,10 @@ export async function getArtistsData(): Promise<ArtistsType[]> {
         fullName,
         slug,
         dateOfBirth,
+        "locationName": branches[]->{
+            _id,
+            locationName,
+        },
         gender,
         bio,
         specialties,

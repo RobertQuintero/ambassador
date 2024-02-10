@@ -1,6 +1,7 @@
 import { Slug } from "sanity";
 import { SocialMediaType } from "./socialMediaType";
 import { ImagesType } from "./imagesType";
+import { BranchesType } from "./branchesType";
 
 export type ArtistsType = {
   _createdAt: string;
@@ -9,6 +10,7 @@ export type ArtistsType = {
   slug: Slug;
   fullName: string;
   dateOfBirth: string;
+  locationName: BranchesType[];
   gender: string;
   bio: string;
   specialties: string[];

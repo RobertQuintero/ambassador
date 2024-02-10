@@ -14,7 +14,7 @@ const ArtistsList = ({artists}:ArtistsListProps) => {
 
   return (
     <React.Fragment>
-        <div className="max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-4 md:gap-8 xl:gap-10 ">
+        <div className="max-w-[1536px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  mx-auto gap-4 md:gap-8 xl:gap-10 ">
           {artists.map((artist, index) => (
             <AnimatedDivLeftRightUpDown
               direction="up"

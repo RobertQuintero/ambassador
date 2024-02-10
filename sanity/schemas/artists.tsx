@@ -26,19 +26,25 @@ export default defineType({
         maxLength: 96,
       },
     }),
+    defineField({
+      name: "branches",
+      title: "Branch",
+      description: "Branch where you work",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "branches" }] }],
+      validation: (Rule) => Rule.required(),
+    }),
 
     defineField({
       name: "dateOfBirth",
       title: "Date of Birth",
       type: "date",
-      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
       name: "gender",
       title: "Gender",
       type: "string",
-      validation: (Rule) => Rule.required(),
     }),
 
     defineField({

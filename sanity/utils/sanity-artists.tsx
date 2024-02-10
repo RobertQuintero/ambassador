@@ -8,7 +8,7 @@ export async function getArtistsData(): Promise<ArtistsType[]> {
         _updatedAt,
         _id,
         fullName,
-        slug,
+        "slug": slug.current,
         dateOfBirth,
         "locationName": branches[]->{
             _id,
@@ -29,27 +29,26 @@ export async function getArtistsData(): Promise<ArtistsType[]> {
 
 
 export async function getArtistPageData(slug: string): Promise<ArtistsType> {
-  const data = await client.fetch(groq`*[_type=="artists" && slug.current==$slug][0]{...,
+  const data = await client.fetch(groq`*[_type=="artists" && slug.current==$slug ][0]{...,
         _createdAt,
         _updatedAt,
         _id,
         fullName,
-        slug,
         dateOfBirth,
         gender,
         bio,
         specialties,
-        "socialMedia": socialMedia[]->{
+        "locationName": branches[]->{
             _id,
-            linkType,
-            url,
-        }
+            locationName,
+        },
         "portfolioImages": portfolioImages[]{
             _id,
             "image": image.asset->url,
             caption,
-        }
-    }`, { slug });
-
+        },
+    }`,
+    { slug }
+    );
     return data;
 }

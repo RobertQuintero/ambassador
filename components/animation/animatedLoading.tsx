@@ -1,7 +1,7 @@
 // animatedFirstPageLoading.tsx
 "use client"
 import { motion } from "framer-motion"
-import { AnimatedLogo } from "./animatedLogo"
+import { AnimatedLogoFull } from "./animatedLogo"
 
 function AnimatedLoading({
   className,
@@ -17,7 +17,7 @@ function AnimatedLoading({
       <motion.div
         className="flex justify-center items-center flex-col max-w-[10rem] md:max-w-xs lg:max-w-sm"
       >
-        <AnimatedLogo/>
+        <AnimatedLogoFull/>
       </motion.div>
     </motion.div>
   )

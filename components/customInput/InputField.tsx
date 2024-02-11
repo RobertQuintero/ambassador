@@ -42,11 +42,6 @@ const InputField: React.FC<InputFieldProps> = ({
       value={value}
       isInvalid={isInvalid}
       errorMessage={errorMessage}
-      classNames={{
-        inputWrapper: value.trim() !== "" ? "border-success " : "danger",
-        errorMessage: isInvalid ? "text-danger" : "text-success",
-        label: value.trim() !== "" ? "text-success" : "text-default-500",
-      }}
       color={isInvalid ? "danger" : "default"}
       onChange={onChange}
       endContent={

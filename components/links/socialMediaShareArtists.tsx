@@ -58,7 +58,7 @@ export default function SocialMediaShareArtists({
             title={socialMediaShareArtists.fullName}
             className={className}
           >
-            <RedditIcon className={` rounded-sm ${size}`} />
+            <RedditIcon className={` rounded-md ${size}`} />
           </RedditShareButton>
           <LinkedinShareButton
             aria-label="Share on LinkedIn"
@@ -66,7 +66,7 @@ export default function SocialMediaShareArtists({
             title={socialMediaShareArtists.fullName}
             className={className}
           >
-            <LinkedinIcon className={` rounded-sm ${size}`} />
+            <LinkedinIcon className={` rounded-md ${size}`} />
           </LinkedinShareButton>
 
           <FacebookShareButton
@@ -78,7 +78,7 @@ export default function SocialMediaShareArtists({
               .join(", ")}
             className={className}
           >
-            <FacebookIcon className={` rounded-sm ${size}`} />
+            <FacebookIcon className={` rounded-md ${size}`} />
           </FacebookShareButton>
           <FacebookMessengerShareButton
             aria-label="Share on Facebook Messenger"
@@ -86,7 +86,7 @@ export default function SocialMediaShareArtists({
             appId="1071787503955957"
             className={className}
           >
-            <FacebookMessengerIcon className={` rounded-sm ${size}`} />
+            <FacebookMessengerIcon className={` rounded-md ${size}`} />
           </FacebookMessengerShareButton>
 
           <TwitterShareButton
@@ -96,7 +96,7 @@ export default function SocialMediaShareArtists({
             hashtags={socialMediaShareArtists.specialties.map((tag: any) => tag.title)}
             className={className}
           >
-            <TwitterIcon className={` rounded-sm ${size}`} />
+            <TwitterIcon className={` rounded-md ${size}`} />
           </TwitterShareButton>
           <PinterestShareButton
             aria-label="Share on Pinterest"
@@ -104,14 +104,14 @@ export default function SocialMediaShareArtists({
             media={socialMediaShareArtists.portfolioImages[0].image}
             description={socialMediaShareArtists.fullName}
           >
-            <PinterestIcon className={` rounded-sm ${size}`} />
+            <PinterestIcon className={` rounded-md ${size}`} />
           </PinterestShareButton>
           <WhatsappShareButton
             aria-label="Share on Whatsapp"
             url={`${siteConfig.url}/talents/${String(socialMediaShareArtists.slug)}`}
             title={socialMediaShareArtists.fullName}
           >
-            <WhatsappIcon className={` rounded-sm ${size}`} />
+            <WhatsappIcon className={` rounded-md ${size}`} />
           </WhatsappShareButton>
 
           <EmailShareButton
@@ -121,7 +121,7 @@ export default function SocialMediaShareArtists({
             body={socialMediaShareArtists.portfolioImages[0].image}
             className={className}
           >
-            <EmailIcon className={` rounded-sm ${size}`} />
+            <EmailIcon className={` rounded-md ${size}`} />
           </EmailShareButton>
         </div>
       </PopoverContent>

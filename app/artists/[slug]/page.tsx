@@ -12,7 +12,6 @@ type Props = {
 export default async function Page({ params }: Props) {
   const { slug } = params;
   const artist = await getArtistPageData(slug);
-  console.log(artist);
   return (
     <React.Fragment>
       <ArtistSlug artist={artist} params={params} />

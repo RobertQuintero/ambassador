@@ -8,6 +8,7 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import { AnimatedCarousel } from "@/components/animation/animatedCarousel";
+import { motion } from "framer-motion";
 
 type GalleryCardProps = {
   gallery: GalleryType;
@@ -18,16 +19,20 @@ const GalleryCard = ({ gallery }: GalleryCardProps) => {
   return (
     <React.Fragment>
       <div className="flex flex-col relative max-w-xl">
-        <Card isBlurred isPressable onPress={onOpen} radius="none" className="">
+                    <motion.div onClick={onOpen}
+              className="cursor-pointer"
+              whileHover={{ scale: 1.1,zIndex: 50}}
+              whileTap={{ scale: 0.9,zIndex: 50}}
+            >
           <Image
             src={gallery.galleryImages[0].image}
             alt={gallery.title}
             width={1000}
             height={1000}
             radius="none"
-            className="rounded-sm"
+            className="rounded-none"
           />
-        </Card>
+          </motion.div>
         <Modal
           isOpen={isOpen}
           onClose={onClose}

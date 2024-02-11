@@ -90,7 +90,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
                   </ScrollShadow>
                   {artists.locationName && artists.locationName.length > 0 ? (
                     <div className="flex flex-row items-center">
-                    <MapIcon className="min-w-[1.25rem] h-[1.25rem] md:min-w-[1.5rem] md:min-h-[1.5rem] mr-2 text-default-700 self-start" />
+                    <MapIcon className="min-w-[1.25rem] h-[1.25rem] md:min-w-[1.5rem] md:min-h-[1.5rem] mr-2 text-default-700 self-start " />
                       <ul className="flex flex-wrap gap-3 ">
                         {artists.locationName.map((branches) => (
                           <li key={branches.locationName}>
@@ -99,7 +99,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
                               radius="full"
                               color="default"
                               size="md"
-                              className="text-default-700 !font-semibold "
+                              classNames={{content: "text-default-700  !font-semibold"}}
                             >
                               {branches.locationName}
                             </Chip>
@@ -110,7 +110,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
                   ) : null}
                   {artists.specialties && artists.specialties.length > 0 ? (
                     <div className="flex flex-row items-center">
-                    <SwatchIcon className="min-w-[1.25rem] h-[1.25rem] md:min-w-[1.5rem] md:min-h-[1.5rem] mr-2 text-default-700 self-start" />
+                    <SwatchIcon className="min-w-[1.25rem] h-[1.25rem] md:min-w-[1.5rem] md:min-h-[1.5rem] mr-2 text-default-700 self-start mt-0.5" />
                       <ul className="flex flex-wrap gap-3 ">
                         {artists.specialties.map((specialty) => (
                           <li key={specialty}>
@@ -119,7 +119,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
                               radius="sm"
                               color="default"
                               size="lg"
-                              className="text-default-700 !font-semibold "
+                              classNames={{content: "text-default-700 capitalize !font-semibold"}}
                             >
                               {specialty}
                             </Chip>

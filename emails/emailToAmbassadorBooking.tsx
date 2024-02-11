@@ -18,22 +18,35 @@ import { siteConfig } from "@/config/site";
 import React from "react";
 import EmailFooter from "./emailFooter";
 
-type EmailContactResponseProps = {
+type EmailToAmbassadorBookingProps = {
   name: string;
   email: string;
-  subject: string;
+  mobileNumber: string;
+  service: string;
+  bookingDate: string;
+  branch: string;
   message: string;
 };
 
-const EmailContactResponse: React.FC<EmailContactResponseProps> = ({
+const EmailToAmbassadorBooking: React.FC<EmailToAmbassadorBookingProps> = ({
   name,
+  mobileNumber,
+  bookingDate,
+  branch,
+  service,
   email,
   message,
-  subject,
-}: EmailContactResponseProps) => {
+}: EmailToAmbassadorBookingProps) => {
   const baseUrl = siteConfig.url ? `${siteConfig.url}` : "";
-  const previewText = `Thank you, ${name}! Your Inquiry has been Received.`;
+  const previewText = `New Booking Scheduled from ${name} at ${branch}`;
   const currentYear = new Date().getFullYear();
+  const booking = new Date(bookingDate);
+  const bookingDateFormatted = booking.toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   return (
     <React.Fragment>
@@ -56,58 +69,22 @@ const EmailContactResponse: React.FC<EmailContactResponseProps> = ({
 
               <Heading className="text-3xl text-center font-bold text-black ">
                 <br />
-                Thank You for Your Inquiry, {name}!
+                Booking Scheduled from {name} at {branch}
               </Heading>
-              <Text className="text-2xl font-bold text-center ">
-                Your inquiry has been received, and we appreciate your interest.
-              </Text>
-
-              <Section className="px-6">
-                <Text className="text-base">
-                  Dear <strong>{name}</strong>,
-                </Text>
-                <Text>
-                  Thank you for reaching out with your inquiry to{" "}
-                  <strong>{siteConfig.name}</strong>. We appreciate your
-                  interest and the opportunity to assist you.
-                </Text>
-                <Text>
-                  We have received your inquiry and our team is eager to address
-                  your questions and provide the information you are seeking.
-                  Your detailed message has given us a better understanding of
-                  your needs, and we are committed to assisting you in the best
-                  way possible.
-                </Text>
-                <Text>
-                  Our team will carefully review your inquiry, and we aim to
-                  provide you with a response within the next{" "}
-                  <strong>48 hours</strong>. We understand the importance of
-                  your inquiry and want to ensure that we address it promptly.
-                </Text>
-                <Text>
-                  In the meantime, if there are any additional details or
-                  specific points you&apos;d like to emphasize, please feel free
-                  to respond to this email or use our online portal to provide
-                  further information.
-                </Text>
-                <Text>
-                  Thank you once again for considering {siteConfig.name}. We
-                  value the opportunity to assist you and look forward to
-                  connecting with you soon.
-                </Text>
-              </Section>
 
               <Section className="px-2">
                 <Text className="text-2xl text-center mt-4  font-bold text-black">
-                  Inquiry Details
+                  Booking Details
                 </Text>
                 {/* Personal Information */}
                 <Row>
                   <Hr className="w-[96%] mb-4" />
                   <div className=" m-0 pl-4 w-full">
-                    <p className="text-gray-500 text-sm mt-1 mb-0">Subject</p>
+                    <p className="text-gray-500 text-sm mt-1 mb-0">
+                      Booking Date
+                    </p>
                     <Text className="text-black text-lg my-1 font-bold ">
-                      {subject}
+                      {bookingDateFormatted}
                     </Text>
                   </div>
                   <div className=" m-0 pl-4 w-full">
@@ -125,6 +102,26 @@ const EmailContactResponse: React.FC<EmailContactResponseProps> = ({
                     </Link>
                   </div>
                   <div className=" m-0 pl-4 w-full">
+                    <p className="text-gray-500 text-sm mt-1 mb-0">
+                      Mobile Number
+                    </p>
+                    <Text className="text-black text-lg my-1 font-bold ">
+                      {mobileNumber}
+                    </Text>
+                  </div>
+                  <div className=" m-0 pl-4 w-full">
+                    <p className="text-gray-500 text-sm mt-1 mb-0">Branch</p>
+                    <Text className="text-black text-lg my-1 font-bold ">
+                      {branch}
+                    </Text>
+                  </div>
+                  <div className=" m-0 pl-4 w-full">
+                    <p className="text-gray-500 text-sm mt-1 mb-0">Service</p>
+                    <Text className="text-black text-lg my-1 font-bold ">
+                      {service}
+                    </Text>
+                  </div>
+                  <div className=" m-0 pl-4 w-full">
                     <p className="text-gray-500 text-sm mt-1 mb-0">Message</p>
                     <Text className="text-black text-lg my-1 font-bold ">
                       {message}
@@ -132,7 +129,6 @@ const EmailContactResponse: React.FC<EmailContactResponseProps> = ({
                   </div>
                 </Row>
               </Section>
-
               <EmailFooter />
             </Container>
           </Body>
@@ -142,4 +138,4 @@ const EmailContactResponse: React.FC<EmailContactResponseProps> = ({
   );
 };
 
-export { EmailContactResponse };
+export { EmailToAmbassadorBooking };

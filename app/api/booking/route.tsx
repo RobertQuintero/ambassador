@@ -1,25 +1,25 @@
 // api/send/route.ts
-import { EmailContactResponse } from "@/emails/emailContactResponse";
-import { EmailToAmbassadorContactApplication } from "@/emails/emailToAmbassadorContactApplication";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
 import { siteConfig } from "@/config/site";
 import { resendApi } from "../env";
+import { EmailBookingResponse } from "@/emails/emailBookingResponse";
+import { EmailToAmbassadorBooking } from "@/emails/emailToAmbassadorBooking";
 
 const resend = new Resend(resendApi);
 
 
 export async function POST(request: NextRequest) {
-  const { name, email, message, subject } = await request.json();
+  const { name, email, message, branch,mobileNumber,bookingDate,service } = await request.json();
 
   await resend.batch.send([
   {
     from: "Ambassador <work@robertquintero.me>",
     to: [email],
-    subject: subject,
+    subject: `!Booking Acknowledgment - ${service}`,
     reply_to: "work@robertquintero.me",
-    react: EmailContactResponse({ name, email, message, subject }),
+    react: EmailBookingResponse({ name, email, message, mobileNumber,bookingDate,branch,service }),
     text: "", // Add this line
   },
   {
@@ -29,9 +29,9 @@ export async function POST(request: NextRequest) {
         siteConfig.recruiter.person2,
         siteConfig.recruiter.person3,
       ],
-    subject: subject,
+    subject: `!Booking Scheduled ${branch} - ${name}`,
     reply_to: "work@robertquintero.me",
-    react: EmailToAmbassadorContactApplication({ name, email, message, subject }),
+    react: EmailToAmbassadorBooking({ name, email, message, mobileNumber ,bookingDate,branch,service }),
     text: "", // Add this line
   },
   ]);

@@ -7,7 +7,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
-    './node_modules/react-tailwindcss-datepicker/dist/index.esm.js',
+    './node_modules/@hassanmojab/react-modern-calendar-datepicker/**/*.{js,ts,jsx,tsx,css}',
   ],
   theme: {
     extend: {

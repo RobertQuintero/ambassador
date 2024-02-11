@@ -8,3 +8,9 @@
 }
 
 
+.react-datetime-picker__calendar{
+    border-radius: 5rem;
+}
+.react-datetime-picker__wrapper{
+    border-radius: 5rem;
+}

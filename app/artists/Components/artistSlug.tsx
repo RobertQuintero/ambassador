@@ -130,7 +130,7 @@ const ArtistSlug = ({ artist, params }: ArtistSlugProps) => {
         {artist.portfolioImages.slice(1).map((image) => (
           <div
             className="flex flex-col break-inside-avoid h-auto "
-            key={image.title}
+            key={image.image}
           >
             <motion.div onClick={() => handleImageClick(artist.portfolioImages.indexOf(image))}
               className="break-inside-avoid-page mb-2 md:mb-3 cursor-pointer"

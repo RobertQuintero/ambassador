@@ -199,6 +199,72 @@ export const TiktokIcon: React.FC<IconSvgProps> = ({
 	);
 };
 
+export const HairDryerIcon: React.FC<IconSvgProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+}) => {
+	return (
+		<svg
+			height={size || height}
+			 viewBox="0 0 24 24"
+			width={size || width}
+			{...props}
+strokeLinecap="round" strokeLinejoin="round"
+		>
+  <path d="m9.597 10.771 1.159 9.277a1.737 1.737 0 0 1-3.446.43l-1.187-9.494"></path>
+  <path d="M6.5 2a4.5 4.5 0 0 0 0 9c.789 0 1.87-.088 3.097-.228l6.201-1.011L22 8.75v-4.5l-7.75-1.125L6.5 2Z"></path>
+  <path d="M18.5 4.1v4.8"></path>
+  <path d="m22 8.75-6.202 1.01"></path>
+  <path d="m22 4.25-7.75-1.125"></path>
+  <path d="M8 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"></path>
+		</svg>
+	);
+};
+
+export const EyeBrowIcon: React.FC<IconSvgProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+}) => {
+	return (
+		<svg
+			height={size || height}
+			 viewBox="0 0 24 24"
+			width={size || width}
+			{...props}
+strokeLinecap="round" strokeLinejoin="round"
+		>
+  <path d="m9.597 10.771 1.159 9.277a1.737 1.737 0 0 1-3.446.43l-1.187-9.494"></path>
+  <path d="M6.5 2a4.5 4.5 0 0 0 0 9c.789 0 1.87-.088 3.097-.228l6.201-1.011L22 8.75v-4.5l-7.75-1.125L6.5 2Z"></path>
+  <path d="M18.5 4.1v4.8"></path>
+  <path d="m22 8.75-6.202 1.01"></path>
+  <path d="m22 4.25-7.75-1.125"></path>
+  <path d="M8 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"></path>
+		</svg>
+	);
+};
+export const EyeLashesIcon: React.FC<IconSvgProps> = ({
+	size = 24,
+	width,
+	height,
+	...props
+}) => {
+	return (
+		<svg
+			height={size || height}
+			 viewBox="0 0 24 24"
+			width={size || width}
+			{...props}
+		>
+  <path fill="currentColor" d="M19.828 12.113a13.671 13.671 0 0 0 1.753-1.81.74.74 0 0 0-.112-1.05.74.74 0 0 0-1.05.104 12.062 12.062 0 0 1-1.997 1.969h-.019c-1.547 1.2-3.656 2.165-6.403 2.165-2.32.023-4.58-.74-6.413-2.165h-.009a12.065 12.065 0 0 1-1.997-1.97.74.74 0 0 0-1.05-.102.74.74 0 0 0-.112 1.05 13.67 13.67 0 0 0 1.753 1.81l-1.828 3.168a.75.75 0 0 0 .647 1.125.77.77 0 0 0 .646-.375l1.735-3.01a11.445 11.445 0 0 0 3.31 1.529l-.554 3.093a.76.76 0 0 0 .61.872h.13a.75.75 0 0 0 .741-.618l.535-3.038c.614.09 1.235.138 1.856.14.618.001 1.235-.043 1.847-.13l.534 3.037a.75.75 0 0 0 .74.619h.132a.76.76 0 0 0 .61-.872l-.544-3.085a11.522 11.522 0 0 0 3.3-1.537l1.725 2.981a.75.75 0 0 0 1.03.272.75.75 0 0 0 .273-1.022l-1.819-3.15Z"></path>
+		</svg>
+	);
+};
+
+
 export const YoutubeIcon: React.FC<IconSvgProps> = ({
 	size = 24,
 	width,

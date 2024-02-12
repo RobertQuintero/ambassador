@@ -27,7 +27,7 @@ const BranchesList = () => {
             size: "md",
           })}`}
         >
-          We couldn't find any branches matching your search
+          We couldn&apos;t find any branches matching your search
         </p>
 
       </div>

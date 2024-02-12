@@ -109,10 +109,10 @@ const ContactForm = () => {
               size: "md",
             })}`}
           >
-            "Welcome to {siteConfig.name} ! Before you fill out the form, we
+            &quot;Welcome to {siteConfig.name} ! Before you fill out the form, we
             want to thank you for choosing us. Your satisfaction matters most,
             and we&apos;re here to make sure you leave feeling great. Got any
-            questions? Just ask. Let&apos;s get started!"
+            questions? Just ask. Let&apos;s get started!&quot;
           </p>
           <InputField
             type="text"
@@ -225,7 +225,7 @@ const ContactForm = () => {
               })}`}
             >
               Our team will now carefully assess your message, and we aim to
-              provide you with a response within the next{" "}
+              provide you with a response within the next
               <strong className="text-warning">14 days</strong>. Please be
               patient during this process, as we strive to give each message
               the attention it deserves.

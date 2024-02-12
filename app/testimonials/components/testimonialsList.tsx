@@ -62,10 +62,10 @@ const TestimonialsList = () => {
               }
             )}`}
           >
-            "Welcome to {siteConfig.name} ! Before you fill out the form, we
+            &quot;Welcome to {siteConfig.name} ! Before you fill out the form, we
             want to thank you for choosing us. Your satisfaction matters most,
             and we&apos;re here to make sure you leave feeling great. Got any
-            questions? Just ask. Let&apos;s get started!"
+            questions? Just ask. Let&apos;s get started!&quot;
           </p>
         </AnimatedDivLeftRightUpDown>
         <div className="max-w-7xl mx-auto columns-1 gap-4 md:gap-8 xl:gap-10 sm:columns-2 lg:columns-3 ">

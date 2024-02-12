@@ -37,10 +37,10 @@ function AnimatedFirstPageLoad() {
   return (
     <motion.div
       className="flex z-50 flex-col fixed h-screen w-screen overflow-hidden bg-background top-0 bottom-0 right-0 left-0 justify-center items-center "
-      initial={{ opacity: 1 }}
-      animate={{ opacity: isVisible ? 1 : 0 }} // animate opacity based on isVisible state
+      initial={{ opacity: 1, display: "flex" }}
+      animate={{ opacity: isVisible ? 1 : 0, transitionEnd: { display: isVisible ? "flex" : "none" } }} // animate opacity based on isVisible state
       exit={{ opacity: 0 }}
-      transition={{ duration: 5.5 }}
+      transition={{ duration: 3 }}
     >
       <motion.div
         className="flex justify-center items-center flex-col max-w-[10rem] md:max-w-xs lg:max-w-sm"

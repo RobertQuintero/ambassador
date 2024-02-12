@@ -1,6 +1,6 @@
 import { getTattooPageData } from "@/sanity/utils/sanity-services-barbershop-salon-tattoo";
 import React from "react";
-import { TattooServicesList } from "./components/barbershopServiceList";
+import { TattooServicesList } from "./components/tattooServiceList";
 
 export const revalidate = 1;
 

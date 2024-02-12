@@ -1,5 +1,7 @@
+import { AnimatedTattooLogo } from "@/components/animation/animatedLogo";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
   title: siteConfig.navItemsService[3].label ,
@@ -11,8 +13,11 @@ export default function AboutLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="w-full h-full  px-4 sm:px-8 overflow-hidden ">
+		<React.Fragment>
+		<AnimatedTattooLogo className="h-[90vh] w-full fixed z-0 m-auto "/>
+		<section className="w-full h-full  px-4 sm:px-8 overflow-hidden z-10">
 				{children}
 		</section>
+		</React.Fragment>
 	);
 }

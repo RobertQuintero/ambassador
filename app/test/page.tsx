@@ -1,7 +1,7 @@
 "use client";
 
-import { paragraph } from "@/components/primitives";
-import { CheckBadgeIcon } from "@heroicons/react/24/solid";
+import { AnimatedBarbershopLogo, AnimatedSalonLogo, AnimatedTattooLogo, } from "@/components/animation/animatedLogo";
+
 import React from "react";
 
 
@@ -10,14 +10,9 @@ export default function Test() {
 
 	return (
 		<React.Fragment>
-			<div className="mt-96 w-full">
-        <div className="w-[550px] h-[600px] bg-white mx-auto">
-        </div>
-			</div>
-
-
-      {/* <AnimatedLogo /> */}
-
+			<AnimatedTattooLogo className="h-[100vh] w-full"/>
+			<AnimatedBarbershopLogo className="h-[100vh] w-full" />
+			<AnimatedSalonLogo className="h-[100vh] w-full" />
 		</React.Fragment>
 	);
 }

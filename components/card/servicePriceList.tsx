@@ -32,8 +32,6 @@ const ServicePriceListTable = ({
 
   return (
     <React.Fragment>
-
-
       <Table
         aria-label="Service Price List"
         selectionMode="single"
@@ -41,7 +39,7 @@ const ServicePriceListTable = ({
         radius="sm"
         className=" "
         classNames={{
-          base: "mx-auto max-w-xl my-16 md:my-32 ",
+          base: "mx-auto max-w-xl ",
           th: `bg-background font-bold !w-full  text-lg sm:text-xl `,
           td: `font-semibold text-sm sm:text-base md:text-lg `,
           wrapper: "bg-default-100/50",

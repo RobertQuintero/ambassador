@@ -1,8 +1,8 @@
 import { getBarbershopPageData } from "@/sanity/utils/sanity-services-barbershop-salon-tattoo";
 import React from "react";
 import { BarbershopServicesList } from "./components/barbershopServiceList";
-import { BarbershopHeader } from "./components/barbershopHeader";
 import { ServicePriceListTable } from "@/components/card/servicePriceList";
+import { BarbershopServicePriceList } from "./components/barbershopServicePriceList";
 
 
 export const revalidate = 1;
@@ -13,9 +13,9 @@ export default async function Barbershop() {
 
   return (
     <React.Fragment>
-        <BarbershopHeader barbershop={barbershop}/>
-        <ServicePriceListTable servicePriceList={barbershop.servicePriceList} />
-        <BarbershopServicesList subServices={barbershop.subServices} />
+        <BarbershopServicesList servicesPage={barbershop} />
+        <BarbershopServicePriceList service={barbershop} />
+
 
     </React.Fragment>
   );

@@ -11,7 +11,8 @@ export default async function Salon() {
 
   return (
     <React.Fragment>
-        <SalonServicesList subServices={salon.subServices} />
+        <SalonServicesList servicesPage={salon} />
+
     </React.Fragment>
   );
 }

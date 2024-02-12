@@ -30,7 +30,7 @@ function AnimatedFirstPageLoad() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!firstVisit || !isVisible) {
+  if (!firstVisit) {
     return null;
   }
 
@@ -38,8 +38,8 @@ function AnimatedFirstPageLoad() {
     <motion.div
       className="flex z-50 flex-col fixed h-screen w-screen overflow-hidden bg-background top-0 bottom-0 right-0 left-0 justify-center items-center "
       initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
-      exit={{ opacity: 1 }}
+      animate={{ opacity: isVisible ? 1 : 0 }} // animate opacity based on isVisible state
+      exit={{ opacity: 0 }}
       transition={{ duration: 5.5 }}
     >
       <motion.div

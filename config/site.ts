@@ -66,7 +66,6 @@ export const siteConfig = {
 	email: "ambassador.com",
 	telephone: "0936736732",
 	mobile: "090-293-232",
-	becomePrimeKlase: "becomeprimera@primeklase.com",
 	address: "ambassador, 1234, Manila, Philippines",
 	// Creator details
 	createdByUrl: "https://robertquintero.me",

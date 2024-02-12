@@ -48,7 +48,7 @@ const EmailContactResponse: React.FC<EmailContactResponseProps> = ({
                   className="object-cover  rounded-t-md h-full w-full -z-10"
                   alt="Logo"
                   // src="https://utfs.io/f/cef924ce-0707-4ff2-9e47-27819b922d87-5pkz02.jpg"
-                  src={`${baseUrl}/bg/primera.jpg`}
+                  src={`${baseUrl}/icon/AmbassadorLogoDark.png`}
                   width={200}
                   height={200}
                 />

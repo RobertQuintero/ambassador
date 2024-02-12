@@ -60,7 +60,7 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
                 <Img
                   className="object-cover  rounded-t-md h-full w-full -z-10"
                   alt="Logo"
-                  src={`${baseUrl}/bg/primera.jpg`}
+                  src={`${baseUrl}/icon/AmbassadorLogoDark.jpg`}
                   width={200}
                   height={200}
                 />

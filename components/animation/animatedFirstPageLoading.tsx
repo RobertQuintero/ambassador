@@ -17,7 +17,7 @@ function AnimatedFirstPageLoad() {
     } else {
       const visitedTime = new Date(parseInt(visitedBefore));
       const hoursElapsed = Math.abs(now.getTime() - visitedTime.getTime()) / 36e5; // convert milliseconds to hours
-      if (hoursElapsed >= 0.1) {
+      if (hoursElapsed >= 9) {
         setFirstVisit(true);
         localStorage.setItem('visitedBefore', now.getTime().toString());
       }

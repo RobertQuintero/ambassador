@@ -42,10 +42,10 @@ const EmailFooter : React.FC = () => {
 
                 <Link href={siteConfig.url} className="m-auto" target="_blank">
                   <Img
-                    src={`${baseUrl}/bg/primeraWhite.png`}
+                    src={`${baseUrl}/icon/AmbassadorLogoDark.png`}
                     width="170"
                     height="70"
-                    alt="Primera"
+                    alt={siteConfig.name}
                     className="m-auto"
                   />
                 </Link>

@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
-import { ServicesPageType, SubServices } from "@/types/servicesPageType";
+import { ServicePriceList, ServicesPageType, SubServices } from "@/types/servicesPageType";
 
 export async function getAllSubServicesData(): Promise<SubServices[]> {
   const barbershopData = await getBarbershopPageData();
@@ -15,6 +15,19 @@ export async function getAllSubServicesData(): Promise<SubServices[]> {
   return allSubServices;
 }
 
+export async function getAllServicePriceData(): Promise<ServicePriceList[]> {
+    const barbershopData = await getBarbershopPageData();
+    const salonData = await getSalonPageData();
+    const tattooData = await getTattooPageData();
+
+    const allServicePriceList = [
+        ...barbershopData.servicePriceList,
+        ...salonData.servicePriceList,
+        ...tattooData.servicePriceList
+    ];
+    return allServicePriceList;
+    }
+
 
 export async function getBarbershopPageData(): Promise<ServicesPageType> {
   const data = await client.fetch(groq`*[_type=="barbershop"][0]{...,
@@ -24,6 +37,14 @@ export async function getBarbershopPageData(): Promise<ServicesPageType> {
         "image": image.asset->url,
         title,
         description,
+        "servicePriceList": servicePriceList[]{
+            _id,
+            priceTitle,
+            servicePrice,
+            promoPrice,
+            freeService,
+        },
+
         "subServices": subServices[]{
             _id,
             "subServiceImage" : subServiceImage.asset->url,
@@ -46,6 +67,13 @@ export async function getSalonPageData(): Promise<ServicesPageType> {
         "image": image.asset->url,
         title,
         description,
+        "servicePriceList": servicePriceList[]{
+            _id,
+            priceTitle,
+            servicePrice,
+            promoPrice,
+            freeService,
+        },
         "subServices": subServices[]{
             _id,
             "subServiceImage" : subServiceImage.asset->url,
@@ -68,6 +96,13 @@ export async function getTattooPageData(): Promise<ServicesPageType> {
         "image": image.asset->url,
         title,
         description,
+        "servicePriceList": servicePriceList[]{
+            _id,
+            priceTitle,
+            servicePrice,
+            promoPrice,
+            freeService,
+        },
         "subServices": subServices[]{
             _id,
             "subServiceImage" : subServiceImage.asset->url,

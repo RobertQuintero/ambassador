@@ -14,7 +14,7 @@ const SalonServicesList = ({subServices}: SalonServicesListProps) => {
 
   return (
     <React.Fragment>
-      <div className="w-full h-full flex flex-col justify-center items-center my-16 md:my-32 ">
+      <div className="w-full h-full flex flex-col justify-center items-center my-16 md:my-32 z-30">
       <AnimatedDivLeftRightUpDown
         className="flex flex-col justify-center items-center my-4 md:my-8"
         direction="up"

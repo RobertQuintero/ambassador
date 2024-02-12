@@ -30,6 +30,44 @@ export default defineType({
       type: "text",
       validation: (Rule) => Rule.required(),
     }),
+    // services price list
+defineField({
+      name: "servicePriceList",
+      title: "Service Price List",
+      description: "",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({
+              name: "promoPrice",
+              title: "Promo Price",
+              description: "If there is a promo price the Price Title will be strike through and the promo price will be shown",
+              type: "number",
+            }),
+            defineField({
+              name: "priceTitle",
+              title: "Price Title",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "servicePrice",
+              title: "Service Price",
+              type: "number",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "freeService",
+              title: "Free Service",
+              type: "array",
+              of: [{ type: "string" }],
+            }),
+          ],
+        },
+      ],
+    }),
     // services sub services
     defineField({
       name: "subServices",

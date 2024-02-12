@@ -1,5 +1,6 @@
 import { AnimatedDivLeftRightUpDown } from "@/components/animation/animatedDiv";
 import { paragraph, title } from "@/components/primitives";
+import { siteConfig } from "@/config/site";
 import { ServicesPageType } from "@/types/servicesPageType";
 import React from "react";
 
@@ -27,8 +28,10 @@ const BarbershopHeader = ({barbershop}:BarbershopHeaderProps) => {
           })}`}
         >
 
+Step into {siteConfig.name} and step out with confidence. Our skilled barbers blend tradition with flair, crafting styles that leave you sharp, suave, and ready to conquer. From classic cuts to modern masterpieces, trust us to sculpt your look and make a lasting impression. Your grooming journey starts here.
         </p>
       </AnimatedDivLeftRightUpDown>
+
     </React.Fragment>
   );
 };

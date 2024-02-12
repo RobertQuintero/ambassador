@@ -1,5 +1,6 @@
 import { getSalonPageData } from "@/sanity/utils/sanity-services-barbershop-salon-tattoo";
 import React from "react";
+import { SalonServicesList } from "./components/salonServiceList";
 
 
 export const revalidate = 1;
@@ -10,7 +11,7 @@ export default async function Salon() {
 
   return (
     <React.Fragment>
-        <p>Salon</p>
+        <SalonServicesList subServices={salon.subServices} />
     </React.Fragment>
   );
 }

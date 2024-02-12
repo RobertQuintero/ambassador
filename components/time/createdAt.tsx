@@ -1,7 +1,7 @@
 import React from "react";
 import { Chip, Tooltip } from "@nextui-org/react";
 import { CalendarIcon } from "@heroicons/react/24/outline";
-import { createdAtData, updatedAtData } from "@/types/createdAt";
+import { createdAtData, updatedAtData } from "@/types/CreatedAt";
 
 
 function formatDate(dateString: string | number | Date) {

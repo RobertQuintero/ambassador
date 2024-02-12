@@ -14,8 +14,8 @@ export default function AboutLayout({
 }) {
 	return (
 		<React.Fragment>
-			<AnimatedSalonLogo className="h-[80vh] w-full fixed z-0 mx-auto "/>
-			<section className="w-full h-full  px-4 sm:px-8 overflow-hidden z-30">
+			<AnimatedSalonLogo className="h-[80vh] w-full fixed z-0 mx-auto opacity-40"/>
+			<section className="w-full h-full  px-4 sm:px-8 overflow-hidden relative z-10">
 					{children}
 			</section>
 		</React.Fragment>

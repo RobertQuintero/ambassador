@@ -32,18 +32,19 @@ const ServicePriceListTable = ({
 
   return (
     <React.Fragment>
+
+
       <Table
         aria-label="Service Price List"
         selectionMode="single"
-        shadow="sm"
+        shadow="none"
         radius="sm"
         className=" "
         classNames={{
-          base: "mx-auto max-w-xl ",
-          th: `bg-background font-bold !w-full text-lg sm:text-xl `,
-          td: `font-semibold text-base sm:text-lg `,
-            loadingWrapper: "bg-red-300",
-          wrapper: "bg-background/90",
+          base: "mx-auto max-w-xl my-16 md:my-32 ",
+          th: `bg-background font-bold !w-full  text-lg sm:text-xl `,
+          td: `font-semibold text-sm sm:text-base md:text-lg `,
+          wrapper: "bg-default-100/50",
         }}
       >
         <TableHeader>
@@ -52,7 +53,7 @@ const ServicePriceListTable = ({
         </TableHeader>
         <TableBody>
           {servicePriceList.map((service) => (
-            <TableRow>
+            <TableRow key={service.priceTitle}>
               <TableCell onClick={() => handleOpen(service)}>
                 {service.promoPrice ? (
                   <div className="flex gap-2">
@@ -68,7 +69,7 @@ const ServicePriceListTable = ({
               <TableCell className="">
                 {/* if service has promoPrice, strike through the servicePrice but still show it the show the promoPrice */}
                 {service.promoPrice ? (
-                  <div className="flex gap-2">
+                  <div className="flex  gap-2">
                     <p className="flex gap-1  opacity-30 before:content-['_₱__'] after:self-end after:pb-0.5  after:text-sm after:content-['.00__']">
                       <s> {service.servicePrice}</s>
                     </p>{" "}
@@ -92,23 +93,59 @@ const ServicePriceListTable = ({
           isOpen={isOpen}
           onOpenChange={onOpenChange}
           backdrop="opaque"
-
+          radius="sm"
           classNames={{
             body: "flex md:flex-row p-2 sm:p-4 lg:p-6",
+            footer: "p-0 flex-col gap-2 md:gap-4",
             header: "p-0  ",
             closeButton:
-              "z-30 bg-background/50 scale-125 rounded-md hover:bg-background/70 text-default-900 hover:text-default-900",
+              "z-30 bg-default-100/50 scale-125 rounded-md hover:bg-default/70 text-default-900 hover:text-default-900",
             base: "bg-background max-w-md shadow-none backdrop-none hideScroll",
           }}
         >
           <ModalContent>
-            <div className="p-2 flex flex-col gap-2 md:gap-4">
-              <p className={`!font-bold ${title({ size: "lg" })}`}>
-                {selectedService.priceTitle}
-              </p>
-              <p >{selectedService.servicePrice}</p>
-              <p>{selectedService.promoPrice}</p>
-              <p>{selectedService.freeService}</p>
+            <div className="p-4 flex flex-col gap-2 md:gap-4">
+              {selectedService.promoPrice ? (
+                <Chip variant="flat" size="lg" color="danger">
+                  Promo
+                </Chip>
+              ) : null}
+                <p className={`${title({ size: "lg" })}`}> {selectedService.priceTitle}</p>
+                {selectedService.promoPrice ? (
+                  <div className="flex  gap-2">
+                    <p className={`flex gap-1  opacity-30 before:content-['_₱__'] after:self-end after:pb-0.5  after:text-sm after:content-['.00__'] ${title({
+                  size: "lg",
+                })}`}>
+                      <s> {selectedService.servicePrice}</s>
+                    </p>{" "}
+                    <p className={`flex gap-1  before:content-['_₱__'] after:self-end after:pb-0.5  after:text-sm after:content-['.00__'] ${title({
+                  size: "lg",
+                })}`}>
+                      {selectedService.promoPrice}
+                    </p>
+                  </div>
+                ) : (
+                  <p className={`flex gap-1  before:content-['_₱__'] after:self-end after:mt-1  after:text-sm after:content-['.00__'] ${title({
+                  size: "lg",
+                })}`}>
+                    {" "}
+                    {selectedService.servicePrice}
+                  </p>
+                )}
+              {selectedService.freeService ? (
+                <div className="flex flex-wrap gap-2 before:content-['Comes_with_']">
+                  {selectedService.freeService?.map((freeService) => (
+                    <Chip
+                      key={freeService}
+                      variant="flat"
+                      size="md"
+                      color="default"
+                    >
+                      {freeService}
+                    </Chip>
+                  ))}
+                </div>
+              ) : null}
             </div>
           </ModalContent>
         </Modal>

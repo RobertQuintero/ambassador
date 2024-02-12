@@ -11,7 +11,6 @@ export default async function Barbershop() {
 
   const barbershop = await getBarbershopPageData();
 
-  console.log(barbershop.servicePriceList);
   return (
     <React.Fragment>
         <BarbershopHeader barbershop={barbershop}/>

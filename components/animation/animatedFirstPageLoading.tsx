@@ -43,7 +43,7 @@ function AnimatedFirstPageLoad() {
       transition={{ duration: 3 }}
     >
       <motion.div
-        className="flex justify-center items-center flex-col max-w-[10rem] md:max-w-xs lg:max-w-sm"
+        className="flex justify-center items-center flex-col max-w-xs lg:max-w-xl 2xl:max-w-3xl"
       >
         <AnimatedLogoFull className="h-[90vh] w-full"/>
       </motion.div>

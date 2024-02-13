@@ -38,7 +38,7 @@ export const Navbar = () => {
   return (
     <NextUINavbar
       maxWidth="full"
-      shouldHideOnScroll={true}
+      shouldHideOnScroll
       className="max-w-[1536px] bg-transparent   !z-40 mx-auto"
       height={"6rem"}
       isMenuOpen={isMenuOpen}
@@ -73,7 +73,9 @@ export const Navbar = () => {
               link="/"
               titleLink="Home"
               onPress={() => setIsMenuOpen()}
-            />
+            >
+            home
+            </AnimatedButtonNavLink>
           </NavbarMenuItem>
           <NavbarMenuItem className="">
             <AnimatedButtonNavLink

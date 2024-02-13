@@ -34,7 +34,7 @@ const ArtistsList = ({ artists }: ArtistsListProps) => {
           stories onto skin with flair and skill.
         </p>
       </AnimatedDivLeftRightUpDown>
-      <div className="max-w-[1536px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  mx-auto gap-2 md:gap-3">
+      <div className="max-w-[1536px] grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4  mx-auto gap-2 md:gap-3">
         {artists.map((artist, index) => (
           <AnimatedDivLeftRightUpDown
             direction="up"

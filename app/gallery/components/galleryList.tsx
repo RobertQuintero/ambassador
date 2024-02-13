@@ -39,7 +39,7 @@ const GalleryList = ({ gallery }: GalleryListProps) => {
       </AnimatedDivLeftRightUpDown>
 
       <div className="w-full h-full flex flex-col justify-center items-center my-16 md:mb-32 ">
-        <div className="max-w-[1536px] mx-auto columns-1 gap-2 md:gap-3 sm:columns-2 lg:columns-3 xl:columns-4  ">
+        <div className="max-w-[1536px] mx-auto columns-2 gap-2 md:gap-3  md:columns-3 xl:columns-4  ">
           {gallery.map((_gallery, index) => (
             <div
               className="flex flex-col break-inside-avoid h-auto mb-2 md:mb-3"

@@ -10,6 +10,7 @@ type LinkArrowProps = {
   hoverTitle?: string;
   children?: React.ReactNode;
   className?: string;
+  onPress?: () => void;
 };
 
 const AnimatedButtonLink = ({
@@ -17,6 +18,7 @@ const AnimatedButtonLink = ({
   titleLink,
   hoverTitle,
   children,
+  onPress,
 }: LinkArrowProps) => {
   return (
     <Link
@@ -24,6 +26,7 @@ const AnimatedButtonLink = ({
       size="lg"
       color="foreground"
       className="relative w-full group flex flex-row items-end gap-4 z-10 "
+      onPress={onPress}
     >
       <span
         className={`!font-bold z-10 ${title({
@@ -52,9 +55,9 @@ const AnimatedButtonNavLink = ({ link, titleLink,className }: LinkArrowProps) =>
     <React.Fragment>
       <Link
         href={link}
-        className={` font-semibold relative before:absolute before:left-0 before:bottom-0 before:origin-right before:scale-x-0 before:transform before:transition-transform before:duration-700 before:ease-in-out before:h-1.5 before:lg:h-2 before:w-full before:bg-default-500 before:rounded-sm hover:before:scale-x-100 hover:before:origin-left
+        className={` font-semibold relative before:absolute before:left-0 before:bottom-0 before:origin-right before:scale-x-0 before:transform before:transition-transform before:duration-700 before:ease-in-out before:h-1 before:lg:h-1.5 before:w-full before:bg-default-500 before:rounded-sm hover:before:scale-x-100 hover:before:origin-left
         hover:before:bg-default-800 hover:!text-default-800 transition-all
-					${title({ size: "v2xl" })}
+					${title({ size: "xl" })}
           ${pathname === link ? "before:scale-x-100 text-default-800 before:bg-default-800" : "text-default-500"}
           ${className}
         `}

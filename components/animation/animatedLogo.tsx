@@ -338,7 +338,7 @@ const AnimatedLogo = ({
   return (
     <div className={cn("flex flex-col items-center ", className)} {...props}>
       <motion.svg
-        className={`p-2 fill-black ${className}`}
+        className={` fill-black ${className}`}
         width="756"
         height="666"
         viewBox="0 -8 756 680"
@@ -500,7 +500,7 @@ const AnimatedTattooLogo = ({
   return (
     <div className={cn("flex flex-col items-center ", className)} {...props}>
       <motion.svg
-        className={`p-2 dark:fill-black fill-white opacity-30 ${className}`}
+        className={` dark:fill-black fill-white opacity-30 ${className}`}
         width="1056"
         height="734"
         viewBox="0 0 1056 734"
@@ -1305,7 +1305,7 @@ const AnimatedBarbershopLogo = ({
   return (
     <div className={cn("flex flex-col items-center ", className)} {...props}>
       <motion.svg
-        className={`p-2 dark:fill-black fill-white dark:stroke-default stroke-default-700  ${className}`}
+        className={` dark:fill-black fill-white dark:stroke-default stroke-default-700  ${className}`}
         width="1080"
         height="1020"
         viewBox="0 0 1080 1020"
@@ -1394,7 +1394,7 @@ const AnimatedSalonLogo = ({
   return (
     <div className={cn("flex flex-col items-center ", className)} {...props}>
       <motion.svg
-        className={`p-2 dark:fill-black fill-white dark:stroke-default stroke-default-700 ${className}`}
+        className={` dark:fill-black fill-white dark:stroke-default stroke-default-700 ${className}`}
         width="951"
         height="603"
         viewBox="0 0 951 603"

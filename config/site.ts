@@ -5,7 +5,7 @@ export const siteConfig = {
 
 
 	// url: "https://ambassador.vercel.app",
-	url:"http://localhost:3000",
+	url:"https://ambassador-delta.vercel.app",
 	image:"/siteLogo.png",
 	keywords: [
     "Barbershop",

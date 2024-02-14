@@ -500,7 +500,7 @@ const AnimatedTattooLogo = ({
   return (
     <div className={cn("flex flex-col items-center ", className)} {...props}>
       <motion.svg
-        className={` dark:fill-black fill-white opacity-30 ${className}`}
+        className={` dark:fill-black fill-white ${className}`}
         width="1056"
         height="734"
         viewBox="0 0 1056 734"

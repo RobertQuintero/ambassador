@@ -39,12 +39,12 @@ export const Navbar = () => {
     <NextUINavbar
       maxWidth="full"
       shouldHideOnScroll
-      className="max-w-[1536px] bg-transparent   !z-40 mx-auto"
+      className="max-w-[1536px] bg-transparent  relative !z-40 mx-auto"
       height={"6rem"}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className="flex ">
+      <NavbarContent className="flex absolute  left-0 ml-4">
         <Button
           as={Link}
           href="/booking"
@@ -56,16 +56,13 @@ export const Navbar = () => {
         </Button>
       </NavbarContent>
 
-      <NavbarBrand className="flex ml-[-8%] sm:ml-[-6%] lg:ml-[-4%] 2xl:ml-[-3%] ">
+      <NavbarBrand className="absolute -left-0 flex justify-center w-full">
         <NextLink href="/" className="">
           <AnimatedLogo className="w-fit h-16" />
         </NextLink>
       </NavbarBrand>
 
-      <NavbarMenuToggle
-        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        className="  md:scale-150 text-default-500  hover:text-default-800 transition-all "
-      />
+      <NavbarMenuToggle className="absolute right-0 mr-4 md:scale-150 text-default-500  hover:text-default-800 transition-all" aria-label={isMenuOpen ? "Close menu" : "Open menu"}/>
       <NavbarMenu className=" md:pt-8 hideScroll flex-col md:flex-row md:justify-evenly h-full ">
         <div className="flex flex-col  gap-3 lg:gap-5 ">
           <NavbarMenuItem className="">

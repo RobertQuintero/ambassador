@@ -8,7 +8,6 @@ const BranchHeader = () => {
 
   return (
     <React.Fragment>
-      <AnimatedLogoFull className="w-64 sm:w-80 h-fit mx-auto" />
       <AnimatedDivLeftRightUpDown
         className="flex flex-col justify-center items-center"
         direction="up"

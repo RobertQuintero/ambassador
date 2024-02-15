@@ -105,7 +105,7 @@ const ContactForm = () => {
             Send us a message
           </p>
           <p
-            className={`!text-default-800 mb-4 text-center mx-auto !max-w-xl ${paragraph({
+            className={`!text-default-500 mb-4 text-center mx-auto !max-w-xl ${paragraph({
               size: "md",
             })}`}
           >
@@ -207,8 +207,9 @@ const ContactForm = () => {
         </form>
       ) : (
         <React.Fragment>
+        <div className="flex flex-col mx-auto ">
           <p
-            className={`!text-default-500 mb-4 text-center ${title({
+            className={`!text-default-500 mb-4 text-center mx-auto  ${title({
               size: "md",
             })}`}
           >
@@ -226,11 +227,12 @@ const ContactForm = () => {
             >
               Our team will now carefully assess your message, and we aim to
               provide you with a response within the next
-              <strong className="text-warning">14 days</strong>. Please be
+              <strong className="text-default-700"> 7 days</strong>. Please be
               patient during this process, as we strive to give each message
               the attention it deserves.
             </p>
           </div>
+        </div>
         </React.Fragment>
       )}
     </React.Fragment>

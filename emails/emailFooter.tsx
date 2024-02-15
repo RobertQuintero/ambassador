@@ -33,16 +33,16 @@ const EmailFooter : React.FC = () => {
                   If you didn&apos;t request this email, there&apos;s nothing to
                   worry about, you can safely ignore it.
                 </Text>
-                <Text className="text-center mt-4 text-gray-500">
+                <Text className="text-center mt-2 text-gray-500">
                   If you have any questions, please contact us at{" "}
                   <Link href={`mailto:${siteConfig.email}`}>
                     {siteConfig.email}
                   </Link>
                 </Text>
 
-                <Link href={siteConfig.url} className="m-auto" target="_blank">
+                <Link href={siteConfig.url} className="m-auto h-fit w-20" target="_blank">
                   <Img
-                    src={`${baseUrl}/icon/AmbassadorLogoDark.png`}
+                    src={`${baseUrl}/icon/AmbassadorLogoWhite.png`}
                     width="170"
                     height="70"
                     alt={siteConfig.name}
@@ -50,7 +50,7 @@ const EmailFooter : React.FC = () => {
                   />
                 </Link>
                 <br />
-                <Row align="center" className="w-72">
+                <Row align="center" className="w-72 mx-auto">
                   <Column align="center">
                     <Link
                       href={`${baseUrl}/`}
@@ -66,7 +66,7 @@ const EmailFooter : React.FC = () => {
                       className="text-black font-bold underline"
                       target="_blank"
                     >
-                      Branches
+                      About us
                     </Link>
                   </Column>
                   <Column align="center">
@@ -143,7 +143,7 @@ const EmailFooter : React.FC = () => {
                 <Text className="text-center text-gray-500">
                   {siteConfig.address}
                 </Text>
-                <Text className="text-center text-gray-500 mt-2">
+                <Text className="text-center text-gray-500 ">
                   Created by{" "}
                   <Link href={siteConfig.createdByUrl}>
                     {siteConfig.createByName}

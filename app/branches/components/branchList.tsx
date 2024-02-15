@@ -13,7 +13,7 @@ const BranchesList = () => {
 
   if (branches.length === 0) {
     return (
-      <div className="w-full h-full flex flex-col justify-center items-center my-16 md:my-32 ">
+      <div className="w-full h-full flex flex-col justify-center items-center mt-8 md:my-16 ">
         <MapLocationXIcon className="w-16 h-16 text-default-500" />
         <h2
           className={`!font-bold  ${title(
@@ -36,7 +36,7 @@ const BranchesList = () => {
 
   return (
     <React.Fragment>
-      <div className="w-full h-full flex flex-col justify-center items-center my-16 md:my-32 ">
+      <div className="w-full h-full flex flex-col justify-center items-center mt-8 md:mt-16  ">
         <div className="max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-4 md:gap-8 xl:gap-10 ">
           {branches.map((branch, index) => (
             <AnimatedDivLeftRightUpDown

@@ -32,7 +32,7 @@ const EmailToAmbassadorContactApplication: React.FC<EmailToAmbassadorContactAppl
   subject,
 }: EmailToAmbassadorContactApplicationProps) => {
   const baseUrl = siteConfig.url ? `${siteConfig.url}` : "";
-  const previewText = `Inquiry Name ${name} and ${subject}`;
+  const previewText = `Message Name ${name} and ${subject}`;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -43,12 +43,12 @@ const EmailToAmbassadorContactApplication: React.FC<EmailToAmbassadorContactAppl
         <Tailwind>
           <Body className="font-sans">
             <Container className="rounded-md border-[#f3f3f5] my-[40px] mx-auto max-w-[44rem]">
-              <div className="h-60 w-full">
+              <div className="h-fit mx-auto w-40">
                 <Img
                   className="object-cover  rounded-t-md h-full w-full -z-10"
                   alt="Logo"
                   // src="https://utfs.io/f/cef924ce-0707-4ff2-9e47-27819b922d87-5pkz02.jpg"
-                  src={`${baseUrl}/icon/AmbassadorLogoDark.png`}
+                  src={`${baseUrl}/icon/AmbassadorLogoWhite.png`}
                   width={200}
                   height={200}
                 />
@@ -56,12 +56,12 @@ const EmailToAmbassadorContactApplication: React.FC<EmailToAmbassadorContactAppl
 
               <Heading className="text-3xl text-center font-bold text-black ">
                 <br />
-                Inquiry Name {name} and {subject}
+                Message Name {name} and {subject}
               </Heading>
 
               <Section className="px-2">
                 <Text className="text-2xl text-center mt-4  font-bold text-black">
-                  Inquiry Details
+                  Message Details
                 </Text>
                 {/* Personal Information */}
                 <Row>

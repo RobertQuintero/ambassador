@@ -56,11 +56,11 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
         <Tailwind>
           <Body className="font-sans">
             <Container className="rounded-md border-[#f3f3f5] my-[40px] mx-auto max-w-[44rem]">
-              <div className="h-60 w-full">
+              <div className="h-fit mx-auto w-40">
                 <Img
                   className="object-cover  rounded-t-md h-full w-full -z-10"
                   alt="Logo"
-                  src={`${baseUrl}/icon/AmbassadorLogoDark.jpg`}
+                  src={`${baseUrl}/icon/AmbassadorLogoWhite.jpg`}
                   width={200}
                   height={200}
                 />
@@ -70,9 +70,6 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
                 <br />
                 Thank You for Your Booking, {name}!
               </Heading>
-              <Text className="text-2xl font-bold text-center ">
-                Your booking has been confirmed, and we appreciate your trust.
-              </Text>
 
               <Section className="px-6">
                 <Text className="text-base">

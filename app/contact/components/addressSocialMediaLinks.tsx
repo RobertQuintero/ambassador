@@ -6,6 +6,7 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
+  Divider,
   Link,
 } from "@nextui-org/react";
 import { paragraph, title } from "@/components/primitives";
@@ -17,38 +18,30 @@ import {
 } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 import { AnimatedDivLeftRightUpDown } from "@/components/animation/animatedDiv";
-import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 const AddressSocialMediaLinks = () => {
   return (
     <React.Fragment>
-      <AnimatedLogoFull className="w-64 sm:w-80 h-fit mx-auto" />
-
       <AnimatedDivLeftRightUpDown
-        className="flex flex-col justify-center items-center"
+        className="flex flex-col justify-center items-center gap-4 md:gap-6 mb-8"
         direction="up"
       >
         <h1
-          className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
+          className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl  ${title(
             { size: "xxxl" }
           )}`}
         >
           Contact us
         </h1>
         <p
-          className={` max-w-2xl text-center mb-4 md:mb-8 ${paragraph({
+          className={`!text-default-500 max-w-2xl text-center ${paragraph({
             size: "md",
           })}`}
         >
-          {/* //the website is about barbershop/salon/  */}
-          Thank you for visiting {siteConfig.name}! Whether you&apos;re looking
-          to schedule an appointment, discuss potential collaborations, or have
-          any questions, we&apos;re here to assist you. Your feedback and
-          inquiries are important to us, so please don&apos;t hesitate to reach
-          out.
+          Welcome to <strong>{siteConfig.name}!</strong> Whether you want to book an appointment, explore collaborations, or have questions, we&apos;re here to help. Feel free to reach out with feedback or message.
         </p>
       </AnimatedDivLeftRightUpDown>
 
-      <div className="max-w-7xl mx-auto md:items-center grid grid-cols-1 gap-4 sm:gap-8 md:grid-cols-4 my-16 md:my-32 ">
+      <div className="max-w-7xl mx-auto md:items-center grid grid-cols-1 gap-3 md:gap-6 md:grid-cols-4 ">
         {/* Inquiries */}
         <AnimatedDivLeftRightUpDown
           direction="left"
@@ -56,10 +49,10 @@ const AddressSocialMediaLinks = () => {
           delay={1}
         >
           <Card
-            className=" border border-default/30 bg-default/30 "
-            radius="none"
+            className=" border border-default/30 bg-default-100/10"
+            radius="sm"
             isBlurred
-            shadow="none"
+            shadow="md"
           >
             <CardHeader>
               <p
@@ -67,12 +60,12 @@ const AddressSocialMediaLinks = () => {
                   size: "xl",
                 })}`}
               >
-                Inquiries
+                Message us
               </p>
             </CardHeader>
             <CardBody>
               <p
-                className={` ${paragraph({
+                className={`!text-default-500 ${paragraph({
                   size: "md",
                 })}`}
               >
@@ -87,7 +80,7 @@ const AddressSocialMediaLinks = () => {
                 className="font-bold w-full"
                 color="default"
                 variant="solid"
-                radius="none"
+                radius="sm"
               >
                 Contact us
               </Button>
@@ -100,10 +93,10 @@ const AddressSocialMediaLinks = () => {
           className="col-span-3 md:col-span-2 order-1 sm:order-2"
         >
           <Card
-            className=" border border-default/30 bg-default/30  pt-4"
-            radius="none"
+            className=" border border-default/30 bg-default-100/10  pt-4"
+            radius="sm"
             isBlurred
-            shadow="none"
+            shadow="lg"
           >
             <CardHeader className="items-center justify-center">
               <p
@@ -207,7 +200,7 @@ const AddressSocialMediaLinks = () => {
                 className="font-bold w-full mt-4"
                 color="default"
                 variant="solid"
-                radius="none"
+                radius="sm"
                 as={NextLink}
                 href="/branches"
               >
@@ -223,10 +216,10 @@ const AddressSocialMediaLinks = () => {
           delay={1}
         >
           <Card
-            className=" border border-default/30 bg-default/30 "
-            radius="none"
+            className=" border border-default/30 bg-default-100/10"
+            radius="sm"
             isBlurred
-            shadow="none"
+            shadow="md"
           >
             <CardHeader>
               <p
@@ -239,7 +232,7 @@ const AddressSocialMediaLinks = () => {
             </CardHeader>
             <CardBody>
               <p
-                className={` ${paragraph({
+                className={`!text-default-500 ${paragraph({
                   size: "md",
                 })}`}
               >
@@ -252,7 +245,7 @@ const AddressSocialMediaLinks = () => {
                 className="font-bold w-full"
                 color="default"
                 variant="solid"
-                radius="none"
+                radius="sm"
                 as={NextLink}
                 href="/application"
               >
@@ -262,6 +255,7 @@ const AddressSocialMediaLinks = () => {
           </Card>
         </AnimatedDivLeftRightUpDown>
       </div>
+      <Divider className="my-16 md:my-32 mx-auto max-w-7xl"/>
     </React.Fragment>
   );
 };

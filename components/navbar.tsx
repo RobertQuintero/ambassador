@@ -39,7 +39,7 @@ export const Navbar = () => {
     <NextUINavbar
       maxWidth="full"
       shouldHideOnScroll
-      className="max-w-[1536px] bg-transparent  relative !z-40 mx-auto"
+      className="max-w-[1536px] bg-transparent   !z-40 mx-auto"
       height={"6rem"}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}

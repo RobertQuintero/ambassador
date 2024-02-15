@@ -14,31 +14,30 @@ type GalleryListProps = {
 const GalleryList = ({ gallery }: GalleryListProps) => {
   return (
     <React.Fragment>
-      <AnimatedLogoFull className="w-64 sm:w-80 h-fit mx-auto" />
       <AnimatedDivLeftRightUpDown
         className="flex flex-col justify-center items-center "
         direction="up"
       >
         <h1
-          className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
+          className={`!font-bold text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
             { size: "xxxl" }
           )}`}
         >
           Gallery
         </h1>
         <p
-          className={` max-w-2xl text-center  ${paragraph({
+          className={`!text-default-500 max-w-2xl text-center  ${paragraph({
             size: "md",
           })}`}
         >
-          Discover the essence of artistry in our gallery, where barbering,
-          salon transformations, and intricate tattoos converge. Each image
+          Discover the essence of artistry in our gallery, where <strong className="text-default-700 capitalize">barbering </strong>,
+          <strong className="text-default-700 capitalize">salon</strong> transformations, and intricate <strong className="text-default-700 capitalize">tattoos</strong> converge. Each image
           embodies creativity and skill, offering inspiration for your next
           visit.
         </p>
       </AnimatedDivLeftRightUpDown>
 
-      <div className="w-full h-full flex flex-col justify-center items-center my-16 md:mb-32 ">
+      <div className="w-full h-full flex flex-col justify-center items-center mt-8 md:mt-16 ">
         <div className="max-w-[1536px] mx-auto columns-2 gap-2 md:gap-3  md:columns-3 xl:columns-4  ">
           {gallery.map((_gallery, index) => (
             <div

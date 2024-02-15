@@ -9,10 +9,7 @@ import {
   Autocomplete,
   AutocompleteItem,
   Button,
-  Card,
   CircularProgress,
-  Divider,
-  Input,
   Image,
   Textarea,
 } from "@nextui-org/react";
@@ -75,22 +72,6 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
   }
 
   const [bookingDate, setBookingDate] = useState<Value>(new Date());
-  const renderCustomInput = ({ref}:any) => (
-    <Input
-      ref={ref}
-      type="text"
-      isRequired
-      variant="underlined" // a styling class
-      size="lg" // a styling class
-      id="bookingDate"
-      name="bookingDate"
-      label="Booking Date"
-      radius="none"
-
-      color={isInvalidBookingDate ? "danger" : "default"}
-      errorMessage={isInvalidBookingDate ? "Please select a date" : ""}
-    />
-  );
 
   const checkFormValidity = () => {
     if (

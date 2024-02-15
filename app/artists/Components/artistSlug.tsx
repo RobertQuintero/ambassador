@@ -43,7 +43,7 @@ const ArtistSlug = ({ artist, params }: ArtistSlugProps) => {
         </BreadcrumbItem>
         <BreadcrumbItem>
           <Link size="sm" color="foreground" href="/artist">
-            Work
+            Artists
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>

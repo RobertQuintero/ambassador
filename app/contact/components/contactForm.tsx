@@ -168,13 +168,6 @@ const ContactForm = () => {
                 : ""
             }
             className="col-span-2"
-            classNames={{
-              inputWrapper:
-                message.trim() !== "" ? "border-success " : "danger",
-              errorMessage: isInvalidMessage ? "text-danger" : "text-success",
-              label:
-                message.trim() !== "" ? "text-success" : "text-default-500",
-            }}
             color={isInvalidMessage ? "danger" : "default"}
             onChange={(e) => {
               setMessage(e.target.value);

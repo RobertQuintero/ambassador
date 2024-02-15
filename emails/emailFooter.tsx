@@ -44,7 +44,7 @@ const EmailFooter : React.FC = () => {
                   <Img
                     src={`${baseUrl}/icon/AmbassadorLogoWhite.png`}
                     width="170"
-                    height="70"
+                    height="170"
                     alt={siteConfig.name}
                     className="m-auto"
                   />
@@ -99,7 +99,8 @@ const EmailFooter : React.FC = () => {
                   Follow us our social media to stay up to date with our latest
                   news
                 </Text>
-                <div className="flex justify-center items-center mx-auto gap-6 mt-4">
+                <Row className="w-52 mx-auto" align="center">
+                  <Column align="center">
                   <Link href={siteConfig.links.instagram}>
                     <Img
                       src={`${baseUrl}/icon/instagram-30.png`}
@@ -108,6 +109,8 @@ const EmailFooter : React.FC = () => {
                       alt="instagram"
                     />
                   </Link>
+                  </Column>
+                  <Column align="center">
                   <Link href={siteConfig.links.facebook}>
                     <Img
                       src={`${baseUrl}/icon/facebook-30.png`}
@@ -116,6 +119,8 @@ const EmailFooter : React.FC = () => {
                       alt="facebook"
                     />
                   </Link>
+                  </Column>
+                  <Column align="center">
                   <Link href={siteConfig.links.twitter}>
                     <Img
                       src={`${baseUrl}/icon/twitter-30.png`}
@@ -124,6 +129,8 @@ const EmailFooter : React.FC = () => {
                       alt="twitter"
                     />
                   </Link>
+                  </Column>
+                  <Column align="center">
                   <Link href={siteConfig.links.linkedin}>
                     <Img
                       src={`${baseUrl}/icon/linkedin-30.png`}
@@ -132,7 +139,8 @@ const EmailFooter : React.FC = () => {
                       alt="linkedin"
                     />
                   </Link>
-                </div>
+                  </Column>
+                </Row>
               </Section>
 
               {/* Footer */}

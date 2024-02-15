@@ -56,13 +56,15 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
         <Tailwind>
           <Body className="font-sans">
             <Container className="rounded-md border-[#f3f3f5] my-[40px] mx-auto max-w-[44rem]">
-              <div className="h-fit mx-auto w-40">
+              <div className="h-fit mx-auto w-80
+">
                 <Img
                   className="object-cover  rounded-t-md h-full w-full -z-10"
                   alt="Logo"
-                  src={`${baseUrl}/icon/AmbassadorLogoWhite.jpg`}
-                  width={200}
-                  height={200}
+                  src={`${baseUrl}/icon/AmbassadorLogoWhite.png
+`}
+                  width={350}
+                  height={350}
                 />
               </div>
 
@@ -77,12 +79,12 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
                 </Text>
                 <Text>
                   Thank you for booking a service with{" "}
-                  <strong>{siteConfig.name}</strong>. We&apos;re excited to serve
-                  you.
+                  <strong>{siteConfig.name}</strong>. We&apos;re excited to
+                  serve you.
                 </Text>
                 <Text>
-                  Your booking details have been received, and we&apos;re preparing
-                  to provide you with an exceptional experience.
+                  Your booking details have been received, and we&apos;re
+                  preparing to provide you with an exceptional experience.
                 </Text>
                 <Text>
                   We&apos;ve noted your preferences and are ready to accommodate
@@ -90,8 +92,8 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
                 </Text>
                 <Text>
                   Our team is committed to ensuring your satisfaction. If you
-                  have any special requests or concerns, please don&apos;t hesitate
-                  to let us know.
+                  have any special requests or concerns, please don&apos;t
+                  hesitate to let us know.
                 </Text>
                 <Text>
                   We look forward to welcoming you on{" "}

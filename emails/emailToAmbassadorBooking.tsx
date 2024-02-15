@@ -55,14 +55,14 @@ const EmailToAmbassadorBooking: React.FC<EmailToAmbassadorBookingProps> = ({
         <Tailwind>
           <Body className="font-sans">
             <Container className="rounded-md border-[#f3f3f5] my-[40px] mx-auto max-w-[44rem]">
-              <div className="h-fit mx-auto w-40">
+              <div className="h-fit mx-auto w-80
+">
                 <Img
                   className="object-cover  rounded-t-md h-full w-full -z-10"
                   alt="Logo"
-                  // src="https://utfs.io/f/cef924ce-0707-4ff2-9e47-27819b922d87-5pkz02.jpg"
                   src={`${baseUrl}/icon/AmbassadorLogoWhite.png`}
-                  width={200}
-                  height={200}
+                  width={350}
+                  height={350}
                 />
               </div>
 

@@ -1,4 +1,4 @@
-// services schema
+// Barbershop schema
 
 import { defineField, defineType } from "sanity";
 
@@ -43,7 +43,8 @@ export default defineType({
             defineField({
               name: "promoPrice",
               title: "Promo Price",
-              description: "If there is a promo price the Price Title will be strike through and the promo price will be shown",
+              description:
+                "If there is a promo price the Price Title will be strike through and the promo price will be shown",
               type: "number",
             }),
             defineField({
@@ -97,7 +98,7 @@ export default defineType({
         },
       ],
     }),
-    // Gallery reference
+    // Get all gallery images
     defineField({
       name: "gallery",
       title: "Gallery Reference",
@@ -106,5 +107,6 @@ export default defineType({
       of: [{ type: "reference", to: [{ type: "gallery" }] }],
       validation: (Rule) => Rule.required(),
     }),
+
   ],
 });

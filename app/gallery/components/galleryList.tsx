@@ -1,8 +1,6 @@
-"use client";
 import { AnimatedDivLeftRightUpDown } from "@/components/animation/animatedDiv";
 import { paragraph, title } from "@/components/primitives";
 import React from "react";
-import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 import { GalleryType } from "@/types/galleryType";
 import { GalleryCard } from "./galleryCard";
 

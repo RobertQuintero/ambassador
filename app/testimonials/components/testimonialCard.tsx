@@ -1,4 +1,5 @@
 // testimonial.tsx component
+"use client";
 import { paragraph, title } from '@/components/primitives'
 import { Avatar, Card, CardBody, CardFooter, CardHeader, ScrollShadow } from '@nextui-org/react'
 import React from 'react'

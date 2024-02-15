@@ -4,22 +4,20 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: siteConfig.navItemsService[1].label ,
+  title: siteConfig.navItemsService[1].label,
   description: siteConfig.navItemsService[1].description,
-}
+};
 export default function AboutLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-	return (
-		<React.Fragment>
-		<AnimatedBarbershopLogo className="h-[90vh] w-full fixed z-0 m-auto  opacity-60"/>
-		<section className="w-full h-full  px-4 sm:px-8 overflow-hidden relative z-10">
-
-				{children}
-
-		</section>
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <AnimatedBarbershopLogo className="h-[90vh] w-full fixed z-0 m-auto  opacity-60" />
+      <section className="w-full h-full  px-4 sm:px-8 overflow-hidden relative z-10">
+        {children}
+      </section>
+    </React.Fragment>
+  );
 }

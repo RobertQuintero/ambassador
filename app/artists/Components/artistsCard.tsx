@@ -48,7 +48,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
           radius="sm"
           backdrop="opaque"
           classNames={{
-            body: "flex md:flex-row p-2 sm:p-4 lg:p-6",
+            body: "flex md:items-center md:flex-row p-2 sm:p-4 lg:p-6",
             footer: "p-0 flex-col gap-2 md:gap-4",
             header: "p-0  ",
             closeButton:

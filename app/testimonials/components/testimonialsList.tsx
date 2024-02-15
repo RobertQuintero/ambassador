@@ -6,8 +6,6 @@ import { TestimonialCard } from "./testimonialCard";
 import { useAtomValue } from "jotai";
 import { filteredTestimonials } from "@/app/atoms/testimonialsAtom";
 import { ShowMoreButton } from "@/app/atoms/components/showMoreButton";
-import { siteConfig } from "@/config/site";
-import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 
 const TestimonialsList = () => {
   const testimonials = useAtomValue(filteredTestimonials);

@@ -42,7 +42,7 @@ const ServicePriceListTable = ({
           base: "mx-auto max-w-xl ",
           th: `bg-background font-bold !w-full  text-lg sm:text-xl `,
           td: `font-semibold text-sm sm:text-base md:text-lg `,
-          wrapper: "bg-default-100/50",
+          wrapper: "bg-default-100",
         }}
       >
         <TableHeader>
@@ -98,7 +98,7 @@ const ServicePriceListTable = ({
             header: "p-0  ",
             closeButton:
               "z-30 bg-default-100/50 scale-125 rounded-md hover:bg-default/70 text-default-900 hover:text-default-900",
-            base: "bg-background max-w-md shadow-none backdrop-none hideScroll",
+            base: "bg-default-100 max-w-md shadow-none backdrop-none hideScroll",
           }}
         >
           <ModalContent>

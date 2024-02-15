@@ -18,23 +18,21 @@ const ArtistsList = ({ artists }: ArtistsListProps) => {
         direction="up"
       >
         <h1
-          className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
+          className={`!font-bold text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
             { size: "xxxl" }
           )}`}
         >
           Artists
         </h1>
         <p
-          className={` max-w-2xl text-center mb-4 md:mb-8 ${paragraph({
+          className={`!text-default-500 max-w-2xl text-center  ${paragraph({
             size: "md",
           })}`}
         >
-          Meet the masters of style, beauty, and ink. These artisans blend
-          precision and passion, sculpting hair, enhancing beauty, and etching
-          stories onto skin with flair and skill.
+Meet skilled artisans mastering style, <strong className="text-default-700 capitalize">beauty</strong>, and <strong className="text-default-700 capitalize">ink</strong>, sculpting <strong className="text-default-700 capitalize">hair</strong>, enhancing beauty, and etching stories with flair.
         </p>
       </AnimatedDivLeftRightUpDown>
-      <div className="max-w-[1536px] grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4  mx-auto gap-2 md:gap-3">
+      <div className="max-w-[1536px] grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4  mx-auto gap-2 md:gap-3 mt-8 md:mt-16">
         {artists.map((artist, index) => (
           <AnimatedDivLeftRightUpDown
             direction="up"

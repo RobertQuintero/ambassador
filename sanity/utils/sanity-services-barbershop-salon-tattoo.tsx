@@ -1,6 +1,8 @@
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { ServicePriceList, ServicesPageType, SubServices } from "@/types/servicesPageType";
+import { GalleryType } from "@/types/galleryType";
+import { ImagesType } from "@/types/imagesType";
 
 export async function getAllSubServicesData(): Promise<SubServices[]> {
   const barbershopData = await getBarbershopPageData();
@@ -29,6 +31,8 @@ export async function getAllServicePriceData(): Promise<ServicePriceList[]> {
     }
 
 
+
+
 export async function getBarbershopPageData(): Promise<ServicesPageType> {
   const data = await client.fetch(groq`*[_type=="barbershop"][0]{...,
         _createdAt,
@@ -50,11 +54,18 @@ export async function getBarbershopPageData(): Promise<ServicesPageType> {
             "subServiceImage" : subServiceImage.asset->url,
             subServiceTitle,
         },
-        "gallery": gallery[]{
+        "gallery": *[_type == "gallery"]{
             _id,
-            "image": image.asset->url,
-            caption,
+            title,
+            description,
+            date,
+            "galleryImages": galleryImages[]{
+                _id,
+                "image": image.asset->url,
+                caption,
+            }
         }
+
     }`);
     return data;
 }
@@ -79,11 +90,7 @@ export async function getSalonPageData(): Promise<ServicesPageType> {
             "subServiceImage" : subServiceImage.asset->url,
             subServiceTitle,
         },
-        "gallery": gallery[]{
-            _id,
-            "image": image.asset->url,
-            caption,
-        }
+
     }`);
     return data;
 }
@@ -108,11 +115,7 @@ export async function getTattooPageData(): Promise<ServicesPageType> {
             "subServiceImage" : subServiceImage.asset->url,
             subServiceTitle,
         },
-        "gallery": gallery[]{
-            _id,
-            "image": image.asset->url,
-            caption,
-        }
+
     }`);
     return data;
 }

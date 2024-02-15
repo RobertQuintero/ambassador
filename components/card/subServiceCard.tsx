@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Card,
@@ -16,7 +17,7 @@ const SubServiceCard = ({ subServices }: SubServiceCardProps) => {
   return (
     <React.Fragment>
       <motion.div whileHover={{scale:1.1}} className="max-w-sm">
-        <Card className="flex-row items-center pl-1 md:pl-2  pr-3 md:pr-4 bg-default-100/50 " radius="sm">
+        <Card className="flex-row items-center pl-1 md:pl-2  pr-3 md:pr-4 bg-default-100 " radius="sm">
           <Image
             src={subServices.subServiceImage}
             alt={subServices.subServiceTitle}

@@ -29,25 +29,31 @@ const ArtistSlug = ({ artist, params }: ArtistSlugProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [clickedIndex, setClickedIndex] = useState(0);
 
-  const handleImageClick = (index:any) => {
+  const handleImageClick = (index: any) => {
     setClickedIndex(index);
     onOpen();
   };
   return (
     <article className="w-full h-full ">
-            <Breadcrumbs className="max-w-7xl mx-auto my-2 md:my-4">
+      <Breadcrumbs className="max-w-7xl mx-auto my-2 md:my-4">
         <BreadcrumbItem>
           <Link size="sm" color="foreground" href="/">
             Home
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <Link size="sm"  color="foreground" href="/artist">
+          <Link size="sm" color="foreground" href="/artist">
             Work
           </Link>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <Link size="sm"  color="foreground" isDisabled href="" className="capitalize">
+          <Link
+            size="sm"
+            color="foreground"
+            isDisabled
+            href=""
+            className="capitalize"
+          >
             {artist.fullName}
           </Link>
         </BreadcrumbItem>
@@ -132,14 +138,17 @@ const ArtistSlug = ({ artist, params }: ArtistSlugProps) => {
             className="flex flex-col break-inside-avoid h-auto "
             key={image.image}
           >
-            <motion.div onClick={() => handleImageClick(artist.portfolioImages.indexOf(image))}
+            <motion.div
+              onClick={() =>
+                handleImageClick(artist.portfolioImages.indexOf(image))
+              }
               className="break-inside-avoid-page mb-2 md:mb-3 cursor-pointer"
               whileHover={{ scale: 1.1, zIndex: 30 }}
               whileTap={{ scale: 0.9, zIndex: 50 }}
             >
               <Image
                 src={image.image}
-                alt={artist.fullName}
+                alt={image.title}
                 radius="none"
                 width={500}
                 height={500}
@@ -154,7 +163,7 @@ const ArtistSlug = ({ artist, params }: ArtistSlugProps) => {
             </motion.div>
           </div>
         ))}
-<Modal
+        <Modal
           isOpen={isOpen}
           onClose={onClose}
           scrollBehavior="inside"

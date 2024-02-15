@@ -1,7 +1,7 @@
+"use client";
 import React, { useState } from "react";
 import { GalleryType } from "@/types/galleryType";
 import {
-  Card,
   Image,
   Modal,
   ModalContent,

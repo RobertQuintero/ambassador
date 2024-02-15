@@ -1,9 +1,7 @@
 import { AnimatedDivLeftRightUpDown } from "@/components/animation/animatedDiv";
 import { paragraph, title } from "@/components/primitives";
 import React from "react";
-import { AnimatedLogoFull } from "@/components/animation/animatedLogo";
 import { SearchBar } from "@/app/atoms/components/searchBar";
-
 const BranchHeader = () => {
 
   return (

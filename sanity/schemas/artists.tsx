@@ -1,4 +1,4 @@
-// Instructors schema
+// artists schema
 
 import { defineField, defineType } from "sanity";
 

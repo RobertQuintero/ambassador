@@ -1,6 +1,5 @@
 import { AnimatedDivLeftRightUpDown } from "@/components/animation/animatedDiv";
 import {
-  AnimatedLogo,
   AnimatedLogoFull,
 } from "@/components/animation/animatedLogo";
 import { paragraph, title } from "@/components/primitives";
@@ -16,12 +15,19 @@ const IntroductionMissionHistory = ({
   introductionMissionHistory,
 }: introductionMissionHistoryProps) => {
   return (
-    <div className="flex flex-col max-w-7xl mx-auto gap-14 sm:gap-16 md:gap-24 lg:gap-28 xl:gap-32 w-full mb-14 sm:mb-16 md:mb-24 lg:mb-28 xl:mb-32">
+    <div className="flex flex-col max-w-7xl mx-auto gap-14 sm:gap-16 md:gap-24 lg:gap-28 xl:gap-32 2xl:gap-64 w-full mb-14 sm:mb-16 md:mb-24 lg:mb-28 xl:mb-32">
       <div>
-        <AnimatedDivLeftRightUpDown direction="down">
+        <AnimatedDivLeftRightUpDown direction="down" className="flex flex-col justify-center items-center">
+        <h1
+          className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl mb-4 md:mb-8 ${title(
+            { size: "xxxl" }
+          )}`}
+        >
+          About Us
+        </h1>
           <AnimatedLogoFull
             delay={2}
-            className=" h-[60vh] w-full mx-auto "
+            className=" h-[45vh] w-full mx-auto "
             classNameStroke="fill-black dark:!fill-white  stroke-[6px]"
           />
         </AnimatedDivLeftRightUpDown>
@@ -36,11 +42,8 @@ const IntroductionMissionHistory = ({
         </AnimatedDivLeftRightUpDown>
       </div>
 
-      <div>
-        <AnimatedDivLeftRightUpDown direction="left">
-          <h2 className={`!font-bold   ${title({ size: "xxxl" })}`}>Mission</h2>
-        </AnimatedDivLeftRightUpDown>
         <AnimatedDivLeftRightUpDown direction="left" delay={1}>
+          <h2 className={`!font-bold   ${title({ size: "xxxl" })}`}>Mission</h2>
           <p
             className={`!text-default-500 max-w-2xl pl-2 ${paragraph({
               size: "lg",
@@ -49,9 +52,7 @@ const IntroductionMissionHistory = ({
             {introductionMissionHistory.mission}
           </p>
         </AnimatedDivLeftRightUpDown>
-      </div>
 
-      <div>
         <AnimatedDivLeftRightUpDown
           direction="right"
           className="flex flex-col items-end"
@@ -63,8 +64,6 @@ const IntroductionMissionHistory = ({
           >
             Vision
           </h2>
-        </AnimatedDivLeftRightUpDown>
-        <AnimatedDivLeftRightUpDown direction="right" delay={1}>
           <p
             className={`!text-default-500 ml-auto max-w-2xl pl-2 ${paragraph({
               size: "lg",
@@ -73,10 +72,8 @@ const IntroductionMissionHistory = ({
             {introductionMissionHistory.vision}
           </p>
         </AnimatedDivLeftRightUpDown>
-      </div>
 
 
-      <div>
         <AnimatedDivLeftRightUpDown
           direction="left"
           className="flex flex-col "
@@ -88,8 +85,6 @@ const IntroductionMissionHistory = ({
           >
             History
           </h2>
-        </AnimatedDivLeftRightUpDown>
-        <AnimatedDivLeftRightUpDown direction="left" delay={1}>
           <p
             className={`!text-default-500  max-w-2xl pl-2 ${paragraph({
               size: "lg",
@@ -98,7 +93,6 @@ const IntroductionMissionHistory = ({
             {introductionMissionHistory.history}
           </p>
         </AnimatedDivLeftRightUpDown>
-      </div>
     </div>
   );
 };

@@ -10,9 +10,10 @@ import NextLink from "next/link";
 type TestimonialProps = {
     testimonial: TestimonialsType;
     className?: string;
+    shadowClass?: string;
 }
 
-const TestimonialCard = ({testimonial, className}:TestimonialProps ) => {
+const TestimonialCard = ({testimonial, className,shadowClass}:TestimonialProps ) => {
   return (
     <React.Fragment>
         <Card className={`max-w-lg h-auto mx-auto p-1.5 md:p-3 border border-default/30 bg-default/10 hover:dark:bg-default/20 hover:bg-default-100 ${className}`} radius="sm" isBlurred shadow="sm" isPressable as={NextLink} href={testimonial.url}>
@@ -23,7 +24,7 @@ const TestimonialCard = ({testimonial, className}:TestimonialProps ) => {
                 </div>
             </CardHeader>
             <CardBody>
-            <ScrollShadow className='max-h-24 md:max-h-32' hideScrollBar>
+            <ScrollShadow className={`max-h-24 md:max-h-32 ${shadowClass}`} hideScrollBar>
                 <blockquote className={paragraph({size:"sm"})}>{testimonial.testimonial}</blockquote>
             </ScrollShadow>
             </CardBody>

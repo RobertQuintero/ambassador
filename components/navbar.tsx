@@ -39,12 +39,12 @@ export const Navbar = () => {
     <NextUINavbar
       maxWidth="full"
       shouldHideOnScroll
-      className="max-w-[1536px] bg-transparent   !z-40 mx-auto"
+      className="max-w-[1536px] bg-transparent mx-auto"
       height={"6rem"}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className="flex absolute  left-0 ml-4">
+      <NavbarContent className="flex absolute z-10 left-0 ml-4">
         <Button
           as={Link}
           href="/booking"

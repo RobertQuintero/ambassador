@@ -38,7 +38,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
             height={1000}
             radius="none"
             shadow="none"
-            className="rounded-sm"
+            className="rounded-sm max-h-[60vh] object-cover object-top"
           />
         </Card>
         <Modal
@@ -48,7 +48,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
           radius="sm"
           backdrop="opaque"
           classNames={{
-            body: "flex md:items-center md:flex-row p-2 sm:p-4 lg:p-6",
+            body: "flex sm:items-center sm:flex-row p-2 sm:p-4 lg:p-6",
             footer: "p-0 flex-col gap-2 md:gap-4",
             header: "p-0  ",
             closeButton:
@@ -65,7 +65,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
                   radius="sm"
                   width={"auto"}
                   height={"auto"}
-                  className="w-full bg-none sm:h-[50vh] object-contain !object-center"
+                  className="w-full bg-none h-[50vh] sm:h-[80vh] object-contain !object-center"
                 />
               </div>
 

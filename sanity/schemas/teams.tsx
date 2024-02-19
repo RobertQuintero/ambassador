@@ -33,13 +33,6 @@ export default defineType({
         }),
 
         defineField({
-        name: "quote",
-        title: "Quote",
-        type: "text",
-        validation: (Rule) => Rule.required(),
-        }),
-
-        defineField({
         name: "socialMedia",
         title: "Social media",
         type: "array",

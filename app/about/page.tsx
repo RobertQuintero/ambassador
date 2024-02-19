@@ -2,20 +2,21 @@ import { getAboutData } from "@/sanity/utils/sanity-about";
 import React from "react";
 import { IntroductionMissionHistory } from "./components/introductionMissionHistory";
 import { TestimonialsListSlideRight } from "./components/testimonialsListSlideRight";
-import { getAllSubServicesData } from "@/sanity/utils/sanity-services-barbershop-salon-tattoo";
-import { ServicesOffered } from "./components/servicesOffered";
+import Teams from "@/sanity/schemas/teams";
+import { getTeamsData } from "@/sanity/utils/sanity-teams";
+import TeamsList from "./components/teamsList";
+
 export const revalidate = 1;
 
 export default async function AboutPage() {
-	const getAllSubServices = await getAllSubServicesData();
 	const about = await getAboutData();
+	const teams = await getTeamsData();
 
 	return (
 		<React.Fragment>
 			<IntroductionMissionHistory introductionMissionHistory={about} />
-			<ServicesOffered subServices={getAllSubServices} />
+			<TeamsList teams={teams} />
 			<TestimonialsListSlideRight testimonials={about.testimonials} />
-
 		</React.Fragment>
 	);
 }

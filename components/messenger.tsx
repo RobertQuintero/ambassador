@@ -11,7 +11,6 @@ const Messenger = () => {
       <MessengerCheckbox
         pageId="246846501842903"
         messengerAppId="929338348839637"
-        size="md"
       />
     </FacebookProvider>
   );

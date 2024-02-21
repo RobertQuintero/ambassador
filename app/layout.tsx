@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { AnimatedFirstPageLoad } from "@/components/animation/animatedFirstPageLoading";
+import { Messenger } from "@/components/messenger";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -88,6 +89,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <Messenger />
         </Providers>
       </body>
     </html>

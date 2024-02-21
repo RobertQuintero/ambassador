@@ -31,18 +31,21 @@ const ServicePriceListTable = ({
   };
 
   return (
+
     <React.Fragment>
       <Table
         aria-label="Service Price List"
         selectionMode="single"
         shadow="none"
         radius="sm"
-        className=" "
+        color="default"
+        defaultSelectedKeys={[]}
         classNames={{
           base: "mx-auto max-w-xl ",
           th: `bg-background font-bold !w-full  text-lg sm:text-xl `,
-          td: `font-semibold text-sm sm:text-base md:text-lg `,
-          wrapper: "bg-default-100",
+          td: `font-semibold text-xs sm:text-sm md:text-base `,
+          tr: "cursor-pointer",
+          wrapper: "bg-default-100 p-1.5  md:p-2 xl:p-3",
         }}
       >
         <TableHeader>
@@ -51,8 +54,8 @@ const ServicePriceListTable = ({
         </TableHeader>
         <TableBody>
           {servicePriceList.map((service) => (
-            <TableRow key={service.priceTitle}>
-              <TableCell onClick={() => handleOpen(service)}>
+            <TableRow key={service.priceTitle} onClick={() => handleOpen(service)}>
+              <TableCell >
                 {service.promoPrice ? (
                   <div className="flex gap-2">
                     <p>{service.priceTitle}</p>
@@ -64,7 +67,7 @@ const ServicePriceListTable = ({
                   <p> {service.priceTitle}</p>
                 )}
               </TableCell>
-              <TableCell className="">
+              <TableCell >
                 {/* if service has promoPrice, strike through the servicePrice but still show it the show the promoPrice */}
                 {service.promoPrice ? (
                   <div className="flex  gap-2">

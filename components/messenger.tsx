@@ -1,37 +1,49 @@
 "use client";
 import Script from "next/script";
-import React from "react";
+import React, { FunctionComponent, useEffect } from "react";
 
-const Messenger = () => {
+interface MessengerPluginProps {}
+declare global {
+  interface Window {
+    fbAsyncInit: () => void
+    FB: {
+      init: (params: object) => void
+    }
+  }
+}
+
+const Messenger:FunctionComponent<MessengerPluginProps> = () => {
+  const pageId = 246846501842903
+
+  const MessengerRef = React.useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (MessengerRef.current) {
+        MessengerRef.current.setAttribute("page_id", pageId.toString())
+        MessengerRef.current.setAttribute("theme_color", "#000000")
+        MessengerRef.current.setAttribute("attribution", "biz_inbox")
+
+      window.fbAsyncInit = function () {
+        window.FB.init({
+          xfbml: true,
+          version: 'v16.0',
+        })
+      }
+      ;(function (d, s, id) {
+        const fjs = d.getElementsByTagName(s)[0]
+        if (d.getElementById(id)) return
+        const js = d.createElement(s) as HTMLScriptElement
+        js.id = id
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js'
+        fjs?.parentNode?.insertBefore(js, fjs)
+      })(document, 'script', 'facebook-jssdk')
+    }
+  }, [])
+
   return (
     <React.Fragment>
-        <div id="fb-root"></div>
-<div id="fb-customer-chat" className="fb-customerchat">
-
-</div>
-
-<Script id="fb-chat" strategy="lazyOnload">
-{`
-var chatbox = document.getElementById('fb-customer-chat');
-chatbox.setAttribute("page\_id", "246846501842903");
-chatbox.setAttribute("attribution", "biz\_inbox");
-
-window.fbAsyncInit = function() {
-FB.init({
-xfbml            : true,
-version          : 'v12.0'
-});
-};
-
-(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)\[0\];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = 'https://connect.facebook.net/en\_US/sdk/xfbml.customerchat.js';
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-`}
-</Script>
+      <div id='fb-root'></div>
+      <div ref={MessengerRef} id='fb-customer-chat' className='fb-customerchat'></div>
     </React.Fragment>
   );
 };

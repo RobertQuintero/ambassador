@@ -89,8 +89,8 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
-          <Messenger />
         </Providers>
+        <Messenger />
       </body>
     </html>
   );

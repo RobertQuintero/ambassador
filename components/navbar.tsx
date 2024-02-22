@@ -25,7 +25,6 @@ import {
 import {
   EnvelopeIcon,
   HandThumbUpIcon,
-  MapIcon,
   PhoneIcon,
 } from "@heroicons/react/24/solid";
 import React from "react";
@@ -39,12 +38,12 @@ export const Navbar = () => {
     <NextUINavbar
       maxWidth="full"
       shouldHideOnScroll
-      className="max-w-[1536px] bg-transparent mx-auto"
+      className=" bg-transparent mx-auto"
       height={"6rem"}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent className="flex absolute z-10 left-0 ml-4">
+      <NavbarContent className="flex absolute z-10 left-0 ml-4 sm:ml-[10%]">
         <Button
           as={Link}
           href="/booking"
@@ -62,7 +61,7 @@ export const Navbar = () => {
         </NextLink>
       </NavbarBrand>
 
-      <NavbarMenuToggle className="absolute right-0 mr-4 md:scale-150 text-default-500  hover:text-default-800 transition-all" aria-label={isMenuOpen ? "Close menu" : "Open menu"}/>
+      <NavbarMenuToggle className="absolute right-0 mr-4 sm:mr-[10%] md:scale-150 text-default-500  hover:text-default-800 transition-all" aria-label={isMenuOpen ? "Close menu" : "Open menu"}/>
       <NavbarMenu className=" md:pt-8 hideScroll flex-col md:flex-row md:justify-evenly h-full ">
         <div className="flex flex-col  gap-3 lg:gap-5 ">
           <NavbarMenuItem className="">

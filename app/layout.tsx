@@ -87,10 +87,12 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <AnimatedFirstPageLoad />
           <Navbar />
-          <main>{children}</main>
+          <Messenger />
+          <main>{children}
+          </main>
           <Footer />
         </Providers>
-        <Messenger />
+
       </body>
     </html>
   );

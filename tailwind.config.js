@@ -11,7 +11,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-
+      fontFamily: {
+        firaSans: ['var(--font-fira-sans)'],
+      },
     },
   },
   darkMode: "class",

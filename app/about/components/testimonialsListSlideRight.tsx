@@ -13,7 +13,7 @@ const TestimonialsListSlideRight = ({
   testimonials,
 }: TestimonialsListSlideRightProps) => {
   return (
-    <div className="my-14 sm:my-16 md:my-24 lg:my-28 xl:my-32">
+    <div className="my-14 sm:my-16 md:my-24 lg:my-28 xl:my-32 2xl:my-64">
       <AnimatedDivLeftRightUpDown
         className="flex flex-col justify-center items-center "
         direction="up"

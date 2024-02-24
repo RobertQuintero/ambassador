@@ -14,16 +14,25 @@ const teamsList = ({ teams }: TeamTypeProps) => {
     <React.Fragment>
       <div className="my-14 sm:my-16 md:my-24 lg:my-28 xl:my-32 2xl:my-64 ">
         <AnimatedDivLeftRightUpDown
-          className="flex flex-col justify-center items-center"
+          className="flex flex-col justify-center my-4 md:my-6 items-center"
           direction="up"
         >
           <h2
-            className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl my-4 md:my-6 ${title(
+            className={`!font-bold text-default-900 text-center !text-5xl sm:!text-6xl  ${title(
               { size: "xxxl" }
             )}`}
           >
             Meet our Team
           </h2>
+          <p
+            className={`!text-default-500 mx-auto max-w-2xl text-center  ${paragraph(
+              { size: "lg" }
+            )}`}
+          >
+            Our team is made up of talented and passionate individuals who are
+            dedicated to making a difference in the world.
+          </p>
+
         </AnimatedDivLeftRightUpDown>
 
         <div className="grid grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto rounded-md ">

@@ -235,13 +235,16 @@ const AnimatedCarousel = ({ gallery }: AnimatedCarouselProps) => {
   );
 };
 
+
 type AnimatedParallaxCardProps = {
   children: React.ReactNode;
   baseVelocity: number;
   initMovement?: number;
+  className?: string;
 };
 
 const AnimatedParallaxCard = ({
+  className,
   children,
   baseVelocity = 100,
   initMovement,
@@ -295,7 +298,7 @@ const AnimatedParallaxCard = ({
       <div
         onMouseEnter={handleHoverStart}
         onMouseLeave={handleHoverEnd}
-        className="overflow-hidden  relative w-full  flex"
+        className={`overflow-hidden  relative w-full  flex ${className}`}
       >
         <div className="absolute left-0 h-full w-[10%] bg-gradient-to-r from-background  to-transparent z-10"></div>
         <div className="absolute right-0 h-full w-[10%] bg-gradient-to-l from-background  to-transparent z-10"></div>

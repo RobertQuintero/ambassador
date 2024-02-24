@@ -41,7 +41,7 @@ const TestimonialsList = () => {
         />
       </AnimatedDivLeftRightUpDown>
 
-      <div className="w-full h-full flex flex-col justify-center items-center  ">
+      <div className="w-full h-full flex flex-col justify-center items-center mt-14 sm:mt-16 md:mt-24 lg:mt-28 xl:mt-32 2xl:mt-64">
         <AnimatedDivLeftRightUpDown
           direction="up"
           className="mx-auto flex flex-col justify-center"

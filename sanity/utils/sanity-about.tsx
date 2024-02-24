@@ -19,6 +19,10 @@ export async function getAboutData(): Promise<AboutType> {
             testimonial,
             url,
         },
+        "products": products[]->{
+            "image": image.asset->url,
+            brandName,
+        },
     }`);
   return data;
 }

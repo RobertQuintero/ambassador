@@ -8,6 +8,7 @@ import artists from './schemas/artists'
 import salon from './schemas/salon'
 import barbershop from './schemas/barbershop'
 import tattoo from './schemas/tattoo'
+import products from './schemas/products'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -20,5 +21,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
   gallery,
   testimonials,
   branches,
+  products,
   ],
 }

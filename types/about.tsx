@@ -1,3 +1,4 @@
+import { ProductsType } from "./productsType"
 import { TestimonialsType } from "./testimonialsType"
 
 // about page types
@@ -12,4 +13,5 @@ export type AboutType={
     vision: string,
     history: string,
     testimonials: TestimonialsType[],
+    products: ProductsType[],
 }

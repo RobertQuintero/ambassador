@@ -28,7 +28,7 @@ const BarbershopServicesList = ({
         </h1>
         <h2
           className={`!text-center my-2 ${title({
-            size: "xl",
+            size: "lg",
           })}`}
         >
           {servicesPage.title}
@@ -43,7 +43,7 @@ const BarbershopServicesList = ({
           {servicesPage.description}
         </p>
       </AnimatedDivLeftRightUpDown>
-      <div className="max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-4 md:gap-8 xl:gap-10 mt-8 md:mt-16">
+      <div className="max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-4 md:gap-8 xl:gap-10 my4 md:my-6">
         {servicesPage.subServices.map((subService, index) => (
           <AnimatedDivLeftRightUpDown
             direction="up"

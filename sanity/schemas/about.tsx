@@ -61,6 +61,14 @@ export default defineType({
         of: [{ type: "reference", to: [{ type: "testimonials" }] }],
         }),
 
+        // products we use
+        defineField({
+        name: "products",
+        title: "Products We Use",
+        description: "Products we use in our company",
+        type: "array",
+        of: [{ type: "reference", to: [{ type: "products" }] }],
+        }),
 
     ]
 });

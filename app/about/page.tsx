@@ -6,6 +6,7 @@ import Teams from "@/sanity/schemas/teams";
 import { getTeamsData } from "@/sanity/utils/sanity-teams";
 import TeamsList from "./components/teamsList";
 import { HeaderAbout } from "./components/header";
+import { ProductsList } from "./components/productsList";
 
 export const revalidate = 1;
 
@@ -19,6 +20,7 @@ export default async function AboutPage() {
 			<TestimonialsListSlideRight testimonials={about.testimonials} />
 			<IntroductionMissionHistory introductionMissionHistory={about} />
 			<TeamsList teams={teams} />
+			<ProductsList products={about.products} />
 
 		</React.Fragment>
 	);

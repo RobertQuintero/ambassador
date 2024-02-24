@@ -36,7 +36,7 @@ const GalleryImages = ({className, gallery }: GalleryImagesProps) => {
                 handleImageClick(gallery.galleryImages.indexOf(image))
               }
               className="break-inside-avoid-page mb-2 md:mb-3 cursor-pointer"
-              whileHover={{ scale: 1.1, zIndex: 30 }}
+              whileHover={{ scale: 1.05, zIndex: 30 }}
               whileTap={{ scale: 0.9, zIndex: 50 }}
             >
               <Image

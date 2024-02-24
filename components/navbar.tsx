@@ -21,6 +21,7 @@ import {
   LinkedInIcon,
   MobileIcon,
   TwitterIcon,
+  TiktokIcon,
 } from "./icons";
 import {
   EnvelopeIcon,
@@ -130,6 +131,15 @@ export const Navbar = () => {
                 aria-label="instagram"
               >
                 <InstagramIcon className="text-default-500 scale-125 md:scale-150  hover:text-default-800 transition-all" />
+              </Link>
+            ) : null}
+            {siteConfig.links.tiktok ? (
+              <Link
+                isExternal
+                href={siteConfig.links.tiktok}
+                aria-label="tiktok"
+              >
+                <TiktokIcon className="text-default-500 scale-125 md:scale-150  hover:text-default-800 transition-all" />
               </Link>
             ) : null}
             {siteConfig.links.facebook ? (

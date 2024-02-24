@@ -8,6 +8,7 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedInIcon,
+  TiktokIcon,
   TwitterIcon,
 } from "./icons";
 import { AnimatedLogo } from "./animation/animatedLogo";
@@ -31,6 +32,15 @@ export const Footer = () => {
                   aria-label="instagram"
                 >
                   <InstagramIcon className="text-default-500 hover:text-default-700  transition-all" />
+                </Link>
+              ) : null}
+              {siteConfig.links.tiktok ? (
+                <Link
+                  isExternal
+                  href={siteConfig.links.tiktok}
+                  aria-label="tiktok"
+                >
+                  <TiktokIcon className="text-default-500 hover:text-default-700  transition-all" />
                 </Link>
               ) : null}
               {siteConfig.links.facebook ? (

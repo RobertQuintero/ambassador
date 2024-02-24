@@ -19,10 +19,10 @@ const TeamCard = ({ team }: TeamCardProps) => {
         />
 
         <div className="flex flex-col items-center justify-center absolute z-10 top-[100vh] group-hover:top-0 h-full w-full bg-default-100/60 animate duration-1000 group-hover:duration-1000 ease-in-out group-hover:ease-in-out  ">
-          <div className="flex flex-col gap-2  ">
+          <div className="flex flex-col gap-0 md:gap-2  ">
             <span
               className={`!font-semibold text-center capitalize text-default-900 ${title(
-                { size: "xl" }
+                { size: "lg" }
               )}`}
             >
               {team.name}

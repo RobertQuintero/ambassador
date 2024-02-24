@@ -136,11 +136,12 @@ export const siteConfig = {
 	],
 
 	links: {
-		twitter: "https://twitter.com/getnextui",
-		facebook: "https://www.facebook.com/getnextui",
-		instagram: "https://www.instagram.com/getnextui",
-		linkedin: "https://www.linkedin.com/company/getnextui",
-		pinterest: "https://www.pinterest.com/getnextui",
+		twitter: "https://twitter.com/",
+		facebook: "https://www.facebook.com/",
+		instagram: "https://www.instagram.com/",
+		linkedin: "https://www.linkedin.com/company/",
+		pinterest: "https://www.pinterest.com/",
+		tiktok: "https://www.tiktok.com/",
 	},
 	recruiter: {
 		person1: "robert.t.quintero.06@gmail.com",

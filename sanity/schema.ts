@@ -9,9 +9,11 @@ import salon from './schemas/salon'
 import barbershop from './schemas/barbershop'
 import tattoo from './schemas/tattoo'
 import products from './schemas/products'
+import home from './schemas/home'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
+  home,
   salon,
   barbershop,
   tattoo,

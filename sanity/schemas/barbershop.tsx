@@ -103,10 +103,8 @@ export default defineType({
       name: "gallery",
       title: "Gallery Reference",
       description: "Gallery reference",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "gallery" }] }],
-      validation: (Rule) => Rule.required(),
+      type: "reference",
+      to: [{ type: "gallery" }],
     }),
-
   ],
 });

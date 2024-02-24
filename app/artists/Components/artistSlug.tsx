@@ -131,7 +131,7 @@ const ArtistSlug = ({ artist, params }: ArtistSlugProps) => {
       </div>
 
       <Divider orientation="horizontal" className="max-w-7xl mx-auto my-3" />
-      <div className="w-full mx-auto max-w-7xl  columns-2 md:columns-3  gap-2 md:gap-3 ">
+      <div className="w-full h-full mx-auto max-w-7xl  columns-2 md:columns-3  gap-2 md:gap-3 ">
         {/* // start from 1 to avoid the first image */}
         {artist.portfolioImages.slice(1).map((image) => (
           <div
@@ -154,10 +154,7 @@ const ArtistSlug = ({ artist, params }: ArtistSlugProps) => {
                 height={500}
                 className="w-full !h-fit object-contain !object-center"
                 classNames={{
-                  wrapper: " !h-fit",
                   img: "!h-fit ",
-                  blurredImg: "!h-fit",
-                  zoomedWrapper: "!h-fit",
                 }}
               />
             </motion.div>
@@ -172,7 +169,7 @@ const ArtistSlug = ({ artist, params }: ArtistSlugProps) => {
           classNames={{
             closeButton:
               "z-30 bg-default/50 scale-125 rounded-md hover:bg-default/70 text-default-900 hover:text-default-900",
-            base: "bg-transparent max-w-7xl shadow-none backdrop-none",
+            base: "bg-transparent max-w-7xl shadow-none backdrop-none ",
           }}
         >
           <ModalContent>

@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { GalleryType } from "@/types/galleryType";
 import { Image, Modal, ModalContent, useDisclosure } from "@nextui-org/react";
-import { AnimatedCarousel } from "@/components/animation/animatedCarousel";
 import { motion } from "framer-motion";
 import { paragraph, title } from "@/components/primitives";
+import { AnimatedCarouselGalleryAll } from "@/components/animation/animatedCarousel";
 
 type GalleryCardProps = {
   gallery: GalleryType;
@@ -60,7 +60,7 @@ const GalleryCard = ({ gallery }: GalleryCardProps) => {
           }}
         >
           <ModalContent>
-            <AnimatedCarousel gallery={gallery} />
+            <AnimatedCarouselGalleryAll gallery={gallery} />
           </ModalContent>
         </Modal>
       </div>

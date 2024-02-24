@@ -1,5 +1,5 @@
 import {
-  AnimatedCarouselGallery,
+  AnimatedCarouselGallerySpecific,
 } from "@/components/animation/animatedCarousel";
 import { GalleryType } from "@/types/galleryType";
 import { Modal, ModalContent, useDisclosure, Image } from "@nextui-org/react";
@@ -56,11 +56,11 @@ const GalleryImages = ({ gallery }: GalleryImagesProps) => {
           classNames={{
             closeButton:
               "z-30 bg-default/50 scale-125 rounded-md hover:bg-default/70 text-default-900 hover:text-default-900",
-            base: "bg-transparent max-w-7xl shadow-none backdrop-none h-fit",
+            base: "bg-transparent max-w-7xl shadow-none backdrop-none",
           }}
         >
           <ModalContent>
-            <AnimatedCarouselGallery
+            <AnimatedCarouselGallerySpecific
               gallery={gallery}
               startIndex={clickedIndex}
             />

@@ -23,6 +23,31 @@ type AnimatedCarouselArtistProps = {
   startIndex: number;
 };
 
+type AnimatedCarouselGalleryProps = {
+  gallery: GalleryType;
+  startIndex: number;
+};
+
+type AnimatedCarouselProps = {
+  gallery: GalleryType;
+};
+
+type AnimatedParallaxCardProps = {
+  children: React.ReactNode;
+  baseVelocity: number;
+  initMovement?: number;
+  className?: string;
+};
+
+
+
+
+
+
+
+
+
+// AnimatedCarouselArtist
 const AnimatedCarouselArtist = ({
   artist,
   startIndex,
@@ -96,7 +121,7 @@ const AnimatedCarouselArtist = ({
 
 
         <ScrollShadow
-          className="grid grid-flow-col relative max-w-7xl "
+          className="grid grid-flow-col relative w-fit max-w-7xl  "
           orientation="horizontal"
           hideScrollBar
         >
@@ -132,12 +157,23 @@ const AnimatedCarouselArtist = ({
     </React.Fragment>
   );
 };
-type AnimatedCarouselGalleryProps = {
-  gallery: GalleryType;
-  startIndex: number;
-};
 
-const AnimatedCarouselGallery = ({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// AnimatedCarouselGallerySpecific
+const AnimatedCarouselGallerySpecific = ({
   gallery,
   startIndex,
 }: AnimatedCarouselGalleryProps) => {
@@ -208,7 +244,7 @@ const AnimatedCarouselGallery = ({
           )}
         </AnimatePresence>
         <ScrollShadow
-          className="grid grid-flow-col relative max-w-7xl"
+          className="grid grid-flow-col relative w-fit max-w-7xl "
           orientation="horizontal"
           hideScrollBar
         >
@@ -244,11 +280,20 @@ const AnimatedCarouselGallery = ({
   );
 };
 
-type AnimatedCarouselProps = {
-  gallery: GalleryType;
-};
 
-const AnimatedCarousel = ({ gallery }: AnimatedCarouselProps) => {
+
+
+
+
+
+
+
+
+
+
+
+// AnimatedCarouselGalleryAll
+const AnimatedCarouselGalleryAll = ({ gallery }: AnimatedCarouselProps) => {
   const [index, setIndex] = useState(0);
   const dragControls = useDragControls();
 
@@ -258,6 +303,7 @@ const AnimatedCarousel = ({ gallery }: AnimatedCarouselProps) => {
     } else if (info.offset.x < -50) {
       setIndex(Math.min(gallery.galleryImages.length - 1, index + 1));
     }
+  }
   return (
     <React.Fragment>
       <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
@@ -315,7 +361,7 @@ const AnimatedCarousel = ({ gallery }: AnimatedCarouselProps) => {
           )}
         </AnimatePresence>
         <ScrollShadow
-          className="grid grid-flow-col relative max-w-7xl  "
+          className="grid grid-flow-col relative w-fit max-w-7xl  "
           orientation="horizontal"
           hideScrollBar
         >
@@ -350,15 +396,52 @@ const AnimatedCarousel = ({ gallery }: AnimatedCarouselProps) => {
     </React.Fragment>
   );
 };
-};
 
 
-type AnimatedParallaxCardProps = {
-  children: React.ReactNode;
-  baseVelocity: number;
-  initMovement?: number;
-  className?: string;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const AnimatedParallaxCard = ({
   className,
@@ -430,4 +513,4 @@ const AnimatedParallaxCard = ({
   );
 };
 
-export { AnimatedCarousel, AnimatedCarouselArtist, AnimatedParallaxCard,AnimatedCarouselGallery };
+export { AnimatedCarouselArtist,AnimatedCarouselGalleryAll,AnimatedCarouselGallerySpecific, AnimatedParallaxCard };

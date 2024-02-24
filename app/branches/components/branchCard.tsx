@@ -23,7 +23,7 @@ const BranchCard = ({ branch, className }: BranchCardProps) => {
   return (
     <React.Fragment>
       <Card
-        className={` h-auto mx-auto p-1.5 md:p-3 border-none hover:dark:bg-default/20 hover:bg-default-100 transition-all duration-500 ${className}`}
+        className={` h-auto mx-auto p-0 md:p-3 border-none hover:dark:bg-default/20 hover:bg-default-100 transition-all duration-500 ${className}`}
         radius="sm"
         isBlurred
         shadow="none"

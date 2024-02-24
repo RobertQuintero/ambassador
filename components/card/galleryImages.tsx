@@ -5,12 +5,14 @@ import { GalleryType } from "@/types/galleryType";
 import { Modal, ModalContent, useDisclosure, Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import { AnimatedDivLeftRightUpDown } from "../animation/animatedDiv";
 
 type GalleryImagesProps = {
   gallery: GalleryType;
+  className?: string;
 };
 
-const GalleryImages = ({ gallery }: GalleryImagesProps) => {
+const GalleryImages = ({className, gallery }: GalleryImagesProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [clickedIndex, setClickedIndex] = useState(0);
 
@@ -20,12 +22,14 @@ const GalleryImages = ({ gallery }: GalleryImagesProps) => {
   };
   return (
     <React.Fragment>
-      <div className="w-full mx-auto max-w-7xl  columns-2 md:columns-3  gap-2 md:gap-3 ">
+      <div className={`w-full mx-auto ${className}`}>
         {/* // start from 1 to avoid the first image */}
-        {gallery.galleryImages.map((image) => (
-          <div
+        {gallery.galleryImages.map((image,index) => (
+          <AnimatedDivLeftRightUpDown
             className="flex flex-col break-inside-avoid h-auto "
             key={image.image}
+            direction="up"
+            delay={index * 0.3}
           >
             <motion.div
               onClick={() =>
@@ -45,7 +49,7 @@ const GalleryImages = ({ gallery }: GalleryImagesProps) => {
                 }}
               />
             </motion.div>
-          </div>
+          </AnimatedDivLeftRightUpDown>
         ))}
         <Modal
           isOpen={isOpen}

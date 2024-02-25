@@ -154,6 +154,7 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
 
   return (
     <React.Fragment>
+       {!isSubmitted ? (
       <form
         className=" flex flex-col gap-4 max-w-4xl mx-auto mb-96"
         id="bookingForm"
@@ -369,9 +370,36 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
             )
           }
         >
-          {isLoading ? "Sending..." : "Send"}
+          {isLoading ? "Booking..." : "Book"}
         </Button>
       </form>
+      ) : (
+        <React.Fragment>
+        <div className="flex flex-col mx-auto ">
+          <p
+            className={`!text-default-500 mb-4 text-center mx-auto  ${title({
+              size: "md",
+            })}`}
+          >
+            Thank you for booking with us
+          </p>
+          <div className="p-4 flex flex-col items-center justify-center w-full h-full max-w-lg relative animate-appearance-in  mx-auto">
+            <div className="w-24 h-24 rounded-full  bg-default/25 border border-default-500 animate-pulse relative z-20" />
+            <div className="w-16 h-16 rounded-full  animate-ping border border-default-500 absolute top-8 -z-10" />
+            <div className="w-12 h-12 rounded-full  animate-ping border border-default-500 delay-300 duration-300 absolute top-10 -z-10" />
+            <CheckBadgeIcon className="w-16 h-16 text-default-800  absolute top-8 animate-appearance-in drop-shadow-lg" />
+            <p
+              className={`!text-default-500 text-center mt-4 ${paragraph({
+                size: "sm",
+              })}`}
+            >
+            Your booking has been successfully received. Our team will carefully review your booking details, and we aim to provide you with a confirmation and any further instructions within the next
+            <strong className="text-default-700"> 12hrs </strong>. If you have any questions or need assistance, feel free to reach out to us. We appreciate your trust in us and look forward to serving you soon!
+            </p>
+          </div>
+        </div>
+        </React.Fragment>
+      )}
     </React.Fragment>
   );
 };

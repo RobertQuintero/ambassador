@@ -1,7 +1,6 @@
 "use client";
 import InputField from "@/components/customInput/InputField";
 import { paragraph, title } from "@/components/primitives";
-import { siteConfig } from "@/config/site";
 import { BranchesType } from "@/types/branchesType";
 import { SubServices } from "@/types/servicesPageType";
 import { CheckBadgeIcon } from "@heroicons/react/24/solid";
@@ -11,7 +10,6 @@ import {
   Button,
   CircularProgress,
   Image,
-  Input,
   Textarea,
 } from "@nextui-org/react";
 import React, { useState } from "react";

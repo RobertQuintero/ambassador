@@ -39,14 +39,19 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
 }: EmailBookingResponseProps) => {
   const baseUrl = siteConfig.url ? `${siteConfig.url}` : "";
   const previewText = `Thank you, ${name}! Your Booking has been Confirmed.`;
-  const currentYear = new Date().getFullYear();
+
+  // how to add hour minute and am/pm to the date
   const booking = new Date(bookingDate);
-  const bookingDateFormatted = booking.toLocaleDateString("en-US", {
+  const bookingDateTimeFormatted = `${booking.toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
+  })} ${booking.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  })}`;
 
   return (
     <React.Fragment>
@@ -56,8 +61,10 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
         <Tailwind>
           <Body className="font-sans">
             <Container className="rounded-md border-[#f3f3f5] my-[40px] mx-auto max-w-[44rem]">
-              <div className="h-fit mx-auto w-80
-">
+              <div
+                className="h-fit mx-auto w-80
+"
+              >
                 <Img
                   className="object-cover  rounded-t-md h-full w-full -z-10"
                   alt="Logo"
@@ -75,7 +82,7 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
 
               <Section className="px-6">
                 <Text className="text-base">
-                  Dear <strong>{name}</strong>,
+                  Dear Ma'am/Sir <strong>{name}</strong>,
                 </Text>
                 <Text>
                   Thank you for booking a service with{" "}
@@ -96,8 +103,10 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
                   hesitate to let us know.
                 </Text>
                 <Text>
-                  We look forward to welcoming you on{" "}
-                  <strong>{bookingDateFormatted}</strong> at our{" "}
+                  Our team will check &quot;availability first&quot;, then send
+                  a confirmation for that schedule and contact you shortly. Your
+                  appointment is scheduled for
+                  <strong>{bookingDateTimeFormatted}</strong> at our{" "}
                   <strong>{branch}</strong> location for your{" "}
                   <strong>{service}</strong> appointment.
                 </Text>
@@ -116,10 +125,10 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
                   <Hr className="w-[96%] mb-4" />
                   <div className=" m-0 pl-4 w-full">
                     <p className="text-gray-500 text-sm mt-1 mb-0">
-                      Booking Date
+                      Booking Date and Time
                     </p>
                     <Text className="text-black text-lg my-1 font-bold ">
-                      {bookingDateFormatted}
+                      {bookingDateTimeFormatted}
                     </Text>
                   </div>
                   <div className=" m-0 pl-4 w-full">
@@ -157,7 +166,7 @@ const EmailBookingResponse: React.FC<EmailBookingResponseProps> = ({
                     </Text>
                   </div>
                   <div className=" m-0 pl-4 w-full">
-                    <p className="text-gray-500 text-sm mt-1 mb-0">Message</p>
+                    <p className="text-gray-500 text-sm mt-1 mb-0">Note</p>
                     <Text className="text-black text-lg my-1 font-bold ">
                       {message}
                     </Text>

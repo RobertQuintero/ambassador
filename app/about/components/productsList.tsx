@@ -24,7 +24,7 @@ const ProductsList = ({
             { size: "xxl" }
           )}`}
         >
-          Products Brand we use
+
         </h2>
       </AnimatedDivLeftRightUpDown>
       <AnimatedDivLeftRightUpDown direction="left" className="mx-auto w-fit">

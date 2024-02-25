@@ -38,15 +38,18 @@ const EmailToAmbassadorBooking: React.FC<EmailToAmbassadorBookingProps> = ({
   message,
 }: EmailToAmbassadorBookingProps) => {
   const baseUrl = siteConfig.url ? `${siteConfig.url}` : "";
-  const previewText = `New Booking Scheduled from ${name} at ${branch}`;
+  const previewText = `New Booking Scheduled from ${name} at ${branch} on ${bookingDate} for ${service}`;
   const booking = new Date(bookingDate);
-  const bookingDateFormatted = booking.toLocaleDateString("en-US", {
+  const bookingDateTimeFormatted = `${booking.toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
-
+  })} ${booking.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  })}`;
   return (
     <React.Fragment>
       <Html className="bg-white">
@@ -61,16 +64,10 @@ const EmailToAmbassadorBooking: React.FC<EmailToAmbassadorBookingProps> = ({
                   className="object-cover  rounded-t-md h-full w-full -z-10"
                   alt="Logo"
                   src={`${baseUrl}/icon/AmbassadorLogoWhite.png`}
-                  width={350}
-                  height={350}
+                  width={300}
+                  height={300}
                 />
               </div>
-
-              <Heading className="text-3xl text-center font-bold text-black ">
-                <br />
-                Booking Scheduled from {name} at {branch}
-              </Heading>
-
               <Section className="px-2">
                 <Text className="text-2xl text-center mt-4  font-bold text-black">
                   Booking Details
@@ -80,10 +77,10 @@ const EmailToAmbassadorBooking: React.FC<EmailToAmbassadorBookingProps> = ({
                   <Hr className="w-[96%] mb-4" />
                   <div className=" m-0 pl-4 w-full">
                     <p className="text-gray-500 text-sm mt-1 mb-0">
-                      Booking Date
+                      Booking Date and Time
                     </p>
                     <Text className="text-black text-lg my-1 font-bold ">
-                      {bookingDateFormatted}
+                      {bookingDateTimeFormatted}
                     </Text>
                   </div>
                   <div className=" m-0 pl-4 w-full">
@@ -121,7 +118,7 @@ const EmailToAmbassadorBooking: React.FC<EmailToAmbassadorBookingProps> = ({
                     </Text>
                   </div>
                   <div className=" m-0 pl-4 w-full">
-                    <p className="text-gray-500 text-sm mt-1 mb-0">Message</p>
+                    <p className="text-gray-500 text-sm mt-1 mb-0">Note</p>
                     <Text className="text-black text-lg my-1 font-bold ">
                       {message}
                     </Text>

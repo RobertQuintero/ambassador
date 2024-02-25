@@ -14,7 +14,7 @@ export default async function Booking() {
   const getAllBranches = await getBranchesData();
   return (
     <React.Fragment>
-        {/* <BookingHeader/> */}
+        <BookingHeader/>
         <BookingForm subServices={getAllSubServices } branches={getAllBranches}/>
     </React.Fragment>
   );

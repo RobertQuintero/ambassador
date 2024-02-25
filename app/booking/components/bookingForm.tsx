@@ -11,16 +11,14 @@ import {
   Button,
   CircularProgress,
   Image,
+  Input,
   Textarea,
 } from "@nextui-org/react";
 import React, { useState } from "react";
+import { CalendarDaysIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import 'react-date-picker/dist/DatePicker.css';
-import 'react-calendar/dist/Calendar.css';
-import DatePicker from 'react-date-picker';
-import 'react-datetime-picker/dist/DateTimePicker.css';
-import 'react-calendar/dist/Calendar.css';
-import 'react-clock/dist/Clock.css';
+import "react-calendar/dist/Calendar.css";
+import "react-datetime-picker/dist/DateTimePicker.css";
 import DateTimePicker from "react-datetime-picker";
 
 type BookingFormProps = {
@@ -35,7 +33,9 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [service, setService] = useState("");
-  const [selectedService, setSelectedService] = useState<React.Key | null>(null);
+  const [selectedService, setSelectedService] = useState<React.Key | null>(
+    null
+  );
 
   const [selectedBranch, setSelectedBranch] = useState<React.Key | null>(null);
   const [branch, setBranch] = useState("");
@@ -44,7 +44,6 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
   const [message, setMessage] = useState("");
 
   const [isInvalidMobileNumber, setIsInvalidMobileNumber] = useState(false);
-  const [isInvalidBookingDate, setIsInvalidBookingDate] = useState(false);
   const [isInvalidService, setIsInvalidService] = useState(false);
   const [isInvalidBranch, setIsInvalidBranch] = useState(false);
   const [isInvalidEmail, setIsInvalidEmail] = useState(false);
@@ -55,23 +54,23 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
 
-
   // render regular HTML input element
   const onSelectedServiceChange = (key: React.Key) => {
     setSelectedService(key);
-  }
-  const onInputServiceChange = (value:string) => {
+  };
+  const onInputServiceChange = (value: string) => {
     setService(value);
-  }
+  };
 
   const onSelectedBranchChange = (key: React.Key) => {
     setSelectedBranch(key);
-  }
-  const onInputBranchChange = (value:string) => {
+  };
+  const onInputBranchChange = (value: string) => {
     setBranch(value);
-  }
+  };
 
-  const [bookingDate, setBookingDate] = useState<Value>(new Date());
+  const [bookingDate, setBookingDate] = useState<Date | null>(null);
+  const [isInvalidBookingDate, setIsInvalidBookingDate] = useState(false);
 
   const checkFormValidity = () => {
     if (
@@ -160,6 +159,7 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
         id="ContactForm"
         onSubmit={handleSubmit}
       >
+        {/* // Name  */}
         <InputField
           type="text"
           id="name"
@@ -174,6 +174,8 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
             checkFormValidity();
           }}
         />
+
+        {/* // Email */}
         <InputField
           type="email"
           id="email"
@@ -184,6 +186,8 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
           value={email}
           onChange={handleEmailChange}
         />
+
+        {/* // Mobile Number */}
         <InputField
           type="text"
           id="mobileNumber"
@@ -201,6 +205,37 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
           }}
         />
 
+        {/* // Branch Location */}
+        <Autocomplete
+          isRequired
+          defaultItems={branches}
+          label="Branch Location"
+          variant="underlined"
+          size="lg"
+          radius="md"
+          value={branch}
+          id="branch"
+          name="branch"
+          errorMessage={isInvalidBranch ? "Please select a branch" : ""}
+          isInvalid={isInvalidBranch}
+          classNames={{ popoverContent: "rounded-md" }}
+          onClose={() => setTouched(true)}
+          color={isInvalidBranch ? "danger" : "default"}
+          onSelectionChange={onSelectedBranchChange}
+          onInputChange={onInputBranchChange}
+        >
+          {(branch) => (
+            <AutocompleteItem
+              description={branch.address}
+              classNames={{ title: "font-semibold capitalize" }}
+              key={branch.locationName}
+            >
+              {branch.locationName}
+            </AutocompleteItem>
+          )}
+        </Autocomplete>
+
+        {/* // Service Type */}
         <Autocomplete
           defaultItems={subServices}
           label="Service Type"
@@ -237,43 +272,75 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
           )}
         </Autocomplete>
 
-        <Autocomplete
-          isRequired
-          defaultItems={branches}
-          label="Branch Location"
-          variant="underlined"
-          size="lg"
-          radius="md"
-          value={branch}
-          id="branch"
-          name="branch"
-          errorMessage={isInvalidBranch ? "Please select a branch" : ""}
-          isInvalid={isInvalidBranch}
-          classNames={{ popoverContent: "rounded-md" }}
-          onClose={() => setTouched(true)}
-          color={isInvalidBranch ? "danger" : "default"}
-          onSelectionChange={onSelectedBranchChange}
-          onInputChange={onInputBranchChange}
+        {/* // Booking Date */}
+        <label
+          htmlFor="bookingDate"
+          className="text-default-600 ml-1 mt-2 text-sm"
         >
-          {(branch) => (
-            <AutocompleteItem
-              description={branch.address}
-              classNames={{ title: "font-semibold capitalize" }}
-              key={branch.locationName}
-            >
-              {branch.locationName}
-            </AutocompleteItem>
-          )}
-        </Autocomplete>
+          Booking Date<span className="text-danger">*</span>
+        </label>
+        <DateTimePicker
+          name="bookingDate"
+          id="bookingDate"
+          value={bookingDate}
+          required
+          onInvalid={(e) => {
+            e.preventDefault();
+            setIsInvalidBookingDate(true);
+          }}
+          className={`
+          z-10
+          !px-1
+          !pb-0
+          !gap-0
+          relative
+          box-border
+          border-b-medium
+          shadow-[0_1px_0px_0_rgba(0,0,0,0.05)]
+          border-default-200
+          !rounded-none
+          hover:border-default-300
+          after:content-['']
+          after:w-0"
+          after:origin-center
+          after:bg-default-foreground
+          after:absolute
+          after:left-1/2
+          after:-translate-x-1/2
+          after:-bottom-[2px]
+          after:h-[2px]
+          group-data-[focus=true]:after:w-full
+          ${bookingDate ? "text-lg" : ""}  ${
+            isInvalidBookingDate ? "border-danger" : "border-default-200"
+          }`}
+          calendarClassName=" !bg-default-100 p-1 md:!p-3 rounded-md shadow-md !border-none text-default-800 "
+          yearPlaceholder="yyyy"
+          monthPlaceholder="mm"
+          dayPlaceholder="dd"
+          hourPlaceholder="hh"
+          minutePlaceholder="mm"
+          secondPlaceholder="ss"
+          tileClassName="bg-red-500"
+          calendarIcon={
+            <CalendarDaysIcon className="w-5 h-5 text-default-500 group-hover:text-default-700 transition-all" />
+          }
+          clearIcon={
+            <XMarkIcon
+              className={`w-4 h-4 ${
+                bookingDate ? " text-default-500" : "!hidden"
+              } hover:text-default-700 transition-all`}
+            />
+          }
+          amPmAriaLabel="Select AM/PM"
+          disableClock
+          onChange={(value: Value) => {
+            setBookingDate(value as Date);
+            setIsInvalidBookingDate(!value);
+            checkFormValidity();
+          }}
+        />
 
-         <DateTimePicker
-          onChange={setBookingDate} value={bookingDate}
-          calendarClassName="!bg-black dark:!bg-dark-500 "
-
-
-
-          />
-
+        {/* // Notes */}
         <Textarea
           id="message"
           name="message"
@@ -282,7 +349,7 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
           size="lg"
           value={message}
           isInvalid={isInvalidMessage}
-          label="Notes"
+          label="Note"
           isRequired
           errorMessage={
             isInvalidMessage
@@ -303,7 +370,7 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
           type="submit"
           radius="none"
           size="lg"
-
+          isDisabled={!isFormValid}
           startContent={
             isLoading ? (
               <CircularProgress

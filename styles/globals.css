@@ -8,3 +8,51 @@
       -ms-overflow-style: none;
     scrollbar-width: none;
 }
+input[type="text"]{
+    border: none;
+    outline: none;
+}
+
+#bookingDate > div{
+    @apply border-none
+}
+#bookingDate input:invalid{
+    @apply !bg-background
+}
+
+
+
+#bookingDate .react-datetime-picker__inputGroup__input:invalid{
+    @apply bg-background
+}
+
+#bookingDate button:enabled:hover, button:enabled:focus {
+    @apply bg-default-200/25
+}
+#bookingDate button:enabled:focus {
+    @apply bg-default-200/50
+}
+#bookingDate  button{
+    border-radius: 6px;
+}
+#bookingDate .react-calendar__tile--hasActive{
+    @apply bg-default-200/10
+}
+
+#bookingDate .react-calendar__tile--now{
+    @apply bg-default-200
+}
+
+#bookingDate .react-calendar__tile--active{
+    @apply bg-default
+}
+
+#bookingDate > div > div > select > option{
+    @apply bg-default
+}
+#bookingDate > div > div > select option:is(:checked){
+    @apply bg-default-200
+}
+#bookingDate > div > div > select option::selection{
+    @apply bg-default-200/25
+}

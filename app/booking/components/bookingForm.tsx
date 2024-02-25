@@ -156,7 +156,7 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
     <React.Fragment>
       <form
         className=" flex flex-col gap-4 max-w-4xl mx-auto mb-96"
-        id="ContactForm"
+        id="bookingForm"
         onSubmit={handleSubmit}
       >
         {/* // Name  */}
@@ -290,26 +290,12 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
           }}
           className={`
           z-10
-          !px-1
-          !pb-0
-          !gap-0
+          !pb-1
           relative
           box-border
           border-b-medium
-          shadow-[0_1px_0px_0_rgba(0,0,0,0.05)]
           border-default-200
-          !rounded-none
-          hover:border-default-300
-          after:content-['']
-          after:w-0"
-          after:origin-center
-          after:bg-default-foreground
-          after:absolute
-          after:left-1/2
-          after:-translate-x-1/2
-          after:-bottom-[2px]
-          after:h-[2px]
-          group-data-[focus=true]:after:w-full
+          group
           ${bookingDate ? "text-lg" : ""}  ${
             isInvalidBookingDate ? "border-danger" : "border-default-200"
           }`}
@@ -322,7 +308,7 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
           secondPlaceholder="ss"
           tileClassName="bg-red-500"
           calendarIcon={
-            <CalendarDaysIcon className="w-5 h-5 text-default-500 group-hover:text-default-700 transition-all" />
+            <CalendarDaysIcon className="w-5 h-5 text-default-300 group-hover:text-default-700 transition-all" />
           }
           clearIcon={
             <XMarkIcon

@@ -121,7 +121,7 @@ const AnimatedCarouselArtist = ({
 
 
         <ScrollShadow
-          className="grid grid-flow-col relative w-fit max-w-7xl  "
+          className="grid grid-flow-col relative  max-w-7xl  "
           orientation="horizontal"
           hideScrollBar
         >
@@ -244,7 +244,7 @@ const AnimatedCarouselGallerySpecific = ({
           )}
         </AnimatePresence>
         <ScrollShadow
-          className="grid grid-flow-col relative w-fit max-w-7xl "
+          className="grid grid-flow-col relative  max-w-7xl  "
           orientation="horizontal"
           hideScrollBar
         >
@@ -361,7 +361,7 @@ const AnimatedCarouselGalleryAll = ({ gallery }: AnimatedCarouselProps) => {
           )}
         </AnimatePresence>
         <ScrollShadow
-          className="grid grid-flow-col relative w-fit max-w-7xl  "
+          className="grid grid-flow-col relative  max-w-7xl  "
           orientation="horizontal"
           hideScrollBar
         >

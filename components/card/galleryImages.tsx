@@ -60,7 +60,7 @@ const GalleryImages = ({className, gallery }: GalleryImagesProps) => {
           classNames={{
             closeButton:
               "z-30 bg-default/50 scale-125 rounded-md hover:bg-default/70 text-default-900 hover:text-default-900",
-            base: "bg-transparent max-w-7xl shadow-none backdrop-none",
+            base: "bg-default/10 max-w-7xl shadow-none backdrop-none overflow-x-hidden hideScroll",
           }}
         >
           <ModalContent>

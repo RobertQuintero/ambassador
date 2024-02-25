@@ -20,11 +20,11 @@ const ProductsList = ({
         direction="up"
       >
         <h2
-          className={`!font-bold text-default-900 text-center my-4 md:my-6 ${title(
+          className={`!font-bold text-default-900 !text-center my-4 md:my-6 ${title(
             { size: "xxl" }
           )}`}
         >
-
+          We exclusively use top-tier brands.
         </h2>
       </AnimatedDivLeftRightUpDown>
       <AnimatedDivLeftRightUpDown direction="left" className="mx-auto w-fit">

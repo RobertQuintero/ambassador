@@ -42,7 +42,7 @@ const ContactForm = () => {
   return (
     <React.Fragment>
       {!isSubmitted ? (
-        <form action={useContactForm} method="post" onSubmit={handleSubmit}
+        <form action={useContactForm} onSubmit={handleSubmit}
           className=" flex flex-col gap-4 max-w-4xl mx-auto "
           id="ContactForm"
 

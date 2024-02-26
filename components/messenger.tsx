@@ -42,8 +42,9 @@ const Messenger:FunctionComponent<MessengerPluginProps> = () => {
 
   return (
     <React.Fragment>
-      <div id='fb-root'></div>
+      <div id='fb-root'>
       <div ref={MessengerRef} id='fb-customer-chat' className='fb-customerchat'></div>
+      </div>
     </React.Fragment>
   );
 };

@@ -44,3 +44,9 @@
 #bookingDate select option:is(:checked){
     @apply bg-default-200
 }
+#fb-root > div.fb_dialog.fb_dialog_advanced > div > iframe:nth-child(3){
+    @apply bg-background
+}
+#fb-root > div.fb_dialog.fb_dialog_advanced > div > iframe:nth-child(2){
+    @apply bg-background
+}

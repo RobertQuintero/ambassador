@@ -83,7 +83,7 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
        {!isSubmitted ? (
       <form
         action={useBookingForm}
-        className=" flex flex-col gap-4 max-w-4xl mx-auto mb-96"
+        className=" flex flex-col gap-4 max-w-4xl mx-auto "
         id="bookingForm"
         onSubmit={handleSubmit}
       >
@@ -268,7 +268,7 @@ const BookingForm = ({ subServices, branches }: BookingFormProps) => {
           isRequired
           errorMessage={
             isInvalidMessage
-              ? "Your story should have at least 8 characters "
+              ? "Your note should have at least 8 characters "
               : ""
           }
           color={isInvalidMessage ? "danger" : "default"}

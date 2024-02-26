@@ -11,7 +11,7 @@ export default function AboutLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="w-full h-full  px-4 sm:px-8 py-14 sm:py-16 md:pb-24 lg:pb-28 xl:pb-32  2xl:pb-64 overflow-hidden ">
+		<section className="w-full h-full  px-4 sm:px-8 pb-14 sm:pb-16 pt-0 md:pt-8 lg:pt-16 md:pb-24 lg:pb-28 xl:pb-32  2xl:pb-64 overflow-hidden ">
 				{children}
 		</section>
 	);

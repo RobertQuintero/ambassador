@@ -2,11 +2,11 @@
 import React from "react";
 import { BookingHeader } from "./components/bookingHeader";
 import { BookingForm } from "./components/bookingForm";
-import { getAllSubServicesData, getBarbershopPageData, getSalonPageData, getTattooPageData } from "@/sanity/utils/sanity-services-barbershop-salon-tattoo";
+import { getAllSubServicesData} from "@/sanity/utils/sanity-services-barbershop-salon-tattoo";
 import { getBranchesData } from "@/sanity/utils/sanity-branches";
 
 
-export const revalidate = 1;
+export const revalidate = 60 * 60;
 
 export default async function Booking() {
 

@@ -20,7 +20,7 @@ export async function getArtistsData(): Promise<ArtistsType[]> {
         "portfolioImages": portfolioImages[]{
             _id,
             "image": image.asset->url,
-            caption,
+            title,
         }
 
     }`);
@@ -45,7 +45,7 @@ export async function getArtistPageData(slug: string): Promise<ArtistsType> {
         "portfolioImages": portfolioImages[]{
             _id,
             "image": image.asset->url,
-            caption,
+            title,
         },
     }`,
     { slug }

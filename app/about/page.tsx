@@ -7,7 +7,8 @@ import TeamsList from "./components/teamsList";
 import { HeaderAbout } from "./components/headerAbout";
 import { ProductsList } from "./components/productsList";
 
-export const revalidate = 1;
+// Revalidate the data every 7 days
+export const revalidate =  60 * 60 * 24 * 7;
 
 export default async function AboutPage() {
 	const about = await getAboutData();

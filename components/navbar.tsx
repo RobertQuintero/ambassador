@@ -45,6 +45,7 @@ export const Navbar = () => {
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="flex absolute z-10 left-0 ml-4 sm:ml-[10%]">
+        <NavbarItem>
         <Button
           as={Link}
           href="/booking"
@@ -54,10 +55,11 @@ export const Navbar = () => {
         >
           Book Now
         </Button>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarBrand className="absolute -left-0 flex justify-center w-full">
-        <NextLink href="/" className="">
+        <NextLink href="/" className="" aria-label="home">
           <AnimatedLogo className="w-fit h-16" />
         </NextLink>
       </NavbarBrand>

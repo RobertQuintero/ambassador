@@ -1,3 +1,4 @@
+"use client";
 import {
   AnimatedCarouselGallerySpecific,
 } from "@/components/animation/animatedCarousel";
@@ -42,6 +43,7 @@ const GalleryImages = ({className, gallery }: GalleryImagesProps) => {
               <Image
                 src={image.image}
                 alt={image.title}
+                aria-label={image.title}
                 radius="none"
                 className="w-full !h-fit object-contain !object-center"
                 classNames={{

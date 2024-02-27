@@ -1,3 +1,4 @@
+"use client";
 import { AnimatedDivLeftRightUpDown } from '@/components/animation/animatedDiv';
 import { paragraph, title } from '@/components/primitives';
 import { HomeType } from '@/types/homeType';

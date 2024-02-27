@@ -1,9 +1,9 @@
-"use client";
 import { getHomeData } from "@/sanity/utils/sanity-home";
 import React from "react";
 import { GalleryImages } from "../../components/card/galleryImages";
 import { HeaderHome } from "./components/headerHome";
 
+export const revalidate = 60 * 60 * 24;
 
 export default async function Home() {
 

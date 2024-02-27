@@ -3,7 +3,7 @@ import { getArtistPageData } from "@/sanity/utils/sanity-artists";
 import React from "react";
 import { ArtistSlug } from "../Components/artistSlug";
 
-export const revalidate = 1;
+export const revalidate = 60 * 60 * 24;
 
 type Props = {
   params: { slug: string };

@@ -2,7 +2,8 @@
 import {getArtistsData } from "@/sanity/utils/sanity-artists";
 import React from "react";
 import { ArtistsList } from "./Components/artistsList";
-export const revalidate = 1;
+// Revalidate every 24 hours
+export const revalidate = 60 * 60 * 24;
 export default async function Works() {
   const artists = await getArtistsData();
 

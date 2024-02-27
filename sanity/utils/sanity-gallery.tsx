@@ -14,7 +14,7 @@ export async function getGalleryData(): Promise<GalleryType[]> {
         "galleryImages": galleryImages[]{
             _id,
             "image": image.asset->url,
-            caption,
+            title,
         }
     }`);
     return data;

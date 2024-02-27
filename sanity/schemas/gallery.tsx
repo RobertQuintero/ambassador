@@ -43,8 +43,8 @@ export default defineType({
                     type: "object",
                     fields: [
                         defineField({
-                            name: "caption",
-                            title: "Caption",
+                            name: "title",
+                            title: "title",
                             type: "string",
                             validation: (Rule) => Rule.required(),
                         }),

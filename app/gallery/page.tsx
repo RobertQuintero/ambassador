@@ -3,7 +3,7 @@ import React from "react";
 import { GalleryList } from "./components/galleryList";
 
 
-export const revalidate = 1;
+export const revalidate = 60 * 60 * 24;
 
 export default async function Gallery() {
 

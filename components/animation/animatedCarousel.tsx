@@ -65,6 +65,7 @@ const AnimatedCarouselArtist = ({
               key={artist.portfolioImages[index].image}
               src={artist.portfolioImages[index].image}
               alt={artist.portfolioImages[index].title}
+              aria-label={artist.portfolioImages[index].title}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -91,6 +92,7 @@ const AnimatedCarouselArtist = ({
               size="md"
               className={`absolute inset-y-[45%] !z-50 left-0`}
               onClick={() => setIndex(index - 1)}
+              aria-label="previous"
             >
               <ChevronLeftIcon className="h-6 w-6" />
             </Button>
@@ -107,6 +109,7 @@ const AnimatedCarouselArtist = ({
               size="md"
               className={`absolute inset-y-[45%] !z-50 right-0`}
               onClick={() => setIndex(index + 1)}
+              aria-label="next"
             >
               <ChevronRightIcon className="h-6 w-6" />
             </Button>
@@ -139,6 +142,7 @@ const AnimatedCarouselArtist = ({
                 <Image
                   width={200}
                   height={200}
+                  radius="none"
                   alt={image.title}
                   src={image.image}
                   className="aspect-square w-full h-full object-cover"
@@ -188,8 +192,8 @@ const AnimatedCarouselGallerySpecific = ({
             <motion.img
               key={gallery.galleryImages[index].image}
               src={gallery.galleryImages[index].image}
-              alt={gallery.galleryImages.map((image) => image.title).join(", ")}
-              aria-label={gallery.galleryImages.map((image) => image.title).join(", ")}
+              alt={gallery.galleryImages[index].title}
+              aria-label={gallery.galleryImages[index].title}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -311,6 +315,7 @@ const AnimatedCarouselGalleryAll = ({ gallery }: AnimatedCarouselProps) => {
               key={gallery.galleryImages[index].image}
               src={gallery.galleryImages[index].image}
               alt={gallery.galleryImages[index].title}
+              aria-label={gallery.galleryImages[index].title}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -337,6 +342,7 @@ const AnimatedCarouselGalleryAll = ({ gallery }: AnimatedCarouselProps) => {
               size="md"
               className={`absolute inset-y-[45%] !z-50 left-0`}
               onClick={() => setIndex(index - 1)}
+              aria-label="previous"
             >
               <ChevronLeftIcon className="h-6 w-6" />
             </Button>
@@ -353,6 +359,7 @@ const AnimatedCarouselGalleryAll = ({ gallery }: AnimatedCarouselProps) => {
               size="md"
               className={`absolute inset-y-[45%] !z-50 right-0`}
               onClick={() => setIndex(index + 1)}
+              aria-label="next"
             >
               <ChevronRightIcon className="h-6 w-6" />
             </Button>
@@ -383,6 +390,7 @@ const AnimatedCarouselGalleryAll = ({ gallery }: AnimatedCarouselProps) => {
                 <Image
                   width={200}
                   height={200}
+                  radius="none"
                   alt={image.title}
                   src={image.image}
                   className="aspect-square object-cover"

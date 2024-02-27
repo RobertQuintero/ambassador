@@ -44,7 +44,7 @@ const GalleryImages = ({className, gallery }: GalleryImagesProps) => {
                 src={image.image}
                 alt={image.title}
                 aria-label={image.title}
-                radius="none"
+                radius="sm"
                 className="w-full !h-fit object-contain !object-center"
                 classNames={{
                   img: "!h-fit ",

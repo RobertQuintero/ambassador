@@ -30,13 +30,13 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
   return (
     <React.Fragment>
       <div className="flex flex-col relative max-w-xl">
-        <Card isBlurred isPressable onPress={onOpen} radius="none" className="" shadow="none">
+        <Card isBlurred isPressable onPress={onOpen} radius="sm" className="" shadow="none">
           <Image
             src={artists.portfolioImages[0].image}
             alt={artists.fullName}
             width={1000}
             height={1000}
-            radius="none"
+            radius="sm"
             shadow="none"
             className="rounded-sm max-h-[60vh] object-cover object-top"
           />
@@ -50,7 +50,7 @@ const ArtistCard = ({ artists }: ArtistCardProps) => {
           classNames={{
             body: "flex sm:items-center sm:flex-row p-2 sm:p-4 lg:p-6",
             footer: "p-0 flex-col gap-2 md:gap-4",
-            header: "p-0  ",
+            header: "p-0",
             closeButton:
               "z-30 bg-default/50 scale-125 rounded-md hover:bg-default/70 text-default-900 hover:text-default-900",
             base: "bg-default/10 max-w-5xl shadow-none backdrop-none hideScroll",

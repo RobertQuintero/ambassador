@@ -83,7 +83,7 @@ export default function RootLayout({
           fontMono.variable
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "system" }}>
           <AnimatedFirstPageLoad />
           <Navbar />
           <main>{children}

@@ -61,7 +61,7 @@ export const siteConfig = {
 
 	// Company details
 	name: "Ambassador",
-	description: "",
+	description: "Discover our premier artistic services at Ambassador. From expert hair styling to exquisite tattoo designs, we're your destination for creative expression. Book your appointment now!",
 	email: "ambassador.com",
 	telephone: "0936736732",
 	mobile: "090-293-232",

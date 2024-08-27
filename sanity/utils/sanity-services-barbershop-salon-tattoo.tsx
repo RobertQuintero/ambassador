@@ -1,8 +1,7 @@
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { ServicePriceList, ServicesPageType, SubServices } from "@/types/servicesPageType";
-import { GalleryType } from "@/types/galleryType";
-import { ImagesType } from "@/types/imagesType";
+
 
 export async function getAllSubServicesData(): Promise<SubServices[]> {
   const barbershopData = await getBarbershopPageData();
